@@ -1,5 +1,5 @@
-=== Twenty Twenty-Three ===
-Contributors: wordpressdotorg
+=== Unhas TV Custom WordPress Theme ===
+Contributors: KOMKOM.id
 Requires at least: 6.1
 Tested up to: 6.3
 Requires PHP: 5.6
@@ -9,31 +9,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Twenty Twenty-Three is designed to take advantage of the new design tools introduced in WordPress 6.1. With a clean, blank base as a starting point, this default theme includes ten diverse style variations created by members of the WordPress community.
-
-Whether you want to build a complex or incredibly simple website, you can do it quickly and intuitively through the bundled styles or dive into creation and full customization yourself.
+This is a modern editorial theme designed to emphasize feature and documentary content in both text and video formats.
 
 == Changelog ==
 
-= 1.2 =
-* Released: August 8, 2023
+= 0.1 =
+* Released: 11 December, 2023
 
-https://wordpress.org/documentation/article/twenty-twenty-three-changelog/#Version_1.2
-
-= 1.1 =
-* Released: March 28, 2023
-
-https://wordpress.org/documentation/article/twenty-twenty-three-changelog/#Version_1.1
-
-= 1.0 =
-* Released: November 1, 2022
-
-https://wordpress.org/documentation/article/twenty-twenty-three-changelog/#Version_1.0
 
 == Copyright ==
 
-Twenty Twenty-Three WordPress Theme, (C) 2022-2023 WordPress.org
-Twenty Twenty-Three is distributed under the terms of the GNU GPL.
+Unhas TV WordPress Theme, (C) 2023 KOMKOM.id
+Unhas TV WordPress Theme is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
