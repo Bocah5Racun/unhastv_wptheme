@@ -1,5 +1,12 @@
 {
   "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "100%"
+    }
+  },
   "styles": {
     "typography": {
       "fontFamily": "Inter, sans-serif",
