@@ -2,7 +2,8 @@
 function register_unhastv_menus() {
   register_nav_menus(
     array(
-      'header-menu' => __( 'Header Menu' ),
+      'header-nav' => 'Header Navigation',
+      'footer-nav' => 'Footer Navigation'
      )
    );
  }

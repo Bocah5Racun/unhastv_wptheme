@@ -11,6 +11,6 @@
 <header id="unhastv-header">
     <div id="unhastv-header__brand-cta"></div>
     <div id="unhastv-header__main-nav">
-        <?php wp_nav_menu( array('theme_location' => 'header-menu' ) ); ?>
+        <?php wp_nav_menu( array('theme_location' => 'header-nav' ) ); ?>
     </div>
 </header>
