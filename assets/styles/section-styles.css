@@ -219,7 +219,9 @@
   font-size: 1rem;
 }
 .section__show-prev,
-.section__show-next {
+.section__show-next,
+.section__show-prev--black,
+.section__show-next--black {
   position: absolute;
   display: flex;
   align-items: center;
@@ -227,11 +229,11 @@
   top: 0;
   padding: 0 16px;
   cursor: pointer;
+  z-index: 500;
 }
-
 .section__show-prev {
   display: none;
-  left: 0;
+  left: -16px;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 33%,
@@ -241,14 +243,35 @@
 }
 .section__show-next {
   display: flex;
-  right: 0;
+  right: -16px;
   background: linear-gradient(
     270deg,
     rgba(255, 255, 255, 1) 33%,
-    rgba(255, 255, 255, 0.75) 75%,
+    rgba(255, 255, 255, 0.65) 75%,
     rgba(255, 255, 255, 0) 100%
   );
 }
+.section__show-prev--black {
+  display: none;
+  left: -16px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 33%,
+    rgba(0, 0, 0, 0.65) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.section__show-next--black {
+  display: flex;
+  right: -16px;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 1) 33%,
+    rgba(0, 0, 0, 0.75) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .slider-icon {
   width: 22px;
 }

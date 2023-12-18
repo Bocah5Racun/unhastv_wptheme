@@ -1,23 +1,27 @@
-const sliderContainer = document.getElementById(
-  "template--singlerow-slideshow__slider-container"
-);
-const buttonPrev = document.getElementById("slider-prev");
-const buttonNext = document.getElementById("slider-next");
+/** */
 
-let scrollPercentage = 0;
+const sliderContainers = document.querySelectorAll(".slider-container");
+const sliderPrevs = document.querySelectorAll(".slider-prev");
+const sliderNexts = document.querySelectorAll(".slider-next");
 
-sliderContainer.addEventListener("scroll", (e) => {
-  scrollPercentage =
-    sliderContainer.scrollLeft /
-    (sliderContainer.scrollWidth - sliderContainer.clientWidth);
-  buttonPrev.style.display = scrollPercentage > 0 ? "flex" : "none";
-  buttonNext.style.display = scrollPercentage < 1 ? "flex" : "none";
+sliderContainers.forEach((sliderContainer, index) => {
+  sliderContainer.addEventListener("scroll", () => {
+    const scrollPercentage =
+      sliderContainer.scrollLeft /
+      (sliderContainer.scrollWidth - sliderContainer.clientWidth);
+    sliderPrevs[index].style.display = scrollPercentage > 0 ? "flex" : "none";
+    sliderNexts[index].style.display = scrollPercentage < 1 ? "flex" : "none";
+  });
 });
 
-buttonPrev.addEventListener("click", () => {
-  sliderContainer.scrollLeft -= sliderContainer.scrollWidth / 5;
+sliderPrevs.forEach((sliderPrev, index) => {
+  sliderPrev.addEventListener("click", () => {
+    sliderContainers[index].scrollLeft -= 520;
+  });
 });
 
-buttonNext.addEventListener("click", () => {
-  sliderContainer.scrollLeft += sliderContainer.scrollWidth / 5;
+sliderNexts.forEach((sliderNext, index) => {
+  sliderNext.addEventListener("click", () => {
+    sliderContainers[index].scrollLeft += 520;
+  });
 });

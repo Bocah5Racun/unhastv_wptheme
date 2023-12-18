@@ -58,10 +58,10 @@ href="<?php echo $category_id ?>"
     
 <div class="template--single-row-slideshow__inner">
 
-<div id="slider-prev" class="section__show-prev noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
-<div id="slider-next" class="section__show-next noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
+<div id="slider-prev" class="slider-prev section__show-prev noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
+<div id="slider-next" class="slider-next section__show-next noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
 
-<div id="template--singlerow-slideshow__slider-container">
+<div id="template--singlerow-slideshow__slider-container" class="slider-container">
 
 <?php
 
@@ -75,7 +75,7 @@ array_push( $shown_posts, get_the_ID() );
 
 <div class="section__news-item">
     <?php the_post_thumbnail( 'medium_large', array( 'class' => 'section__news-item__thumbnail' ) ); ?>
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="section__news-item__title"><?php the_title(); ?></h1></a>
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
     <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
 </div>
 

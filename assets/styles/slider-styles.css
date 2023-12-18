@@ -1,0 +1,7 @@
+.slider-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.slider-container::-webkit-scrollbar {
+  display: none;
+}

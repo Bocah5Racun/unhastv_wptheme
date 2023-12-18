@@ -85,7 +85,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="section__news-item__title"><?php the_title(); ?></h1>
+            <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>
@@ -100,7 +100,7 @@ if( $the_query->current_post == 0 ):
                 <?php echo $the_category; ?>
             </div>
             <a href="<?php echo get_the_permalink(); ?>">
-                <h1 class="section__news-item__title"><?php the_title(); ?></h1>
+                <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
             </a>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>

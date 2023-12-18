@@ -41,6 +41,14 @@ body {
   font-weight: 400;
 }
 
+.line-limit {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 h1,
 h2,
 h3,

@@ -6,7 +6,7 @@ $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
     'post__not_in' => $shown_posts,
-    'posts_per_page' => '5',
+    'posts_per_page' => '10',
     'orderby' => 'date',
     'order' => 'DESC',
 );
@@ -60,7 +60,7 @@ if( $the_query->current_post == 0 ): // check if first post
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
         <div class="hero__news-item__meta-container container--constrained">
             <div class="category-badge--with-background"><?php echo $the_category; ?></div>
-            <h1 class="hero__news-item__title"><?php the_title(); ?></h1>
+            <h1 class="hero__news-item__title line-limit"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>
@@ -71,8 +71,10 @@ break;
 endif;
 endwhile;
 ?>
-
-<div class="hero__news-item-container container--constrained">
+<div class="hero__slider container--constrained">
+<div id="slider-prev" class="slider-prev section__show-prev--black noselect"><img  src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x to-red" /></div>
+<div id="slider-next" class="slider-next section__show-next--black noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon to-red" /></div>
+<div class="hero__news-item-container container--constrained slider-container">
 
 <?php
 while( $the_query->have_posts() ): // the remaining posts
@@ -111,7 +113,7 @@ endif;
             </div>
         </div>
         <div class="hero__news-item__meta-container">
-            <h1 class="hero__news-item__title"><?php the_title(); ?></h1>
+            <h1 class="hero__news-item__title line-limit"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>
@@ -122,6 +124,7 @@ endif;
     wp_reset_postdata();
 ?>
 
+</div>
 </div>
 
 </section>
