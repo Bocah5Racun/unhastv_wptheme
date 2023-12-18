@@ -3,8 +3,10 @@ Theme Name: Unhas TV News Theme
 */
 
 :root {
-  --light-gray: #d9d9d9;
+  --dark-gray: #b8b8b8;
+  --light-gray: #dcdcdc;
   --unhas-red: #c6203c;
+  --unhas-yellow: #fdc10f;
 }
 
 @font-face {
@@ -31,12 +33,12 @@ Theme Name: Unhas TV News Theme
 }
 
 body {
-  background-color: var(--light-gray);
+  background-color: #fff;
+  color: #222;
   margin: 0;
   padding: 0;
   font-family: "Inter", "Times New Roman", sans-serif;
   font-weight: 400;
-  line-height: 1.25rem;
 }
 
 h1,
@@ -44,13 +46,45 @@ h2,
 h3,
 h4 {
   line-height: 125%;
+  margin: 0;
+  padding: 0;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
 
+hr {
+  border: 0;
+  border-bottom: 1px solid var(--dark-gray);
+}
+
 .container--constrained {
   margin: 0 auto;
-  width: 1200px;
+  width: clamp(900px, 80vw, 1200px);
+}
+
+.to-red {
+  filter: invert(20%) sepia(86%) saturate(2008%) hue-rotate(329deg)
+    brightness(96%) contrast(103%);
+}
+
+.to-yellow {
+  filter: invert(83%) sepia(56%) saturate(1713%) hue-rotate(344deg)
+    brightness(97%) contrast(106%);
+}
+
+.flip-x {
+  rotate: 180deg;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

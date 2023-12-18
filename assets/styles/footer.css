@@ -1,0 +1,43 @@
+#unhastv-footer {
+  background-color: #000;
+  padding: 25px 0;
+  color: var(--light-gray);
+  font-size: 0.875rem;
+}
+
+.footer__main {
+  display: flex;
+  align-items: center;
+}
+
+.footer__main > div:not(:nth-child(2)) {
+  flex: 1;
+}
+
+.footer__copyright {
+  font-size: 0.6875rem;
+  text-align: center;
+  line-height: 200%;
+}
+
+#footer-menu {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#footer-menu > li:not(:first-child)::before {
+  margin: 0 16px;
+  content: "•";
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+.footer__socials__icon {
+  width: 32px;
+  height: 32px;
+}

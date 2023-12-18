@@ -1,10 +1,15 @@
+#unhastv-header {
+  background-color: var(--light-gray);
+}
 #unhastv-header__brand-cta {
   display: flex;
   justify-content: space-between;
+  padding: 15px 0;
 }
 
-#unhastv-header__brand-logo {
-  max-height: 125px;
+.custom-logo {
+  width: auto;
+  max-height: 60px;
 }
 
 #unhastv-header__cta {
@@ -26,6 +31,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  scale: 1;
+  transition: scale 80ms ease-in;
+}
+#unhastv-header__cta:hover {
+  scale: 1.025;
 }
 
 #unhastv-header__cta__record-icon {
@@ -44,10 +54,29 @@
 
 #unhastv-header__main-nav #menu-main-menu {
   display: flex;
-  padding: 25px 0;
+  font-size: 0.875rem;
+  line-height: 400%;
   list-style-type: none;
-  gap: 30px;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--light-gray);
+  padding: 0;
+}
+
+#menu-main-menu a {
+  display: block;
+  padding: 0 20px;
+  width: 100%;
+  height: 100%;
+}
+#menu-main-menu li:hover {
+  background-color: none;
+  transition: background-color 120ms ease-in-out;
+}
+#menu-main-menu li:hover {
+  background-color: var(--unhas-red);
+}
+
+#menu-main-menu li:last-child {
+  color: var(--unhas-yellow);
 }
