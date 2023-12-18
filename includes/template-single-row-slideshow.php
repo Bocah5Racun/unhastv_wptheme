@@ -4,6 +4,7 @@ global $shown_posts;
 
 $loop_args = array(
     'post_type' => 'post',
+    'ignore_sticky_posts' => true,
     'post__not_in' => $shown_posts,
     'posts_per_page' => '8',
     'orderby' => 'date',
@@ -87,4 +88,5 @@ array_push( $shown_posts, get_the_ID() );
 
 <?php
 endif;
+wp_reset_postdata();
 ?>
