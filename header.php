@@ -21,7 +21,7 @@
             <?php echo $cta_text; ?>
         </a>
 
-        <? endif; ?>
+        <?php endif; ?>
     </div>
     <div id="unhastv-header__main-nav">
         <?php wp_nav_menu( array(

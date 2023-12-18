@@ -79,11 +79,10 @@ function unhastv_customize_register( $wp_customize ) {
 
   foreach($categories as $category){
     if($i==0){
-    $default = '';
-    $i++;
-  }
-  
-  $cats[$category->slug] = $category->name;
+      $default = '';
+      $i++;
+    }
+    $cats[$category->slug] = $category->name;
   }
 
   $wp_customize->add_setting ('hero_category', array(
