@@ -14,7 +14,7 @@
   max-height: 60px;
 }
 #sticky-header .custom-logo {
-  height: 45px;
+  height: 36px;
   filter: brightness(0) invert(1);
 }
 
@@ -29,6 +29,7 @@
     var(--unhas-red) 0%,
     #a0001b 100%
   );
+  white-space: nowrap;
   color: var(--light-gray);
   font-family: "Inria Sans", sans-serif;
   font-weight: 700;
@@ -42,15 +43,18 @@
   transition: all 80ms ease-in;
 }
 
+#sticky-header__cta {
+  padding: 6px;
+}
+
 #sticky-header ul {
   margin: 0;
 }
 #unhastv-header__cta:hover,
 #sticky-header__cta:hover {
   background: var(--unhas-yellow);
-  border: none;
+  border: 1px solid var(--unhas-yellow);
   color: var(--ultra-dark-gray);
-  box-shadow: 0 0 4px var(--ultra-dark-gray);
 }
 #unhastv-header__cta:hover .header__cta__record-icon,
 #sticky-header__cta:hover .header__cta__record-icon {
@@ -89,19 +93,22 @@
 .unhastv-header__main-nav .menu-main-menu {
   display: flex;
   font-size: 0.875rem;
-  line-height: 400%;
   list-style-type: none;
+  align-items: stretch;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--light-gray);
   padding: 0;
 }
 
+.menu-main-menu li {
+  min-height: 100%;
+}
 .menu-main-menu a {
-  display: block;
-  padding: 0 20px;
-  width: 100%;
+  display: flex;
+  align-items: center;
   height: 100%;
+  padding: 16px;
 }
 .menu-main-menu li:hover {
   background-color: none;
