@@ -20,5 +20,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--light-gray);
-  background: rgba(198, 32, 60, 1);
+  background: rgba(198, 32, 60, 0.9);
+  min-width: 50px;
+  text-align: center;
 }

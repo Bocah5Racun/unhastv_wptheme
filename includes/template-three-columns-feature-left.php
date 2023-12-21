@@ -45,7 +45,6 @@ href="<?php echo $category_id ?>"
 >
 
 <h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<img class="right-arrow to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-right-arrow.png" />
 
 </a>
 
@@ -107,7 +106,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="hero__news-item__title line-limit"><?php the_title(); ?></h1>
+            <h1 class="hero__news-item__title line-limit-3"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>

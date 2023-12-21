@@ -32,7 +32,7 @@ if( $the_query->have_posts() ):
 
 ?>
 
-<div class="template--two-columns-feature-left container--constrained">
+<div class="template--three-columns-feature-center container--constrained">
 <div class="section-header"> 
     
 <a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>">
@@ -43,7 +43,7 @@ if( $the_query->have_posts() ):
 
 </div>
 
-<div class="template--two-columns-feature-left__inner-container">
+<div class="template--three-columns-feature-center__inner-container">
 
 <?php
 
@@ -84,7 +84,8 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
+            <h1 class="section__news-item__title"><?php the_title(); ?></h1>
+            <p class="line-limit" style="margin: 0;"><?php echo get_the_excerpt(); ?></p>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>
@@ -99,9 +100,8 @@ if( $the_query->current_post == 0 ):
                 <?php echo $the_category; ?>
             </div>
             <a href="<?php echo get_the_permalink(); ?>">
-                <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
-            </a>       
-            <p class="line-limit"><?php echo get_the_excerpt(); ?></p>
+                <h1 class="section__news-item__title line-limit-3"><?php the_title(); ?></h1>
+            </a>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
         <a href="<?php echo get_the_permalink(); ?>">

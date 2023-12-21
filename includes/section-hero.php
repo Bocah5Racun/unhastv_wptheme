@@ -72,9 +72,9 @@ endif;
 endwhile;
 ?>
 <div class="hero__slider container--constrained">
-<div id="slider-prev" class="slider-prev section__show-prev--black noselect"><img  src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x to-red" /></div>
-<div id="slider-next" class="slider-next section__show-next--black noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon to-red" /></div>
-<div class="hero__news-item-container container--constrained slider-container">
+<div id="slider-prev" class="slider-prev slider-prev--black noselect"><img  src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x to-yellow" /></div>
+<div id="slider-next" class="slider-next slider-next--black noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon to-yellow" /></div>
+<div class="hero__news-item-container slider-container">
 
 <?php
 while( $the_query->have_posts() ): // the remaining posts

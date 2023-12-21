@@ -15,11 +15,18 @@ function register_unhastv_menus() {
 function unhastv_enqueue_styles() {
   wp_enqueue_style( 'unhastv-header-styles', get_template_directory_uri() . '/assets/styles/header.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'unhastv-footer-styles', get_template_directory_uri() . '/assets/styles/footer.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'unhastv-ads-styles', get_template_directory_uri() . '/assets/styles/ads.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
   wp_enqueue_style( 'unhastv-badges-and-buttons-styles', get_template_directory_uri() . '/assets/styles/badges-buttons-styles.css', array(), '1.0', 'all' );
+
+  if(is_front_page()) {
+    wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
+  }
+  
+  if(is_single()) {
+    wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), '1.0', 'all' );
+  }
 }
 
 function unhastv_enqueue_scripts() {
@@ -106,8 +113,9 @@ function unhastv_customize_register( $wp_customize ) {
     'none' => 'Disembunyikan',
     'simple-grid' => 'Simple Grid',
     'single-row-slideshow' => '1 Row, Slideshow',
-    'three-columns-feature-left' => '3 Columns, Feature Post Left',
     'two-columns-feature-left' => '2 Columns, Feature Post Left',
+    'three-columns-feature-left' => '3 Columns, Feature Post Left',
+    'three-columns-feature-center' => '3 Columns, Feature Post Center',
     'three-rows-staggered-columns' => '3 Rows, Staggered Columns',
   ];
 
@@ -333,7 +341,7 @@ add_action( 'customize_register', 'unhastv_customize_register' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_scripts' );
 add_action( 'after_setup_theme', 'unhastv_theme_setup' );
-add_filter( 'excerpt_length', 'my_excerpt_length' );
+//add_filter( 'excerpt_length', 'my_excerpt_length' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
  ?>

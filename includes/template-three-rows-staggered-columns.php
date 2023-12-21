@@ -39,7 +39,6 @@ href="<?php echo $category_id ?>"
 >
 
 <h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<img class="right-arrow to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-right-arrow.png" />
 
 </a>
 

@@ -30,7 +30,6 @@ $shown_posts = [];
     ) );
     ?>
     <section class="section adspace--landscape container--constrained">
-        <img src="http://unhas-tv.local/wp-content/uploads/2023/12/sample-leaderboard-ad.jpg" />
     </section>
     <section id="section-1" class="section">
         <?php
@@ -69,7 +68,6 @@ $shown_posts = [];
         ?>
     </section>
     <section class="section adspace--landscape container--constrained">
-        <img src="http://unhas-tv.local/wp-content/uploads/2023/12/sample-leaderboard-ad.jpg" />
     </section>
     <section id="section-4" class="section">
         <?php
@@ -84,7 +82,6 @@ $shown_posts = [];
         ?>
     </section>
     <section class="section adspace--landscape container--constrained">
-        <img src="http://unhas-tv.local/wp-content/uploads/2023/12/sample-leaderboard-ad.jpg" />
     </section>
     <section id="section-5" class="section">
         <?php

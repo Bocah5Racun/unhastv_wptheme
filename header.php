@@ -1,3 +1,6 @@
+<?php
+wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,28 +11,51 @@
 </head>
 <body>
 
-<header id="unhastv-header">
-    <div id="unhastv-header__brand-cta" class="container--constrained">
-        <?php the_custom_logo(); ?>
+<div id="sticky-header" class="sticky-header--conceal">
+    <div id="sticky-header__inner" class="container--constrained">
+        <div class="sticky-header__brand"><?php the_custom_logo(); ?></div>
+        <div class="unhastv-header__main-nav">
+            <?php wp_nav_menu( array(
+                "theme_location" => "header-nav",
+                "menu_class" => "menu-main-menu"
+                ));
+            ?>
+        </div>
         <?php
             $cta_text = get_theme_mod( 'cta_text' );
             if( $cta_text ) :
         ?>
 
-        <a id="unhastv-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
-            <img id="unhastv-header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+        <a id="sticky-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
+            <img class="header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
             <?php echo $cta_text; ?>
         </a>
 
         <?php endif; ?>
     </div>
-    <div id="unhastv-header__main-nav">
+    <div class="header__border-gradient"></div>
+</div>
+
+<header id="unhastv-header">
+    <div id="unhastv-header__brand-cta" class="container--constrained">
+        <?php the_custom_logo(); ?>
+        <?php
+            if( $cta_text ) :
+        ?>
+
+        <a id="unhastv-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
+            <img class="header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <?php echo $cta_text; ?>
+        </a>
+
+        <?php endif; ?>
+    </div>
+    <div class="unhastv-header__main-nav">
         <?php wp_nav_menu( array(
             "theme_location" => "header-nav",
-            "menu_id" => "menu-main-menu",
-            "menu_class" => "container--constrained"
+            "menu_class" => "menu-main-menu container--constrained"
             ));
         ?>
     </div>
-    <div id="unhastv-header__border-gradient"></div>
+    <div class="header__border-gradient"></div>
 </header>

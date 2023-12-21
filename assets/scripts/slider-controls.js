@@ -9,8 +9,6 @@ sliderContainers.forEach((sliderContainer, index) => {
     const scrollPercentage =
       sliderContainer.scrollLeft /
       (sliderContainer.scrollWidth - sliderContainer.clientWidth);
-    sliderPrevs[index].style.display = scrollPercentage > 0 ? "flex" : "none";
-    sliderNexts[index].style.display = scrollPercentage < 1 ? "flex" : "none";
   });
 });
 

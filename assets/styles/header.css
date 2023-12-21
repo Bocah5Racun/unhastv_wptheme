@@ -6,13 +6,20 @@
   justify-content: space-between;
   padding: 15px 0;
 }
-
+#sticky-header {
+  top: -200px;
+}
 .custom-logo {
   width: auto;
   max-height: 60px;
 }
+#sticky-header .custom-logo {
+  height: 45px;
+  filter: brightness(0) invert(1);
+}
 
-#unhastv-header__cta {
+#unhastv-header__cta,
+#sticky-header__cta {
   align-self: center;
   padding: 12px;
   border-radius: 6px;
@@ -32,27 +39,54 @@
   align-items: center;
   gap: 8px;
   scale: 1;
-  transition: scale 80ms ease-in;
-}
-#unhastv-header__cta:hover {
-  scale: 1.025;
+  transition: all 80ms ease-in;
 }
 
-#unhastv-header__cta__record-icon {
+#sticky-header ul {
+  margin: 0;
+}
+#unhastv-header__cta:hover,
+#sticky-header__cta:hover {
+  background: var(--unhas-yellow);
+  border: none;
+  color: var(--ultra-dark-gray);
+  box-shadow: 0 0 4px var(--ultra-dark-gray);
+}
+#unhastv-header__cta:hover .header__cta__record-icon,
+#sticky-header__cta:hover .header__cta__record-icon {
+  filter: brightness(0);
+}
+
+.header__cta__record-icon {
   height: 24px;
 }
 
-#unhastv-header__border-gradient {
+.header__border-gradient {
   background: radial-gradient(circle at center, #c6203c 0%, #51000e 100%);
   height: 3px;
 }
 
-#unhastv-header__main-nav {
-  background: linear-gradient(180deg, #373737 0%, #0a0a0a 21.35%, #000 54.69%);
+#sticky-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  transition: all 150ms ease-in;
+  background-color: var(--ultra-dark-gray);
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+#sticky-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.unhastv-header__main-nav {
+  margin-right: auto;
+  /* background: linear-gradient(180deg, #373737 0%, #0a0a0a 21.35%, #000 54.69%); */
+  background-color: var(--ultra-dark-gray);
 }
 
-#unhastv-header__main-nav #menu-main-menu {
+.unhastv-header__main-nav .menu-main-menu {
   display: flex;
   font-size: 0.875rem;
   line-height: 400%;
@@ -63,20 +97,20 @@
   padding: 0;
 }
 
-#menu-main-menu a {
+.menu-main-menu a {
   display: block;
   padding: 0 20px;
   width: 100%;
   height: 100%;
 }
-#menu-main-menu li:hover {
+.menu-main-menu li:hover {
   background-color: none;
   transition: background-color 120ms ease-in-out;
 }
-#menu-main-menu li:hover {
+.menu-main-menu li:hover {
   background-color: var(--unhas-red);
 }
 
-#menu-main-menu li:last-child {
+.menu-main-menu li:last-child {
   color: var(--unhas-yellow);
 }

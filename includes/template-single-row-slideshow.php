@@ -45,21 +45,15 @@ href="<?php echo $category_id ?>"
 >
 
 <h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<img class="right-arrow to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-right-arrow.png" />
 
 </a>
 
 </div>
-
-<?php if( $the_query->found_posts > 3 ) : ?>
-    
-    
-    <?php endif; ?>
     
 <div class="template--single-row-slideshow__inner">
 
-<div id="slider-prev" class="slider-prev section__show-prev noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
-<div id="slider-next" class="slider-next section__show-next noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
+<div id="slider-prev" class="slider-prev slider-prev noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
+<div id="slider-next" class="slider-next slider-next noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
 
 <div id="template--singlerow-slideshow__slider-container" class="slider-container">
 

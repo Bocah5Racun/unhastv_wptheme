@@ -1,5 +1,5 @@
 #unhastv-footer {
-  background-color: #000;
+  background-color: var(--ultra-dark-gray);
   padding: 25px 0;
   color: var(--light-gray);
   font-size: 0.875rem;
@@ -28,7 +28,7 @@
 }
 
 #footer-menu > li:not(:first-child)::before {
-  margin: 0 16px;
+  margin: 0 8px;
   content: "•";
 }
 
