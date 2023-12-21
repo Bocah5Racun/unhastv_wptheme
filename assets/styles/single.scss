@@ -5,24 +5,60 @@ article {
 .single-meta {
   font-size: 0.875rem;
   margin-bottom: 20px;
-  .single-title {
-    font-size: 2.5rem;
+}
+
+.single-breadcrumbs {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  li {
+    list-style: none;
+    line-height: 24px;
+    height: 24px;
+  }
+  li:not(:first-child) {
+    list-style-type: "\203A";
+    margin: 0 4px;
+  }
+  li:not(:first-child)::marker {
+    font-weight: 700;
+  }
+  .single-home-icon {
+    height: 24px;
   }
 }
 
-.single-feature-image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  aspect-ratio: 16 / 9;
+.single-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  .category-badge--with-background {
+    align-self: auto;
+    color: #fff;
+  }
+  .single-title {
+    font-size: 3rem;
+    line-height: 115%;
+    text-align: center;
+  }
+  .single-excerpt {
+    width: clamp(200px, 80%, 900px);
+  }
+  .single-feature-image {
+    margin: 20px 0;
+    width: clamp(200px, 80%, 900px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
 }
 .single-body-container {
-  margin: 20px 0;
   display: flex;
-  gap: 20px;
-  & > * {
-    min-width: 150px;
-  }
   .content-container {
     margin: 0 auto;
     width: 670px;
@@ -31,7 +67,7 @@ article {
       word-wrap: break-word;
       overflow-wrap: break-word;
       hyphens: auto;
-      margin: 1rem;
+      margin: 1rem 0;
       &:first-child {
         margin-top: 0;
       }

@@ -24,11 +24,7 @@
   padding: 12px;
   border-radius: 6px;
   border: 1px solid var(--unhas-red);
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    var(--unhas-red) 0%,
-    #a0001b 100%
-  );
+  background-color: var(--unhas-red);
   white-space: nowrap;
   color: var(--light-gray);
   font-family: "Inria Sans", sans-serif;
@@ -90,6 +86,9 @@
   background-color: var(--ultra-dark-gray);
 }
 
+#sticky-header__inner .menu-main-menu {
+  overflow-x: auto;
+}
 .unhastv-header__main-nav .menu-main-menu {
   display: flex;
   font-size: 0.875rem;

@@ -38,7 +38,7 @@ if( $the_query->have_posts() ) :
     
 <a class="section-header__inner-container"
 
-<?php if( isset( $category_id ) ) : ?>
+<?php if( !empty( $category_id ) ) : ?>
 href="<?php echo $category_id ?>"
 <?php endif; ?>
 
