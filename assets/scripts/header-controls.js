@@ -3,7 +3,7 @@ const stickyHeaderHeight = stickyHeader.offsetHeight;
 const menuTrigger = window.innerHeight / 3;
 const bodyOffset = document.getElementById("wpadminbar")
   ? document.getElementById("unhastv-header").offsetTop + 32
-  : document.getElementById("unhastv-header").offsetTop + 32;
+  : document.getElementById("unhastv-header").offsetTop;
 
 console.log(bodyOffset);
 
