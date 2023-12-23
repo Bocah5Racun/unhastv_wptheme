@@ -1,6 +1,3 @@
-<?php
-wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,9 +39,6 @@ wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/sc
         <?php
             if( $cta_text ) :
         ?>
-
-        
-        <div class="alert" style="color: var(--unhas-red); font-weight: bold">Under Construction</div>
 
         <a id="unhastv-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
             <img class="header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />

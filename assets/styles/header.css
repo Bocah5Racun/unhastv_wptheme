@@ -56,6 +56,7 @@
 #unhastv-header__cta:hover .header__cta__record-icon,
 #sticky-header__cta:hover .header__cta__record-icon {
   filter: brightness(0);
+  transition: all 80ms ease-in;
 }
 
 .header__cta__record-icon {

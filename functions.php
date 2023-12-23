@@ -30,6 +30,7 @@ function unhastv_enqueue_styles() {
 }
 
 function unhastv_enqueue_scripts() {
+  wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
 }
 
 /**
