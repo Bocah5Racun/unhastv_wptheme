@@ -20,6 +20,12 @@
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
             <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-youtube.png" />
             </a>
+            <a href="https://www.youtube.com/@unhastv.official" target"_blank">
+            <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-facebook.png" />
+            </a>
+            <a href="https://www.youtube.com/@unhastv.official" target"_blank">
+            <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-tiktok.png" />
+            </a>
         </div>
     </div>
     <div class="footer__copyright container--constrained">

@@ -150,3 +150,6 @@ ul.sub-menu li {
   padding: 4px;
   white-space: nowrap;
 }
+ul.sub-menu li:hover {
+  background-color: var(--unhas-dark-red);
+}

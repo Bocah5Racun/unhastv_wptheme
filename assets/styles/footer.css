@@ -35,9 +35,15 @@
 .footer__socials {
   display: flex;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 4px;
 }
 .footer__socials__icon {
   width: 32px;
   height: 32px;
+  transition: all 150ms ease-in;
+}
+.footer__socials__icon:hover {
+  filter: invert(83%) sepia(56%) saturate(1713%) hue-rotate(344deg)
+    brightness(97%) contrast(106%);
+  scale: 0.95;
 }

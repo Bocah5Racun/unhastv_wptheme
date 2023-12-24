@@ -3,14 +3,8 @@ article {
   margin: 20px 0;
 }
 
-.single-meta {
-  font-size: 0.875rem;
-}
-
 .single-breadcrumbs {
   margin: 0;
-  font-weight: 700;
-  font-size: 0.875rem;
   padding: 0;
   display: flex;
   gap: 8px;
@@ -44,17 +38,18 @@ article {
 }
 .single-header .single-title {
   font-size: clamp(3.25rem, 7vh, 72px);
-  line-height: 115%;
+  line-height: 100%;
   text-align: center;
 }
-.single-header .single-author {
+.single-header .single-meta {
+  font-size: 0.75rem;
+}
+.single-header .single-meta .single-author {
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.875rem;
 }
-.single-header .single-date {
+.single-header .single-meta .single-date {
   text-transform: uppercase;
-  font-size: 0.875rem;
 }
 .single-header .single-excerpt {
   width: clamp(200px, 80%, 900px);
@@ -70,13 +65,15 @@ article {
 
 .single-body-container {
   display: flex;
+  gap: 8px;
 }
 .single-body-container .content-container {
+  flex: 0 0 clamp(597px, 50vw, 615px);
   margin: 0 auto;
-  width: 670px;
+  max-width: 615px;
 }
 .single-body-container .content-container p {
-  line-height: 175%;
+  line-height: 150%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
@@ -89,14 +86,28 @@ article {
 .single-body-container .content-container p:last-child {
   margin-bottom: 0;
 }
+.single-body-container .socials-container {
+  align-self: flex-start;
+}
 .single-body-container .socials-container .socials-header {
-  font-size: 1.25rem;
+  color: var(--unhas-red);
   font-weight: 700;
+  border-bottom: 1px solid var(--unhas-red);
 }
 .single-body-container .socials-container .socials-icons {
-  margin: 16px 0;
+  margin: 8px 0;
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.single-body-container .socials-container .socials-icons .socials-icon {
+  width: 32px;
+  transition: all 150ms ease-in;
+  cursor: pointer;
+}
+.single-body-container .socials-container .socials-icons .socials-icon:hover {
+  filter: invert(83%) sepia(56%) saturate(1713%) hue-rotate(344deg) brightness(97%) contrast(106%);
+  scale: 0.95;
 }
 
 .ad-example-space .example-ad {
