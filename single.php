@@ -2,8 +2,6 @@
 
 <?php
 
-wp_enqueue_script( 'slider-controls', get_template_directory_uri() . '/assets/scripts/slider-controls.js', NULL, NULL, true );
-
 get_header();
 
 if( have_posts() ) the_post();
@@ -28,8 +26,10 @@ $cats = get_the_category();
     <?php echo $cats[0]->name; ?>
 </div>
 <h1 class="single-title"><?php the_title(); ?></h1>
-<div class="single-author"><?php the_author(); ?></div>
-<div class="single-date"><?php the_date(); ?></div>
+<div class="single-meta">
+<span class="single-author"><?php the_author(); ?></span>
+<span class="single-date"><?php the_date(); ?></span>
+</div>
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
 </div>
 
@@ -51,6 +51,10 @@ $cats = get_the_category();
 </div>
 
 </article>
+
+<div class="related-articles-container">
+    These are the related articles.
+</div>
 
 
 </main>

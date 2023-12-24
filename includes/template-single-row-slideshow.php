@@ -65,11 +65,41 @@ $the_query->the_post();
 
 array_push( $shown_posts, get_the_ID() );
 
+/**
+ * get the first sub-category.
+ * if no sub-category, get the first category.
+ */
+$cats = get_the_category();
+$the_category = "";
+
+if( count($cats) > 0 ):
+    foreach( $cats as $cat ):
+        if( $cat->parent != 0 ):
+            $the_category = $cat->name;
+            break;
+        endif;
+    endforeach;
+endif;
+
+if( strlen( $the_category ) == 0 ):
+    $the_category = $cats[0]->name;
+endif;
+
 ?>
 
-<div class="section__news-item">
-    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'section__news-item__thumbnail' ) ); ?>
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
+<div class="hero__news-item">
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
+    <div class="hero__news-item__image-container">
+        <?php the_post_thumbnail( 'medium_large', array( 'class' => 'hero__news-item__thumbnail' ) ); ?>
+
+        <?php if( strlen( $category_filter > 0 ) ): ?>
+        <div class="category-badge--with-background">
+            <?php echo $the_category; ?>
+        </div>
+        <?php endif; ?>
+    </div>
+    <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
+    </a>
     <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
 </div>
 

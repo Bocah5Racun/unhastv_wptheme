@@ -39,7 +39,7 @@
 .slider-icon {
   width: 36px;
   scale: 1;
-  transition: scale 50ms ease-out;
+  transition: all 50ms ease-out;
   cursor: pointer;
 }
 .slider-icon:hover {

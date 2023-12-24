@@ -9,7 +9,7 @@ window.onload = () => {
     if (document.body.scrollTop > menuTrigger) {
       stickyHeader.style.top = bodyOffset;
     } else {
-      stickyHeader.style.top = stickyHeaderHeight * -1;
+      stickyHeader.style.top = -stickyHeaderHeight;
     }
   });
 };

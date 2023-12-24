@@ -4,7 +4,6 @@ article {
 
 .single-meta {
   font-size: 0.875rem;
-  margin-bottom: 20px;
 }
 
 .single-breadcrumbs {
@@ -42,9 +41,18 @@ article {
     color: #fff;
   }
   .single-title {
-    font-size: 3rem;
+    font-size: clamp(3.25rem, 7vh, 72px);
     line-height: 115%;
     text-align: center;
+  }
+  .single-author {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+  .single-date {
+    text-transform: uppercase;
+    font-size: 0.875rem;
   }
   .single-excerpt {
     width: clamp(200px, 80%, 900px);
@@ -63,7 +71,7 @@ article {
     margin: 0 auto;
     width: 670px;
     p {
-      line-height: 1.5rem;
+      line-height: 175%;
       word-wrap: break-word;
       overflow-wrap: break-word;
       hyphens: auto;
