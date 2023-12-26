@@ -130,7 +130,7 @@ hr {
   padding: 4px 8px;
   background-color: var(--unhas-red);
   font-weight: 700;
-  color: var(--unhas-yellow);
+  color: white;
 }
 #breadcrumbs > span > *:nth-child(2n) {
   font-weight: 700;

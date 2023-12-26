@@ -65,7 +65,7 @@
 }
 
 .header__border-gradient {
-  background: radial-gradient(circle at center, #c6203c 0%, #51000e 100%);
+  background: var(--unhas-red);
   height: 3px;
 }
 
