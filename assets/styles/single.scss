@@ -28,7 +28,7 @@ article {
 .single-header {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   align-items: center;
   .category-badge--with-background {
     align-self: auto;
@@ -68,11 +68,12 @@ article {
     margin: 0 auto;
     max-width: 615px;
     p {
+      font-size: 1.275rem;
       line-height: 150%;
       word-wrap: break-word;
       overflow-wrap: break-word;
       hyphens: auto;
-      margin: 1rem 0;
+      margin: 2rem 0;
       &:first-child {
         margin-top: 0;
       }

@@ -29,7 +29,7 @@ article {
 .single-header {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
   align-items: center;
 }
 .single-header .category-badge--with-background {
@@ -73,12 +73,13 @@ article {
   max-width: 615px;
 }
 .single-body-container .content-container p {
+  font-size: 1.275rem;
   line-height: 150%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;
           hyphens: auto;
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 .single-body-container .content-container p:first-child {
   margin-top: 0;
