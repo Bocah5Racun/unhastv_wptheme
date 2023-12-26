@@ -10,6 +10,7 @@ function register_unhastv_menus() {
  function unhastv_theme_setup(){
   add_theme_support( 'custom-logo' );
   add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'post-formats', array( 'video' ) );
 }
 
 function unhastv_enqueue_styles() {
