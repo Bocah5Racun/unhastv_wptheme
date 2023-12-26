@@ -38,15 +38,10 @@ if( $the_query->have_posts() ):
     
 <div class="section-header"> 
     
-<a class="section-header__inner-container"
-
-<?php if( isset( $category_id ) ) : ?>
-href="<?php echo $category_id ?>"
-<?php endif; ?>
-
->
+<a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>">
 
 <h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+<span class="section-header__see-more">━ Lihat Semua</span>
 
 </a>
 

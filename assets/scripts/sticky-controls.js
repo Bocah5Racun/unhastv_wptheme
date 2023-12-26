@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const isAdmin = document.getElementById("wpadminbar").offsetHeight;
 
   stickys.forEach((sticky) => {
-    sticky.style.top = stickyHeaderHeight + isAdmin + 8;
+    sticky.style.top = stickyHeaderHeight + isAdmin + 16;
   });
 });

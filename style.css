@@ -126,7 +126,7 @@ hr {
   align-items: center;
   gap: 8px;
 }
-#breadcrumbs > span > *:first-child {
+#breadcrumbs > span > *:first-child > a {
   padding: 4px 8px;
   background-color: var(--unhas-red);
   font-weight: 700;
