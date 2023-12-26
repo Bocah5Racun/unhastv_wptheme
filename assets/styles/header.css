@@ -37,7 +37,7 @@
   align-items: center;
   gap: 8px;
   scale: 1;
-  transition: all 80ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 #sticky-header__cta {
@@ -52,6 +52,7 @@
   background: var(--unhas-yellow);
   border: 1px solid var(--unhas-yellow);
   color: var(--ultra-dark-gray);
+  scale: 0.98;
 }
 #unhastv-header__cta:hover .header__cta__record-icon,
 #sticky-header__cta:hover .header__cta__record-icon {

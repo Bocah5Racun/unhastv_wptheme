@@ -5,8 +5,8 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'post__not_in' => $shown_posts,
-    'posts_per_page' => '8',
+    // 'post__not_in' => $shown_posts,
+    'posts_per_page' => '16',
     'orderby' => 'date',
     'order' => 'DESC',
 );
