@@ -77,7 +77,7 @@ if( $the_query->current_post == 0 ) :
 <?php else : ?>
 
     <div class="video-gallery__video">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'thumbnail', array( 'class' => 'video-gallery__thumbnail' ) ); ?></a>
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'video-gallery__thumbnail' ) ); ?></a>
     <div class="video-gallery__meta">
         <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="video-gallery__title line-limit-3"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
