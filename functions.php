@@ -150,6 +150,16 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
+  $wp_customize->add_setting ('section1_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section1_show_previous_posts_input', array(
+    'settings' => 'section1_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section1_customizer',
+    'type'    => 'checkbox',
+  ) );
+
   $wp_customize->add_setting ('section1_offset', array(
     'default' => 0,
   ) );
@@ -192,6 +202,16 @@ function unhastv_customize_register( $wp_customize ) {
     'section'  => 'section2_customizer',
     'type'    => 'select',
     'choices' => $cats,
+  ) );
+
+  $wp_customize->add_setting ('section2_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section2_show_previous_posts_input', array(
+    'settings' => 'section2_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section2_customizer',
+    'type'    => 'checkbox',
   ) );
 
   $wp_customize->add_setting ('section2_offset', array(
@@ -238,6 +258,16 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
+  $wp_customize->add_setting ('section3_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section3_show_previous_posts_input', array(
+    'settings' => 'section3_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section3_customizer',
+    'type'    => 'checkbox',
+  ) );
+
   $wp_customize->add_setting ('section3_offset', array(
     'default' => 0,
   ) );
@@ -282,6 +312,16 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
+  $wp_customize->add_setting ('section4_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section4_show_previous_posts_input', array(
+    'settings' => 'section4_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section4_customizer',
+    'type'    => 'checkbox',
+  ) );
+
   $wp_customize->add_setting ('section4_offset', array(
     'default' => 0,
   ) );
@@ -294,7 +334,7 @@ function unhastv_customize_register( $wp_customize ) {
   ) );
 
   /**
-   * code for the section 4 customizer
+   * code for the section 5 customizer
    */
   $wp_customize->add_section( 'section5_customizer', array(
     'title' => __('⋆ Unhas TV: Sesuaikan Section 5'),
@@ -326,6 +366,15 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
+  $wp_customize->add_setting ('section5_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section5_show_previous_posts_input', array(
+    'settings' => 'section5_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section5_customizer',
+    'type'    => 'checkbox',
+  ) );
   $wp_customize->add_setting ('section5_offset', array(
     'default' => 0,
   ) );

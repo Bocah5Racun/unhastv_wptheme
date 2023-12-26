@@ -5,11 +5,13 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'post__not_in' => $shown_posts,
     'posts_per_page' => '5',
     'orderby' => 'date',
     'order' => 'DESC',
 );
+
+// filter out previously shown posts if this argument is false
+if( $args['show_prev_posts'] === false ) $loop_args['post__not_in'] = $shown_posts;
 
 /**
  * get $category_filter

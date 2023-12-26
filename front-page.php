@@ -39,6 +39,7 @@ $shown_posts = [];
                 array(
                     'category_filter' => $section_cats['section1'],
                     'offset' => get_theme_mod( 'section1_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section1_show_previous_posts' ),
                 )
             );
         ?>
@@ -51,6 +52,7 @@ $shown_posts = [];
                 array(
                     'category_filter' => $section_cats['section2'],
                     'offset' => get_theme_mod( 'section2_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section2_show_previous_posts' ),
                 )
             );
         ?>
@@ -63,6 +65,7 @@ $shown_posts = [];
                 array(
                     'category_filter' => $section_cats['section3'],
                     'offset' => get_theme_mod( 'section3_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section3_show_previous_posts' ),
                 )
             );
         ?>
@@ -77,6 +80,7 @@ $shown_posts = [];
                 array(
                     'category_filter' => $section_cats['section4'],
                     'offset' => get_theme_mod( 'section4_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section4_show_previous_posts' ),
                 )
             );
         ?>
@@ -91,6 +95,7 @@ $shown_posts = [];
                 array(
                     'category_filter' => $section_cats['section5'],
                     'offset' => get_theme_mod( 'section5_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section5_show_previous_posts' ),
                 )
             );
         ?>
