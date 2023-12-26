@@ -348,14 +348,13 @@
 .template--video-gallery__inner .section__news-item__thumbnail {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9;
 }
 .template--video-gallery__inner
   .section__news-item--feature
   .section__news-item__thumbnail {
-  width: 100%;
   max-height: 450px;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .video-gallery__video-list-container {
