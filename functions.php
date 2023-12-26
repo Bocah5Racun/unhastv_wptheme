@@ -118,6 +118,7 @@ function unhastv_customize_register( $wp_customize ) {
     'three-columns-feature-left' => '3 Columns, Feature Post Left',
     'three-columns-feature-center' => '3 Columns, Feature Post Center',
     'three-rows-staggered-columns' => '3 Rows, Staggered Columns',
+    'video-gallery' => 'Galeri Video'
   ];
 
   $wp_customize->add_section( 'section1_customizer', array(
