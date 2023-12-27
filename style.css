@@ -4,7 +4,7 @@ Theme Name: Unhas TV News Theme
 
 :root {
   --ultra-dark-gray: #0f1214;
-  --dark-gray: #c7c7c7;
+  --dark-gray: #727272;
   --light-gray: #dcdcdc;
   --unhas-red: #c6203c;
   --unhas-dark-red: #6e1221;
@@ -80,7 +80,7 @@ a {
 
 hr {
   border: 0;
-  border-bottom: 1px solid var(--dark-gray);
+  border-bottom: 1px solid hsl(350, 69%, 85%);
 }
 
 .container--constrained {
@@ -127,10 +127,9 @@ hr {
   gap: 8px;
 }
 #breadcrumbs > span > *:first-child > a {
-  padding: 4px 8px;
-  background-color: var(--unhas-red);
   font-weight: 700;
-  color: white;
+  color: var(--unhas-red);
+  text-decoration: underline;
 }
 #breadcrumbs > span > *:nth-child(2n) {
   font-weight: 700;
@@ -144,4 +143,12 @@ hr {
 
 .copy {
   display: none;
+}
+
+.post-tag {
+  padding: 4px;
+  background-color: var(--unhas-dark-red);
+  color: var(--light-gray);
+  font-size: 0.75rem;
+  border-radius: 6px;
 }

@@ -72,12 +72,15 @@ article {
       gap: 4px;
       .socials-icon {
         width: 32px;
-        transition: all 150ms ease-in;
+        transition: all 150ms ease-in-out;
+        transition: scale 20ms linear;
         cursor: pointer;
         &:hover {
           filter: invert(83%) sepia(56%) saturate(1713%) hue-rotate(344deg)
             brightness(97%) contrast(106%);
-          scale: 0.95;
+        }
+        &:active {
+          scale: 0.85;
         }
       }
     }
@@ -89,5 +92,53 @@ article {
     width: 240px;
     height: 400px;
     background-color: black;
+  }
+}
+
+.related-articles-container {
+  margin: 50px auto;
+  .related-articles-container__header {
+    color: var(--unhas-red);
+    border-bottom: 1px solid var(--unhas-red);
+    margin: 8px 0;
+  }
+}
+.related-articles-container__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.related-article {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 0 0 calc(100% / 4 - 16px);
+  .link {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .image-container {
+    position: relative;
+    .thumbnail {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .category-badge--with-background {
+      position: absolute;
+      left: 4px;
+      bottom: 4px;
+    }
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+  .date {
+    color: var(--dark-gray);
+    font-size: 0.875rem;
   }
 }

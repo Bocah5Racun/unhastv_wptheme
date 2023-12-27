@@ -41,6 +41,11 @@
   margin: 0;
 }
 
+.section__news-item__tags {
+  display: flex;
+  gap: 8px;
+}
+
 /* two columns feature left */
 .template--two-columns-feature-left__inner-container {
   display: grid;
@@ -342,7 +347,6 @@
   grid-template-columns: 2fr 1fr;
   background-color: var(--ultra-dark-gray);
   color: var(--light-gray);
-  max-height: 600px;
   overflow-y: auto;
 }
 
@@ -352,6 +356,9 @@
 }
 
 .template--video-gallery__inner .section__news-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 16px;
 }
 

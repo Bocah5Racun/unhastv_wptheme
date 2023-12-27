@@ -1,5 +1,7 @@
 <?php
 
+wp_enqueue_script( 'video-gallery-controls', get_template_directory_uri() . '/assets/scripts/video-gallery-controls.js', NULL, NULL, true );
+
 global $shown_posts;
 
 $loop_args = array(
@@ -55,6 +57,8 @@ while( $the_query->have_posts() ) :
 
 $the_query->the_post();
 
+$tags = get_the_tags();
+
 array_push( $shown_posts, get_the_ID() );
 
 if( $the_query->current_post == 0 ) :
@@ -66,6 +70,11 @@ if( $the_query->current_post == 0 ) :
     <div class="section__news-item__meta">
         <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
+        <div class="section__news-item__tags">
+            <?php foreach( $tags as $tag ) : ?>
+                <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
+                <?php endforeach; ?>
+        </div>
     </div>
 </div>
 

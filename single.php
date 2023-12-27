@@ -61,10 +61,73 @@ $cats = get_the_category();
 </article>
 
 <?php
-// get up to 10 related articles based on categories and tags
-?>
-<div class="related-articles-container">
+// get up to 8 related articles based on categories and tags
+$tags = get_the_tags();
+$tag_ids = array();
+foreach( $tags as $tag ) $tag_ids[] = $tag->term_id;
 
+$query_args = array(
+    'posts_per_page' => '4',
+    'tag__in' => $tag_ids,
+    'orderby' => 'rand',
+    'post__not_in' => array( get_the_ID() ),
+);
+
+$the_query = new WP_QUERY( $query_args );
+
+?>
+
+<?php if( $the_query->have_posts() ) : ?>
+
+<div class="related-articles-container">
+    <h2 class="related-articles-container__header">Related Articles</h2>
+
+<div class="related-articles-container__inner">
+
+<?php while( $the_query->have_posts() ):
+$the_query->the_post();
+
+/**
+ * get the first sub-category.
+ * if no sub-category, get the first category.
+ */
+$cats = get_the_category();
+$the_category = "";
+
+if( count($cats) > 0 ):
+    foreach( $cats as $cat ):
+        if( $cat->parent != 0 ):
+            $the_category = $cat->name;
+            break;
+        endif;
+    endforeach;
+endif;
+
+if( strlen( $the_category ) == 0 ):
+    $the_category = $cats[0]->name;
+endif;
+
+?>
+
+<div class="related-article">
+<a class="link" href="<?php echo get_the_permalink(); ?>">
+<div class="image-container">
+    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
+    <div class="category-badge--with-background">
+        <?php echo $the_category; ?>
+    </div>
+</div>
+<h1 class="title line-limit-3"><?php the_title(); ?></h1>
+</a>
+<div class="date"><?php echo get_the_date(); ?></div>
+</div>
+
+<?php
+endwhile;
+endif;
+?>
+
+</div>
 </div>
 
 </main>
