@@ -72,6 +72,9 @@
   grid-gap: 8px;
   height: 100%;
 }
+.template--two-columns-feature-left .section__news-item__link a {
+  overflow: hidden;
+}
 .template--two-columns-feature-left .section__news-item:nth-child(2),
 .template--two-columns-feature-left .section__news-item:nth-child(3),
 .template--two-columns-feature-left .section__news-item:nth-child(4),
