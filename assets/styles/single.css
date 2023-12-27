@@ -124,6 +124,7 @@ article {
 }
 .related-article .image-container {
   position: relative;
+  width: 100%;
 }
 .related-article .image-container .thumbnail {
   aspect-ratio: 16/9;

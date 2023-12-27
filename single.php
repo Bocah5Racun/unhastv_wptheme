@@ -9,7 +9,8 @@ get_header();
 
 if( have_posts() ) the_post();
 
-$cats = get_the_category();
+$the_post_cats = get_the_category();
+$the_category_slug = $the_post_cats[0]->slug;
 
 ?>
 
@@ -26,7 +27,7 @@ $cats = get_the_category();
 
 <div class="single-header">
 <div class="single-category category-badge--with-background">
-    <?php echo $cats[0]->name; ?>
+    <?php echo $the_post_cats[0]->name; ?>
 </div>
 <h1 class="single-title"><?php the_title(); ?></h1>
 <div class="single-meta">
@@ -110,16 +111,83 @@ endif;
 ?>
 
 <div class="related-article">
-<a class="link" href="<?php echo get_the_permalink(); ?>">
-<div class="image-container">
-    <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
-    <div class="category-badge--with-background">
-        <?php echo $the_category; ?>
-    </div>
+    <a class="link" href="<?php echo get_the_permalink(); ?>">
+        <div class="image-container">
+            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
+            <div class="category-badge--with-background">
+            <?php echo $the_category; ?>
+            </div>
+        </div>
+        <h1 class="title line-limit-3"><?php the_title(); ?></h1>
+    </a>
+    <div class="date"><?php echo get_the_date(); ?></div>
 </div>
-<h1 class="title line-limit-3"><?php the_title(); ?></h1>
-</a>
-<div class="date"><?php echo get_the_date(); ?></div>
+
+<?php
+wp_reset_postdata();
+endwhile;
+endif;
+?>
+</div>
+
+<?php
+
+$query_args = array(
+    'posts_per_page' => '4',
+    'category_name' => $the_category_slug,
+    'orderby' => 'rand',
+    'post__not_in' => array( get_the_ID() ),
+);
+
+$the_query = new WP_QUERY( $query_args );
+if( $the_query->have_posts() ):
+
+?>
+
+<div class="related-articles-container">
+    <h2 class="related-articles-container__header">Artikel <?php echo $the_post_cats[0]->name; ?> Lain</h2>
+
+<div class="related-articles-container__inner">
+
+<?php
+
+
+while( $the_query->have_posts() ):
+
+$the_query->the_post();
+/**
+ * get the first sub-category.
+ * if no sub-category, get the first category.
+ */
+$cats = get_the_category();
+$the_category = "";
+
+if( count($cats) > 0 ):
+    foreach( $cats as $cat ):
+        if( $cat->parent != 0 ):
+            $the_category = $cat->name;
+            break;
+        endif;
+    endforeach;
+endif;
+
+if( strlen( $the_category ) == 0 ):
+    $the_category = $cats[0]->name;
+endif;
+
+?>
+
+<div class="related-article">
+    <a class="link" href="<?php echo get_the_permalink(); ?>">
+        <div class="image-container">
+            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
+            <div class="category-badge--with-background">
+            <?php echo $the_category; ?>
+            </div>
+        </div>
+        <h1 class="title line-limit-3"><?php the_title(); ?></h1>
+    </a>
+    <div class="date"><?php echo get_the_date(); ?></div>
 </div>
 
 <?php
