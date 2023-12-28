@@ -12,24 +12,24 @@
         </div>
         <div class="footer__socials">
             <a href="https://twitter.com/UNHAS_TV" target="_blank">
-                <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-twitterx.png" />
+                <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-twitterx.png" />
             </a>
             <a href="https://www.instagram.com/unhastvofficial/" target="_blank">
-                <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-instagram.png" />
+                <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-instagram.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-youtube.png" />
+            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-youtube.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-facebook.png" />
+            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-facebook.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-tiktok.png" />
+            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-tiktok.png" />
             </a>
         </div>
     </div>
     <div class="footer__copyright container--constrained">
-        ©2023<?php echo ( date("Y") != "2023" ) ? "–" . date("Y") : "";?> <?php echo get_bloginfo( 'name' ); ?>. All rights reserved.
+        ©2023<?= ( date("Y") != "2023" ) ? "–" . date("Y") : "";?> <?= get_bloginfo( 'name' ); ?>. All rights reserved.
         <br />
         <a style="color: var(--unhas-yellow);" href="https://komkom.id" target="_blank">Designed by KOMKOM.id</a>
     </div>    

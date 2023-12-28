@@ -11,6 +11,7 @@ function register_unhastv_menus() {
   add_theme_support( 'custom-logo' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'post-formats', array( 'video' ) );
+  add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 }
 
 function unhastv_enqueue_styles() {
@@ -27,6 +28,9 @@ function unhastv_enqueue_styles() {
   
   if(is_single()) {
     wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), '1.0', 'all' );
+  }
+  if(is_archive()) {
+    wp_enqueue_style( 'unhastv-archive-styles', get_template_directory_uri() . '/assets/styles/archive.css', array(), '1.0', 'all' );
   }
 }
 

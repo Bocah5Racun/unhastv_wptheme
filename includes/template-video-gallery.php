@@ -73,7 +73,7 @@ if( $the_query->current_post == 0 ) :
         <div class="section__news-item__tags">
             <?php foreach( $tags as $tag ) : ?>
                 <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
-                <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

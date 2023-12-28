@@ -53,6 +53,18 @@ $the_category_slug = $the_post_cats[0]->slug;
     </div>
     <div class="content-container">
         <?php the_content(); ?>
+        <div class="single-post-tags">
+
+<?php
+// show all the tags for the post
+$tags = get_the_tags();
+$post_id = get_the_ID();
+
+if( $tags ) :
+foreach( $tags as $tag ) : ?>
+            <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
+<?php endforeach; endif; ?>
+        </div>
     </div>
     <div class="ad-example-space">
         <div class="example-ad">Adspace</div>
@@ -65,6 +77,8 @@ $the_category_slug = $the_post_cats[0]->slug;
 // get up to 8 related articles based on categories and tags
 $tags = get_the_tags();
 $tag_ids = array();
+
+if( $tags ) :
 foreach( $tags as $tag ) $tag_ids[] = $tag->term_id;
 
 $query_args = array(
@@ -81,7 +95,7 @@ $the_query = new WP_QUERY( $query_args );
 <?php if( $the_query->have_posts() ) : ?>
 
 <div class="related-articles-container">
-    <h2 class="related-articles-container__header">Related Articles</h2>
+    <h2 class="related-articles-container__header">Artikel Terkait</h2>
 
 <div class="related-articles-container__inner">
 
@@ -127,6 +141,8 @@ endif;
 wp_reset_postdata();
 endwhile;
 endif;
+endif;
+
 ?>
 </div>
 
@@ -135,17 +151,20 @@ endif;
 $query_args = array(
     'posts_per_page' => '4',
     'category_name' => $the_category_slug,
-    'orderby' => 'rand',
-    'post__not_in' => array( get_the_ID() ),
+    'orderby' => 'date',
+    'post__not_in' => array( $post_id ),
 );
 
 $the_query = new WP_QUERY( $query_args );
+
+if( !$the_query->have_posts() ) $the_query = new WP_QUERY( array( 'posts_per_page' => '4', 'orderby' => 'random', 'post__not_in' => array( $post_id ) ) );
+
 if( $the_query->have_posts() ):
 
 ?>
 
 <div class="related-articles-container">
-    <h2 class="related-articles-container__header">Artikel <?php echo $the_post_cats[0]->name; ?> Lain</h2>
+    <h2 class="related-articles-container__header">Artikel <?= $tags ? $the_post_cats[0]->name : ""; ?> Lain</h2>
 
 <div class="related-articles-container__inner">
 

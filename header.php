@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
 <meta charset="<?php bloginfo( "charset" ); ?>">
 <title><?php bloginfo( 'name' ); ?> | <?php is_front_page() ? bloginfo( 'description' ) : wp_title(''); ?></title>
-<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
+<link rel="stylesheet" href="<?= esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
 <?php wp_head(); ?>
 </head>
 <body>
@@ -23,9 +23,9 @@
             if( $cta_text ) :
         ?>
 
-        <a id="sticky-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
-            <img class="header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
-            <?php echo $cta_text; ?>
+        <a id="sticky-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
+            <img class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <?= $cta_text; ?>
         </a>
 
         <?php endif; ?>
@@ -40,9 +40,9 @@
             if( $cta_text ) :
         ?>
 
-        <a id="unhastv-header__cta" href="<?php echo get_theme_mod( 'cta_url' ); ?>" target="_blank">
-            <img class="header__cta__record-icon" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
-            <?php echo $cta_text; ?>
+        <a id="unhastv-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
+            <img class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <?= $cta_text; ?>
         </a>
 
         <?php endif; ?>
