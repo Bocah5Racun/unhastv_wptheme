@@ -40,7 +40,7 @@ if( $the_query->have_posts() ) :
     
 <a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>">
 
-<h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+<h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
 <span class="section-header__see-more">━ Lihat Semua</span>
 
 </a>
@@ -64,13 +64,13 @@ if( $the_query->current_post == 0 ) :
 ?>
 
 <div class="section__news-item--feature">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'section__news-item__thumbnail' ) ); ?></a>
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'section__news-item__thumbnail' ) ); ?></a>
     <div class="section__news-item__meta">
-        <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
-        <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
+        <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
+        <div class="hero__news-item__date"><?= get_the_date(); ?></div>
         <div class="section__news-item__tags">
             <?php foreach( $tags as $tag ) : ?>
-                <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
+                <a href="<?= get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?= $tag->name; ?></span></a>
             <?php endforeach; ?>
         </div>
     </div>
@@ -81,10 +81,10 @@ if( $the_query->current_post == 0 ) :
 <?php else : ?>
 
     <div class="video-gallery__video">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'video-gallery__thumbnail' ) ); ?></a>
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><?php the_post_thumbnail( 'medium', array( 'class' => 'video-gallery__thumbnail' ) ); ?>
     <div class="video-gallery__meta">
-        <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>"><h1 class="video-gallery__title line-limit-3"><?php the_title(); ?></h1></a>
-        <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
+        <h1 class="video-gallery__title line-limit-3"><?php the_title(); ?></h1></a>
+        <div class="hero__news-item__date"><?= get_the_date(); ?></div>
     </div>
     </div>
 
