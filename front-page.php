@@ -13,6 +13,7 @@ $section_cats = [
     "section3" => get_theme_mod( 'section3_category' ),
     "section4" => get_theme_mod( 'section4_category' ),
     "section5" => get_theme_mod( 'section5_category' ),
+    "section6" => get_theme_mod( 'section6_category' ),
 ];
 
 global $shown_posts;
@@ -100,8 +101,19 @@ $shown_posts = [];
             );
         ?>
     </section>
-    <section id="section-5" class="section">
-        
+    <section id="section-6" class="section">
+        <?php
+            get_template_part(
+                'includes/template',
+                get_theme_mod( 'section6_template'),
+                array(
+                    'category_filter' => $section_cats['section6'],
+                    'offset' => get_theme_mod( 'section6_offset' ),
+                    'show_prev_posts' => get_theme_mod( 'section6_show_previous_posts' ),
+                )
+            );
+        ?>
+    </section>
     </section>
 </main>
 

@@ -112,20 +112,19 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
-  /**
-   * code for the section 1 customizer
-   */
+  
   $section_templates = [
     'none' => 'Disembunyikan',
-    'simple-grid' => 'Simple Grid',
     'single-row-slideshow' => '1 Row, Slideshow',
     'two-columns-feature-left' => '2 Columns, Feature Post Left',
     'three-columns-feature-left' => '3 Columns, Feature Post Left',
     'three-columns-feature-center' => '3 Columns, Feature Post Center',
-    'three-rows-staggered-columns' => '3 Rows, Staggered Columns',
     'video-gallery' => 'Galeri Video'
   ];
 
+  /**
+   * code for the section 1 customizer
+   */
   $wp_customize->add_section( 'section1_customizer', array(
     'title' => __('⋆ Unhas TV: Sesuaikan Section 1'),
     'description' => 'Sesuaikan seksi-seksi yang ditampilkan di halaman depan.',
@@ -388,6 +387,59 @@ function unhastv_customize_register( $wp_customize ) {
     'label'   => 'Offset',
     'description' => 'Dimulai dari pos ke-berapa?',
     'section'  => 'section5_customizer',
+    'type'    => 'number',
+  ) );
+
+  /**
+   * code for the section 6 customizer
+   */
+  $wp_customize->add_section( 'section6_customizer', array(
+    'title' => __('⋆ Unhas TV: Sesuaikan Section 6'),
+    'description' => 'Sesuaikan seksi-seksi yang ditampilkan di halaman depan.',
+    'priority' => 104,
+  ) );
+  $wp_customize->add_setting( 'section6_template', array(
+    'default' => 'three-columns-feature-left',
+  ) );
+  $wp_customize->add_control( 'section6_selector', array(
+    'settings' => 'section6_template',
+    'label' => 'Section 6 Template',
+    'description' => 'Pilih template untuk Section 6.',
+    'section' => 'section6_customizer',
+    'type' => 'select',
+    'choices' => $section_templates,
+  ) );
+  
+  $wp_customize->add_setting ('section6_category', array(
+    'default' => ''
+  ) );
+  
+  $wp_customize->add_control( 'section6_category_box', array(
+    'settings' => 'section6_category',
+    'label'   => 'Kategori',
+    'description' => 'Tampilkan pos dari kategori ini di Section 6.',
+    'section'  => 'section6_customizer',
+    'type'    => 'select',
+    'choices' => $cats,
+  ) );
+  
+  $wp_customize->add_setting ('section6_show_previous_posts', array(
+    'default' => false,
+  ) );
+  $wp_customize->add_control( 'section6_show_previous_posts_input', array(
+    'settings' => 'section6_show_previous_posts',
+    'label'   => 'Tampilkan pos-pos yang telah ditampilkan sebelumnya.',
+    'section'  => 'section6_customizer',
+    'type'    => 'checkbox',
+  ) );
+  $wp_customize->add_setting ('section6_offset', array(
+    'default' => 0,
+  ) );
+  $wp_customize->add_control( 'section6_offset_input', array(
+    'settings' => 'section6_offset',
+    'label'   => 'Offset',
+    'description' => 'Dimulai dari pos ke-berapa?',
+    'section'  => 'section6_customizer',
     'type'    => 'number',
   ) );
 }
