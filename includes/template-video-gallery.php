@@ -1,7 +1,5 @@
 <?php
 
-wp_enqueue_script( 'video-gallery-controls', get_template_directory_uri() . '/assets/scripts/video-gallery-controls.js', NULL, NULL, true );
-
 global $shown_posts;
 
 $loop_args = array(

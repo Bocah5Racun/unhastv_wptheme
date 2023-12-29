@@ -341,8 +341,6 @@
 /* video gallery styles */
 .template--video-gallery__inner {
   position: relative;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
   background-color: var(--ultra-dark-gray);
   color: var(--light-gray);
   overflow-y: auto;
@@ -366,6 +364,7 @@
 }
 .template--video-gallery__inner .section__news-item--feature {
   position: sticky;
+  width: 66%;
   display: inline-block;
   align-self: flex-start;
   top: 0;
@@ -380,6 +379,10 @@
 }
 
 .video-gallery__video-list-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 33%;
   padding: 16px;
   scroll-behavior: smooth;
   aspect-ratio: 9 / 11;
