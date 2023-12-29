@@ -35,7 +35,7 @@ $the_category_slug = $the_post_cats[0]->slug;
 <span class="single-author">Oleh <?php the_author(); ?></span> •
 <span class="single-date"><?php the_date(); ?></span>
 </div>
-<img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="single-feature-image" />
+<?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
 </div>
 
 <div class="single-body-container">
@@ -128,7 +128,7 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
+            <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
             <?php echo $the_category; ?>
             </div>
@@ -200,7 +200,7 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-            <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
+            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
             <div class="category-badge--with-background">
             <?php echo $the_category; ?>
             </div>
