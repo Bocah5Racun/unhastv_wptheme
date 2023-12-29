@@ -10,6 +10,7 @@ get_header();
 if( have_posts() ) the_post();
 
 $the_post_cats = get_the_category();
+$the_category_id = $the_post_cats[0]->cat_ID;
 $the_category_slug = $the_post_cats[0]->slug;
 
 ?>
@@ -26,9 +27,9 @@ $the_category_slug = $the_post_cats[0]->slug;
 </div>
 
 <div class="single-header">
-<div class="single-category category-badge--with-background">
+<a href="<?= get_category_link( $the_category_id ); ?>"class="single-category category-badge--with-background">
     <?php echo $the_post_cats[0]->name; ?>
-</div>
+</a>
 <h1 class="single-title"><?php the_title(); ?></h1>
 <div class="single-meta">
 <span class="single-author">Oleh <?php the_author(); ?></span> •

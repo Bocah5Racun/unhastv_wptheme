@@ -81,6 +81,7 @@ a {
 hr {
   border: 0;
   border-bottom: 1px solid hsl(350, 69%, 85%);
+  margin: 5vh 0;
 }
 
 .container--constrained {
@@ -151,4 +152,8 @@ hr {
   color: var(--light-gray);
   font-size: 0.75rem;
   border-radius: 6px;
+}
+
+.section {
+  margin: 20px auto;
 }
