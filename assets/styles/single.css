@@ -38,7 +38,7 @@ article {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.single-header #movie_player {
+.single-header .cvwp-video-player {
   margin: 20px 0;
 }
 
