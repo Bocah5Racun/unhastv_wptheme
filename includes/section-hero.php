@@ -55,7 +55,8 @@ if( $the_query->current_post == 0 ): // check if first post
 ?>
 
 <div class="hero__news-item--large">
-    <?php the_post_thumbnail( 'full', array( 'class' => 'hero__news-item__thumbnail' ) ); ?>
+    <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
+
     <div class="hero__news-item__overlay"></div>
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
         <div class="hero__news-item__meta-container container--constrained">
@@ -107,7 +108,7 @@ endif;
 <div class="hero__news-item">
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
         <div class="hero__news-item__image-container">
-            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'hero__news-item__thumbnail' ) ); ?>
+            <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>

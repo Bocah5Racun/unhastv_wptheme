@@ -93,8 +93,7 @@ endif;
 <div class="hero__news-item">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
     <div class="hero__news-item__image-container">
-        <?php the_post_thumbnail( 'medium_large', array( 'class' => 'hero__news-item__thumbnail' ) ); ?>
-
+        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
         <?php if( strlen( $category_filter > 0 ) ): ?>
         <div class="category-badge--with-background">
             <?php echo $the_category; ?>

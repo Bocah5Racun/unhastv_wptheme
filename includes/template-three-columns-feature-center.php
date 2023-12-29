@@ -81,7 +81,7 @@ if( $the_query->current_post == 0 ):
 
 <div class="section__news-item--feature">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
-        <?php the_post_thumbnail( 'large', array( 'class' => 'section__news-item__thumbnail' ) ); ?>
+        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" class="section__news-item__thumbnail" />
         <div class="hero__news-item__overlay"></div>
         <div class="section__news-item__meta-container">
             <div class="category-badge--with-background">
@@ -108,7 +108,7 @@ if( $the_query->current_post == 0 ):
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
         <a href="<?php echo get_the_permalink(); ?>">
-        <?php the_post_thumbnail( 'medium', array( 'class' => 'section__news-item__thumbnail' ) ); ?>
+        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
         </a>
     </div>
 </div>

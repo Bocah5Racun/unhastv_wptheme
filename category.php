@@ -92,7 +92,7 @@ endif;
 
 <div class="archive-post">
 <a href="<?= get_the_permalink(); ?>" class="archive-post__inner">
-<?php the_post_thumbnail( 'medium_large', array( 'class' => 'archive-post__thumbnail' ) ); ?>
+<img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="archive-post__thumbnail" />
 <div>
 <span class="archive-post__category category-badge"><?= $the_category; ?></span>
 <h2 class="archive-post__title line-limit-3"><?= get_the_title(); ?></h2>
