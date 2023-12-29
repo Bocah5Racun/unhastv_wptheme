@@ -38,6 +38,9 @@ article {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.single-header #movie_player {
+  margin: 20px 0;
+}
 
 .single-body-container {
   display: flex;
