@@ -18,7 +18,7 @@
 }
 
 .section-header h1 {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
 }
 
 .right-arrow {
@@ -72,8 +72,8 @@
 .template--two-columns-feature-left .section__news-item__link a {
   overflow: hidden;
 }
-.template--two-columns-feature-left .section__news-item:not(:first-child),
-.template--two-columns-feature-left .section__news-item:not(:last-child) {
+.template--two-columns-feature-left
+  .section__news-item:not(:nth-last-child(-n + 2)) {
   border-bottom: 1px solid var(--light-gray);
 }
 .template--two-columns-feature-left
