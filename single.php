@@ -200,7 +200,7 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-            <?php the_post_thumbnail( 'medium_large', array( 'class' => 'thumbnail' ) ); ?>
+        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
             <?php echo $the_category; ?>
             </div>
