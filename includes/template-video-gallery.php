@@ -64,7 +64,7 @@ if( $the_query->current_post == 0 ) :
 ?>
 
 <div class="section__news-item--feature">
-    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><?php the_post_thumbnail( 'full', array( 'class' => 'section__news-item__thumbnail' ) ); ?></a>
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="video-gallery__thumbnail" /></a>
     <div class="section__news-item__meta">
         <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?= get_the_date(); ?></div>
