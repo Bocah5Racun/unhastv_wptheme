@@ -37,6 +37,22 @@
 <header id="unhastv-header">
     <div id="unhastv-header__brand-cta" class="container--constrained">
         <?php the_custom_logo(); ?>
+
+        <div class="ads-header-horizontal">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
+            crossorigin="anonymous"></script>
+            <!-- header-horizontal -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3215141506790563"
+                data-ad-slot="6113283488"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
         <?php
             if( $cta_text ) :
         ?>
@@ -47,20 +63,6 @@
         </a>
 
         <?php endif; ?>
-    </div>
-    <div class="ads-header-horizontal">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-        crossorigin="anonymous"></script>
-        <!-- header-horizontal -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="6113283488"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </div>
     <div class="unhastv-header__main-nav">
         <?php wp_nav_menu( array(
