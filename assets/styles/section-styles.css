@@ -140,7 +140,7 @@
 .template--three-columns-feature-center__inner-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
+  grid-auto-rows: fit-content;
   grid-gap: 0 16px;
 }
 .template--three-columns-feature-center
