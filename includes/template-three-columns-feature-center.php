@@ -128,7 +128,7 @@ wp_reset_postdata();
         crossorigin="anonymous"></script>
     <!-- three-col-ft-center-block -->
     <ins class="adsbygoogle"
-        style="display:block"
+        style="display:block; width: 100%; height: 100%;"
         data-ad-client="ca-pub-3215141506790563"
         data-ad-slot="7024708778"
         data-ad-format="rectangle"
