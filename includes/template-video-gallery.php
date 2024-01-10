@@ -83,11 +83,9 @@ if( $the_query->current_post == 0 ) :
         crossorigin="anonymous"></script>
     <!-- video-gallery-block -->
     <ins class="adsbygoogle"
-        style="display:block"
+        style="display:inline-block;width:360px;height:100px"
         data-ad-client="ca-pub-3215141506790563"
-        data-ad-slot="9706712439"
-        data-ad-format="rectangle"
-        data-full-width-responsive="true"></ins>
+        data-ad-slot="9706712439"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
