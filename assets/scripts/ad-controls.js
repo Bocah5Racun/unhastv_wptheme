@@ -31,7 +31,7 @@ window.onload = () => {
   );
   console.log(threeColsCenterAd);
   const threeColsCenterBlock = document.querySelector(
-    ".template--three-columns-feature-center__inner-container .section__news-item:nth-child(2)"
+    ".template--three-columns-feature-center__inner-container .section__news-item:nth-child(2) .section__news-item__link"
   );
   const threeColsCenterWidth = threeColsCenterBlock.offsetWidth;
   const threeColsCenterHeight = threeColsCenterBlock.offsetHeight;
