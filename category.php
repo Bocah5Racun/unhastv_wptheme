@@ -1,5 +1,3 @@
-<body>
-
 <?php
 
 wp_enqueue_script( 'sticky-controls', get_template_directory_uri() . '/assets/scripts/sticky-controls.js', NULL, NULL, true );
@@ -96,6 +94,7 @@ endif;
 <div>
 <span class="archive-post__category category-badge"><?= $the_category; ?></span>
 <h2 class="archive-post__title line-limit-3"><?= get_the_title(); ?></h2>
+<span class="archive-post__author"><?= get_the_author(); ?></span>
 <p class="archive-post__excerpt line-limit-3"><?= get_the_excerpt(); ?></p>
 </div>
 </a>
@@ -119,5 +118,3 @@ endif;
 </main>
 
 <?php get_footer(); ?>
-
-</body>
