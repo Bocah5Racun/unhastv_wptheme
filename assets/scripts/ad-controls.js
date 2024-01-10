@@ -9,10 +9,8 @@ window.onload = () => {
   const vGVWidth = videoGalleryVideo.offsetWidth;
   const vGVHeight = videoGalleryVideo.offsetHeight;
 
-  videoGalleryBlock.style.width = videoGalleryBlock.parentElement.width =
-    vGVWidth;
-  videoGalleryBlock.style.height = videoGalleryBlock.parentElement.height =
-    vGVHeight;
+  videoGalleryBlock.parentElement.style.width = vGVWidth;
+  videoGalleryBlock.parentElement.style.height = vGVHeight;
 
   // two-cols-ft-left
   const twoColesLeftAd = document.querySelector(
@@ -24,8 +22,8 @@ window.onload = () => {
   const twoColsCenterWidth = twoColsCenterBlock.offsetWidth;
   const twoColsCenterHeight = twoColsCenterBlock.offsetHeight;
 
-  twoColesLeftAd.style.width = twoColsCenterWidth;
-  twoColesLeftAd.style.height = twoColsCenterHeight;
+  twoColesLeftAd.parentElement.style.width = twoColsCenterWidth;
+  twoColesLeftAd.parentElement.style.height = twoColsCenterHeight;
 
   // three-cols-ft-center ad controls
   const threeColsCenterAd = document.querySelector(
@@ -38,6 +36,6 @@ window.onload = () => {
   const threeColsCenterWidth = threeColsCenterBlock.offsetWidth;
   const threeColsCenterHeight = threeColsCenterBlock.offsetHeight;
 
-  threeColsCenterAd.style.width = threeColsCenterWidth;
-  threeColsCenterAd.style.height = threeColsCenterHeight;
+  threeColsCenterAd.parentElement.style.width = threeColsCenterWidth;
+  threeColsCenterAd.parentElement.style.height = threeColsCenterHeight;
 };
