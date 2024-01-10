@@ -5,7 +5,7 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'posts_per_page' => '7',
+    'posts_per_page' => '6',
     'orderby' => 'date',
     'order' => 'DESC',
 );
@@ -122,5 +122,21 @@ endif;
 wp_reset_postdata();
 
 ?>
+
+<div class="section__news-item">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
+        crossorigin="anonymous"></script>
+    <!-- three-col-ft-center-block -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3215141506790563"
+        data-ad-slot="7024708778"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
 </div>
 </div>
