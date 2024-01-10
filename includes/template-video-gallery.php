@@ -86,7 +86,7 @@ if( $the_query->current_post == 0 ) :
         style="display:block"
         data-ad-client="ca-pub-3215141506790563"
         data-ad-slot="9706712439"
-        data-ad-format="auto"
+        data-ad-format="rectangle"
         data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});

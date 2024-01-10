@@ -131,7 +131,7 @@ wp_reset_postdata();
         style="display:block"
         data-ad-client="ca-pub-3215141506790563"
         data-ad-slot="7024708778"
-        data-ad-format="auto"
+        data-ad-format="rectangle"
         data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
