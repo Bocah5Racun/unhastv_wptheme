@@ -165,9 +165,6 @@
 }
 .template--three-columns-feature-center .section__news-item__link {
   position: relative;
-  display: grid;
-  grid-template-columns: auto 50%;
-  grid-gap: 8px;
 }
 .template--three-columns-feature-center .section__news-item:nth-child(2),
 .template--three-columns-feature-center .section__news-item:nth-child(3),

@@ -103,12 +103,14 @@ if( $the_query->current_post == 0 ):
                 <?php echo $the_category; ?>
             </div>
             <a href="<?php echo get_the_permalink(); ?>">
+                <?php if( $the_query->current_post == 5 ): ?>
+                <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
+                <?php endif; ?>
                 <h1 class="section__news-item__title line-limit-3"><?php the_title(); ?></h1>
             </a>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
         <a href="<?php echo get_the_permalink(); ?>">
-        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
         </a>
     </div>
 </div>
