@@ -36,6 +36,7 @@ function unhastv_enqueue_styles() {
 
 function unhastv_enqueue_scripts() {
   wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
+  wp_enqueue_script( 'ad-controls', get_template_directory_uri() . '/assets/scripts/ad-controls.js', NULL, NULL, true );
 }
 
 /**
