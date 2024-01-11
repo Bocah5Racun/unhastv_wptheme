@@ -13,6 +13,45 @@ $the_post_cats = get_the_category();
 $the_category_id = $the_post_cats[0]->cat_ID;
 $the_category_slug = $the_post_cats[0]->slug;
 
+//Adding adsense ad unit inside the article
+//Insert ads after every third paragraph of single post content.
+add_filter( 'the_content', 'prefix_insert_post_ads' );
+function prefix_insert_post_ads( $content ) {
+	//CHANGE BELOW AdSense CODE WITH YOUR OWN CODE
+	$ad_code = '
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-3215141506790563"
+     data-ad-slot="8727660920"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+';
+    if ( is_single() ) {
+	//CHANGE 3 TO DESIRED NUMBER YOU WANT ADVERT TO BE APPEARED
+        return prefix_insert_after_paragraph( $ad_code, 3, $content );
+    }
+    return $content;
+}
+// Parent Function that makes the magic happen
+function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
+    $closing_p = '</p>';
+    $paragraphs = explode( $closing_p, $content );
+    foreach ($paragraphs as $index => $paragraph) {
+        if ( trim( $paragraph ) ) {
+            $paragraphs[$index] .= $closing_p;
+        }
+        if ( ( ($index + 1) % $paragraph_id ) == 0 ) {
+            $paragraphs[$index] .= $insertion;
+        }
+    }
+    return implode( '', $paragraphs );
+}
+
 ?>
 
 <main class="container--constrained">
@@ -68,7 +107,18 @@ foreach( $tags as $tag ) : ?>
         </div>
     </div>
     <div class="ad-example-space">
-        <div class="example-ad">Adspace</div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
+            crossorigin="anonymous"></script>
+        <!-- single-vertical -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3215141506790563"
+            data-ad-slot="4175485471"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 </div>
 
