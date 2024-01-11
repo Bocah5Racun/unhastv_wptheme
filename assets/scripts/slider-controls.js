@@ -1,8 +1,8 @@
 /** */
 
 const sliderContainers = document.querySelectorAll(".slider-container");
-const sliderPrevs = document.querySelectorAll(".slider-prev");
-const sliderNexts = document.querySelectorAll(".slider-next");
+const sliderPrevs = document.querySelectorAll(".slider-prev .slider-icon");
+const sliderNexts = document.querySelectorAll(".slider-next .slider-icon");
 
 sliderContainers.forEach((sliderContainer, index) => {
   const isScrollable =
