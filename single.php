@@ -92,6 +92,20 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
                 copyToClipboard(alertText);
             })()'/>
         </div>
+        <div class="ad-example-space">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
+                crossorigin="anonymous"></script>
+            <!-- single-vertical -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-3215141506790563"
+                data-ad-slot="4175485471"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </div>
     <div class="content-container">
         <?php the_content(); ?>
