@@ -42,6 +42,7 @@ article {
 }
 .single-body-container {
   display: flex;
+  justify-content: space-between;
   gap: 16px;
   .content-container {
     flex: 0 0 clamp(597px, 50vw, 615px);
