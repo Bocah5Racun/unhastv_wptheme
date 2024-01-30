@@ -35,7 +35,7 @@ function prefix_insert_post_ads( $content ) {
 ';
     if ( is_single() ) {
 	//CHANGE 3 TO DESIRED NUMBER YOU WANT ADVERT TO BE APPEARED
-        return prefix_insert_after_paragraph( $ad_code, 3, $content );
+        return prefix_insert_after_paragraph( $ad_code, 5, $content );
     }
     return $content;
 }
@@ -61,10 +61,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <article>
 
 <div class="single-breadcrumbs">
-<?php if ( function_exists('yoast_breadcrumb') ) {
-  yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
-};
-?>
+<?php breadcrumbs(); ?>
 </div>
 
 <div class="single-header">
@@ -91,20 +88,6 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
                 const alertText = "Baca Artikel Ini di Unhas TV: <?php echo get_the_permalink(); ?>";
                 copyToClipboard(alertText);
             })()'/>
-        </div>
-        <div class="ad-example-space">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-                crossorigin="anonymous"></script>
-            <!-- single-vertical -->
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-3215141506790563"
-                data-ad-slot="4175485471"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
         </div>
     </div>
     <div class="content-container">

@@ -1,5 +1,6 @@
 #unhastv-header {
   background-color: var(--light-gray);
+  margin-bottom: 4rem;
 }
 #unhastv-header__brand-cta {
   display: flex;

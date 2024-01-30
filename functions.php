@@ -444,6 +444,13 @@ function unhastv_customize_register( $wp_customize ) {
     'type'    => 'number',
   ) );
 }
+
+//extra functions
+function breadcrumbs() {
+  if ( function_exists('yoast_breadcrumb') ) {
+    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+  };
+}
   
 add_action( 'init', 'register_unhastv_menus' );
 add_action( 'customize_register', 'unhastv_customize_register' );

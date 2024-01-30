@@ -37,7 +37,7 @@ Theme Name: Unhas TV News Theme
 
 body {
   background-color: #fff;
-  color: var(--ultra-dark-gray);
+  color: #444;
   margin: 0;
   padding: 0;
   font-family: "Inter", "Times New Roman", sans-serif;
@@ -71,6 +71,14 @@ h4 {
   line-height: 125%;
   margin: 0;
   padding: 0;
+}
+
+h1.large {
+  font-size: 4rem;
+}
+
+.color--unhas-red {
+  color: var(--unhas-red);
 }
 
 a {

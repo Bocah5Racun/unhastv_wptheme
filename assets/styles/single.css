@@ -14,7 +14,8 @@ article {
 }
 .single-header .single-title {
   font-size: clamp(3.25rem, 7vh, 72px);
-  line-height: 100%;
+  color: #000;
+  line-height: 120%;
   text-align: center;
 }
 .single-header .single-meta {
@@ -44,6 +45,7 @@ article {
 
 .single-body-container {
   display: flex;
+  justify-content: space-between;
   gap: 16px;
 }
 .single-body-container .content-container {
@@ -52,7 +54,7 @@ article {
   max-width: 615px;
 }
 .single-body-container .content-container p {
-  line-height: 150%;
+  line-height: 175%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;

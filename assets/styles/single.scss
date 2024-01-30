@@ -13,7 +13,8 @@ article {
   }
   .single-title {
     font-size: clamp(3.25rem, 7vh, 72px);
-    line-height: 100%;
+    color: #000;
+    line-height: 120%;
     text-align: center;
   }
   .single-meta {
@@ -49,7 +50,7 @@ article {
     margin: 0 auto;
     max-width: 615px;
     p {
-      line-height: 150%;
+      line-height: 175%;
       word-wrap: break-word;
       overflow-wrap: break-word;
       hyphens: auto;

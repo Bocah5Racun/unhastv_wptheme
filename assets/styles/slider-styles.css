@@ -4,6 +4,7 @@
   width: calc(100% - 88px);
   overflow-x: auto;
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 .slider-container::-webkit-scrollbar {
   display: none;
