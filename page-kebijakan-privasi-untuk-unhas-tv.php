@@ -3,7 +3,7 @@
 <?php get_header(); ?>
 
 
-<div class="container--constrained">
+<main class="container--constrained">
 
 <article>
 <?php breadcrumbs(); ?>
@@ -11,7 +11,7 @@
 <?= get_the_content(); ?>
 </article>
 
-</div>
+</main>
 
 <?php get_footer() ;?>
     
