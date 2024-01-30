@@ -25,7 +25,7 @@
             if( $cta_text ) :
         ?>
         <a id="sticky-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
-            <img class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
             <?= $cta_text; ?>
         </a>
 
@@ -58,7 +58,7 @@
         ?>
 
         <a id="unhastv-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
-            <img class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
             <?= $cta_text; ?>
         </a>
 

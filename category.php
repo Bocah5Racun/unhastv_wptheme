@@ -19,7 +19,7 @@ $qo = get_queried_object();
 // get the parent category id
 $parent_cat_ID = ( $qo->parent == '0' ) ? $qo->cat_ID : $qo->parent;
 
-$categories = get_categories( array( 'child_of' => $parent_cat_ID, 'hide_empty' => '0' ));
+$categories = get_categories( array( 'child_of' => $parent_cat_ID ));
 
 ?>
 
@@ -90,7 +90,7 @@ endif;
 
 <div class="archive-post">
 <a href="<?= get_the_permalink(); ?>" class="archive-post__inner">
-<img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="archive-post__thumbnail" />
+<img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="archive-post__thumbnail" />
 <div>
 <span class="archive-post__category category-badge"><?= $the_category; ?></span>
 <h2 class="archive-post__title line-limit-3"><?= get_the_title(); ?></h2>

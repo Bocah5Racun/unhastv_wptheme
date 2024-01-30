@@ -31,6 +31,12 @@ Theme Name: Unhas TV News Theme
   src: url("./assets/fonts/InriaSans-Bold.ttf");
 }
 
+@font-face {
+  font-family: "IBM Plex Serif";
+  font-weight: 700;
+  src: url("./assets/fonts/IBMPlexSerif-Bold.ttf");
+}
+
 * {
   box-sizing: border-box;
 }
@@ -47,7 +53,28 @@ body {
 
 main {
   min-height: 100vh;
-  margin: 3rem inherit !important;
+}
+
+.my-2 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+.my-3 {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+.my-4 {
+  margin-top: 4rem !important;
+  margin-bottom: 4rem !important;
+}
+
+.margin-center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.text-container {
+  max-width: 700px;
 }
 
 .line-limit {
@@ -70,6 +97,7 @@ h2,
 h3,
 h4 {
   line-height: 125%;
+  font-weight: 700;
   margin: 0;
   padding: 0;
 }
@@ -95,7 +123,7 @@ hr {
 
 .container--constrained {
   margin: 0 auto;
-  width: clamp(900px, 80vw, 1200px);
+  width: clamp(800px, 1366px, 1440px);
 }
 
 .to-red {
@@ -164,5 +192,5 @@ hr {
 }
 
 .section {
-  margin: 20px auto;
+  margin-bottom: 4rem !important;
 }

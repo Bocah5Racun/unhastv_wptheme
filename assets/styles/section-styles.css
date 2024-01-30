@@ -1,5 +1,4 @@
 .section-header {
-  border-bottom: 1px solid var(--unhas-red);
   margin-bottom: 8px;
 }
 .section-header__inner-container {
@@ -18,7 +17,7 @@
 }
 
 .section-header h1 {
-  font-size: 1.75rem;
+  font-size: 3rem;
 }
 
 .right-arrow {

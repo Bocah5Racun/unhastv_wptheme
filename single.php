@@ -56,7 +56,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 
 ?>
 
-<main class="container--constrained">
+<main class="container--constrained my-2">
 
 <article>
 
@@ -64,7 +64,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <?php breadcrumbs(); ?>
 </div>
 
-<div class="single-header">
+<div class="single-header my-2">
 <a href="<?= get_category_link( $the_category_id ); ?>"class="single-category category-badge--with-background">
     <?php echo $the_post_cats[0]->name; ?>
 </a>
@@ -73,24 +73,24 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <span class="single-author">Oleh <?php the_author(); ?></span> •
 <span class="single-date"><?php the_date(); ?></span>
 </div>
-<?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
+<?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image my-2' ) ); ?>
 </div>
 
 <div class="single-body-container">
     <div class="socials-container sticky">
         <div class="socials-header">Share</div>
         <div class="socials-icons">
-            <img class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
-            <img class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>" title="Bagikan artikel ini lewat Facebook" />
-            <img class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>" title="Bagikan artikel ini lewat WhatsApp" />
-            <img class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-email.png" ?>" title="Bagikan artikel ini lewat email" />
-            <img class="socials-icon to-red copy" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-copy.png" ?>" title="Salin link artikel ini ke clipboard" onclick='( ()=> {
+            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
+            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>" title="Bagikan artikel ini lewat Facebook" />
+            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>" title="Bagikan artikel ini lewat WhatsApp" />
+            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-email.png" ?>" title="Bagikan artikel ini lewat email" />
+            <img loading="lazy" class="socials-icon to-red copy" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-copy.png" ?>" title="Salin link artikel ini ke clipboard" onclick='( ()=> {
                 const alertText = "Baca Artikel Ini di Unhas TV: <?php echo get_the_permalink(); ?>";
                 copyToClipboard(alertText);
             })()'/>
         </div>
     </div>
-    <div class="content-container">
+    <div class="content-container text-container">
         <?php the_content(); ?>
         <div class="single-post-tags">
 
@@ -177,7 +177,7 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-            <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
+            <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
             <?php echo $the_category; ?>
             </div>
@@ -249,7 +249,7 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
             <?php echo $the_category; ?>
             </div>

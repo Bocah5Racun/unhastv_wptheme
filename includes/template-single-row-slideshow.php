@@ -46,8 +46,8 @@ href="<?php echo $category_id ?>"
 
 >
 
-<h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<span class="section-header__see-more">━ Lihat Semua</span>
+<h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+<?php if( $category_filter ): ?><span class="section-header__see-more">━ Lihat Semua</span><?php endif; ?>
 
 </a>
 
@@ -55,8 +55,8 @@ href="<?php echo $category_id ?>"
     
 <div class="template--single-row-slideshow__inner">
 
-<div id="slider-prev" class="slider-prev slider-prev noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
-<div id="slider-next" class="slider-next slider-next noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
+<div id="slider-prev" class="slider-prev slider-prev noselect"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x" /></div>
+<div id="slider-next" class="slider-next slider-next noselect"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon" /></div>
 
 <div id="template--singlerow-slideshow__slider-container" class="slider-container">
 
@@ -93,7 +93,7 @@ endif;
 <div class="hero__news-item">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
     <div class="hero__news-item__image-container">
-        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
         <?php if( strlen( $category_filter > 0 ) ): ?>
         <div class="category-badge--with-background">
             <?php echo $the_category; ?>

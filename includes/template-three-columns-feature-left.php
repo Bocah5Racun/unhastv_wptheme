@@ -40,8 +40,8 @@ if( $the_query->have_posts() ):
     
 <a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>">
 
-<h1><?php echo $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<span class="section-header__see-more">━ Lihat Semua</span>
+<h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+<?php if( $category_filter ): ?><span class="section-header__see-more">━ Lihat Semua</span><?php endif; ?>
 
 </a>
 
@@ -82,7 +82,7 @@ if( $the_query->current_post == 0 ):
 
 <div class="section__news-item--feature">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
-        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" class="section__news-item__thumbnail" />
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'large' ); ?>" class="section__news-item__thumbnail" />
         <div class="hero__news-item__overlay"></div>
         <div class="section__news-item__meta-container">
             <div class="category-badge--with-background">
@@ -98,7 +98,7 @@ if( $the_query->current_post == 0 ):
 
 <div class="section__news-item">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
-        <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
         <div class="section__news-item__meta-container">
             <div class="category-badge">
                 <?php echo $the_category; ?>

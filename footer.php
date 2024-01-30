@@ -12,19 +12,19 @@
         </div>
         <div class="footer__socials">
             <a href="https://twitter.com/UNHAS_TV" target="_blank">
-                <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-twitterx.png" />
+                <img loading="lazy" class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-twitterx.png" />
             </a>
             <a href="https://www.instagram.com/unhastvofficial/" target="_blank">
-                <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-instagram.png" />
+                <img loading="lazy" class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-instagram.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-youtube.png" />
+            <img loading="lazy" class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-youtube.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-facebook.png" />
+            <img loading="lazy" class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-facebook.png" />
             </a>
             <a href="https://www.youtube.com/@unhastv.official" target"_blank">
-            <img class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-tiktok.png" />
+            <img loading="lazy" class="footer__socials__icon to-red" src="<?= get_template_directory_uri(); ?>/assets/imgs/unhastv-socials-tiktok.png" />
             </a>
         </div>
     </div>

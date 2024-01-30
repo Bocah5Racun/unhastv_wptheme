@@ -55,7 +55,7 @@ if( $the_query->current_post == 0 ): // check if first post
 ?>
 
 <div class="hero__news-item--large">
-    <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
+    <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
 
     <div class="hero__news-item__overlay"></div>
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
@@ -73,8 +73,8 @@ endif;
 endwhile;
 ?>
 <div class="hero__slider container--constrained">
-<div id="slider-prev" class="slider-prev slider-prev--black noselect"><img  src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x to-yellow" /></div>
-<div id="slider-next" class="slider-next slider-next--black noselect"><img src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon to-yellow" /></div>
+<div id="slider-prev" class="slider-prev slider-prev--black noselect"><img loading="lazy"  src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon flip-x to-yellow" /></div>
+<div id="slider-next" class="slider-next slider-next--black noselect"><img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/imgs/unhastv-slider-arrow.png" class="slider-icon to-yellow" /></div>
 <div class="hero__news-item-container slider-container">
 
 <?php
@@ -108,7 +108,7 @@ endif;
 <div class="hero__news-item">
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
         <div class="hero__news-item__image-container">
-            <img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
+            <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>
