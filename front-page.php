@@ -21,15 +21,15 @@ $shown_posts = [];
 
 ?>
 
+<?php
+get_template_part(
+    'includes/section',
+    'hero',
+    array(
+    'category_filter' => $section_cats['hero'],
+) );
+?>
 <main>
-    <?php
-    get_template_part(
-        'includes/section',
-        'hero',
-        array(
-        'category_filter' => $section_cats['hero'],
-    ) );
-    ?>
 
     <section class="section adspace--landscape container--constrained">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"

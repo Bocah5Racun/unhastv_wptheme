@@ -54,7 +54,7 @@ article {
   max-width: 615px;
 }
 .single-body-container .content-container p {
-  line-height: 175%;
+  line-height: 150%;
   word-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-hyphens: auto;

@@ -47,7 +47,7 @@ body {
 
 main {
   min-height: 100vh;
-  margin-top: 4rem !important;
+  margin: 3rem inherit !important;
 }
 
 .line-limit {
