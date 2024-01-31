@@ -78,10 +78,10 @@ if( $the_query->current_post == 0 ) :
 
 <div class="video-gallery__video-list-container">
 
+<!--
 <div class="video-gallery__video">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
         crossorigin="anonymous"></script>
-    <!-- video-gallery-block -->
     <ins class="adsbygoogle"
         style="display:block; width: 100% !important;"
         data-ad-client="ca-pub-3215141506790563"
@@ -92,6 +92,8 @@ if( $the_query->current_post == 0 ) :
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </div>
+-->
+        
 
 <?php else : ?>
 

@@ -404,7 +404,6 @@
 }
 .video-gallery__video {
   display: grid;
-  max-height: 100px;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 8px;
 }

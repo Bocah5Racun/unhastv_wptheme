@@ -5,7 +5,7 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'posts_per_page' => '6',
+    'posts_per_page' => '7',
     'orderby' => 'date',
     'order' => 'DESC',
 );
@@ -93,10 +93,10 @@ if( $the_query->current_post == 0 ):
     </a>
 </div>
 
+<!--
 <div class="section__news-item">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
         crossorigin="anonymous"></script>
-    <!-- two-col-ft-left-block -->
     <ins class="adsbygoogle"
         style="display:block"
         data-ad-client="ca-pub-3215141506790563"
@@ -107,6 +107,7 @@ if( $the_query->current_post == 0 ):
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </div>
+-->
 
 <?php else: ?>
 
