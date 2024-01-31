@@ -51,20 +51,10 @@ foreach( $categories as $category ) :
 
 <?php
 
-$loop_args = array(
-    'post_type' => 'post',
-    'ignore_sticky_posts' => true,
-    'category_name' => get_cat_name( $qo->cat_ID),
-    'posts_per_page' => '24',
-    'orderby' => 'date',
-    'order' => 'DESC',
-);
+if( have_posts() ) :
 
-$the_query = new WP_QUERY( $loop_args );
-if( $the_query->have_posts() ) :
-
-while( $the_query->have_posts() ) :
-    $the_query->the_post();
+while( have_posts() ) :
+    the_post();
 
 /**
  * get the first sub-category.
@@ -113,6 +103,14 @@ endif;
 </div>
 
 <div class="section archive-pagination-container container--constrained">
+
+<?php the_posts_pagination( array(
+	'mid_size'  => 4,
+	'prev_text' => __( '«', 'textdomain' ),
+	'next_text' => __( '»', 'textdomain' ),
+    ) );
+?>
+
 </div>
 
 </main>

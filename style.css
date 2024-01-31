@@ -194,3 +194,29 @@ hr {
 .section {
   margin-bottom: 4rem !important;
 }
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid var(--light-gray);
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+}
+
+a.page-numbers:hover {
+  text-decoration: underline;
+}
+.nav-links .page-numbers {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-links .current {
+  background-color: var(--unhas-red);
+  font-weight: bold;
+  color: var(--light-gray);
+}
