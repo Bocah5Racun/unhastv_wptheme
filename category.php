@@ -1,10 +1,10 @@
+<body>
+    
 <?php
 
 wp_enqueue_script( 'sticky-controls', get_template_directory_uri() . '/assets/scripts/sticky-controls.js', NULL, NULL, true );
 
 get_header();
-
-if( have_posts() ) the_post();
 
 $qo = get_queried_object();
 
@@ -50,6 +50,7 @@ foreach( $categories as $category ) :
 <div class="archive-posts-container__inner">
 
 <?php
+
 
 if( have_posts() ) :
 
@@ -116,3 +117,5 @@ endif;
 </main>
 
 <?php get_footer(); ?>
+
+</body>
