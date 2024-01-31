@@ -56,6 +56,10 @@ main {
   min-height: 100vh;
 }
 
+.my-1 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
 .my-2 {
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;

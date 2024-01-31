@@ -23,7 +23,7 @@ $categories = get_categories( array( 'child_of' => $parent_cat_ID ));
 
 ?>
 
-<h2 class="archive-header"><?= get_cat_name( $parent_cat_ID ); ?></h2>
+<h2 class="archive-header my-1"><?= get_cat_name( $parent_cat_ID ); ?></h2>
 </div>
 
 

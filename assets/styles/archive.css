@@ -1,5 +1,6 @@
 .archive-container h2.archive-header {
   color: var(--unhas-red);
+  font-size: 3rem;
 }
 .archive-container .latest-posts-container__inner {
   display: grid;
@@ -28,21 +29,37 @@
   flex-direction: column;
   gap: 16px;
 }
-.archive-container .archive-posts-container .archive-posts-container__inner .archive-post .archive-post__inner {
+.archive-container
+  .archive-posts-container
+  .archive-posts-container__inner
+  .archive-post
+  .archive-post__inner {
   display: grid;
   grid-template-columns: clamp(160px, 20vw, 320px) auto;
   grid-gap: 16px;
 }
-.archive-container .archive-posts-container .archive-posts-container__inner .archive-post .archive-post__thumbnail {
+.archive-container
+  .archive-posts-container
+  .archive-posts-container__inner
+  .archive-post
+  .archive-post__thumbnail {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-.archive-container .archive-posts-container .archive-posts-container__inner .archive-post .archive-post__title {
+.archive-container
+  .archive-posts-container
+  .archive-posts-container__inner
+  .archive-post
+  .archive-post__title {
   font-size: 1.25rem;
 }
-.archive-container .archive-posts-container .archive-posts-container__inner .archive-post .archive-post__excerpt {
+.archive-container
+  .archive-posts-container
+  .archive-posts-container__inner
+  .archive-post
+  .archive-post__excerpt {
   font-size: 0.875rem;
-}/*# sourceMappingURL=archive.css.map */
+} /*# sourceMappingURL=archive.css.map */
