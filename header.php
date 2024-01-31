@@ -2,6 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="<?php bloginfo( "charset" ); ?>">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <title><?php bloginfo( 'name' ); ?> | <?php is_front_page() ? bloginfo( 'description' ) : wp_title(''); ?></title>
 <link rel="stylesheet" href="<?= esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"

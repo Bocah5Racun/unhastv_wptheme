@@ -47,6 +47,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Inter", "Times New Roman", sans-serif;
+  font-size: clamp(16px, 0.5vw, 20px);
   font-weight: 400;
   line-height: 125%;
 }
@@ -74,7 +75,7 @@ main {
 }
 
 .text-container {
-  max-width: 700px;
+  max-width: clamp(300px, 70vw, 700px);
 }
 
 .line-limit {
@@ -123,7 +124,7 @@ hr {
 
 .container--constrained {
   margin: 0 auto;
-  width: clamp(800px, 1366px, 1440px);
+  width: clamp(120px, 80vw, 1000px);
 }
 
 .to-red {
