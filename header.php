@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -13,8 +14,14 @@
 
 <?php
 
+
 // check if popups are allowed on this page
 if( get_theme_mod( 'popup-show', true ) ):
+
+    // check popup session
+if( !isset( $_SESSION["popup-timeout"] ) || (time() - $_SESSION["popup-timeout"] > get_theme_mod( 'popup-timeout', 180 )) ) :
+
+    $_SESSION["popup-timeout"] = time();
         
     $popup_settings = array(
         'penyedia'      => get_theme_mod( 'popup-penyedia', 'kustom' ),
@@ -42,6 +49,7 @@ if( get_theme_mod( 'popup-show', true ) ):
 </div>
     
 <?php
+endif;
 endif;
 endif;
 endif;

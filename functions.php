@@ -159,6 +159,9 @@ function unhastv_customize_register( $wp_customize ) {
   $wp_customize->add_setting( 'popup-penyedia', array( 
     'default'     => 'kustom',
     ) );
+  $wp_customize->add_setting( 'popup-timeout', array( 
+    'default'     => 180,
+    ) );
   $wp_customize->add_setting( 'popup-post', array(
     'default'     => '--',
   ) );
@@ -227,6 +230,12 @@ function unhastv_customize_register( $wp_customize ) {
     'description' => 'Atur tautan kustom untuk iklan pop-up. Kosongkan untuk mengarahkan pengguna ke pos iklan default saat diklik.',
     'section'     => 'popup_customizer',
     'type'        => 'url',
+  ) );
+  $wp_customize->add_control( 'popup-timeout_selector', array(
+    'settings'    => 'popup-timeout',
+    'label'       => 'Timeout Iklan',
+    'section'     => 'popup_customizer',
+    'type'        => 'number',
   ) );
   $wp_customize->add_control( 'popup-which-pages_selector', array(
     'settings'    => 'popup-which-pages',
