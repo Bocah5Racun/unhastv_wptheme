@@ -44,11 +44,12 @@ if( !isset( $_SESSION["popup-timeout"] ) || (time() - $_SESSION["popup-timeout"]
         <a href="<?= $popup_settings['iklan_url'] ? $popup_settings['iklan_url'] : get_permalink( $popup_settings['iklan_id'] ); ?>">
             <img src="<?= get_the_post_thumbnail_url( $popup_settings['iklan_id'], 'large'); ?>" class="popup-image">
         </a>
-        <?php endif; ?>
+        <?php else: ?>
     </div>
 </div>
     
 <?php
+endif;
 endif;
 endif;
 endif;

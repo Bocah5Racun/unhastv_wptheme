@@ -161,6 +161,7 @@ function unhastv_customize_register( $wp_customize ) {
     ) );
   $wp_customize->add_setting( 'popup-timeout', array( 
     'default'     => 180,
+    'transport'   => 'postMessage',
     ) );
   $wp_customize->add_setting( 'popup-post', array(
     'default'     => '--',
