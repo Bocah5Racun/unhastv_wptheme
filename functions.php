@@ -25,6 +25,10 @@ function unhastv_enqueue_styles() {
     wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
   }
+
+  if(is_front_page() || get_theme_mod('popup-show')) {
+    wp_enqueue_style( 'unhastv-popup-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
+  }
   
   if(is_single()) {
     wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), '1.0', 'all' );
@@ -37,6 +41,27 @@ function unhastv_enqueue_styles() {
 function unhastv_enqueue_scripts() {
   wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
   wp_enqueue_script( 'ad-controls', get_template_directory_uri() . '/assets/scripts/ad-controls.js', NULL, NULL, true );
+
+  if(is_front_page() || get_theme_mod('popup-show')) {
+    wp_enqueue_script( 'unhastv-popup-controls', get_template_directory_uri() . '/assets/scripts/popup-controls.js', array(), '1.0', 'all');
+  }
+}
+
+// add post types
+function unhastv_add_posttypes() {
+  register_post_type( 
+    'iklan',
+    array(
+      'labels'      => array(
+        'name'          => __( 'Iklan' ),
+        'singular_name' => __( 'Iklan' )
+      ),
+      'supports'    => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+      'public'      => true,
+      'has_archive' => false,
+      'rewrite'     => array( 'slug' => 'iklan' ),
+      'taxonomies'  => array( 'category' ),
+    ) );
 }
 
 /**
@@ -113,6 +138,102 @@ function unhastv_customize_register( $wp_customize ) {
     'choices' => $cats,
   ) );
 
+  /**
+   * The Popup Customizer
+   * Seksi pengaturan iklan popup.
+   * --
+   * @popup-show_customizer: Toggle tampilkan popup (type checkbox)
+   * @popup-penyedia_customizer: Pilih penyedia Google atau Kustom (type select)
+   * @popup-which-pages_customizer: Tampilkan di halaman front page atau semua (type select)
+   * 
+   */
+  $wp_customize->add_section( 'popup_customizer', array(
+    'title'       => __( 'Pengaturan Iklan Popup' ),
+    'description' => 'Pengaturan iklan popup.',
+    'priority'    => 102,
+  ) );
+
+  $wp_customize->add_setting( 'popup-show', array( 
+    'default'     => true,
+    ) );
+  $wp_customize->add_setting( 'popup-penyedia', array( 
+    'default'     => 'kustom',
+    ) );
+  $wp_customize->add_setting( 'popup-post', array(
+    'default'     => '--',
+  ) );
+  $wp_customize->add_setting( 'popup-url', array(
+    'default'     => false,
+    'transport'   => 'postMessage',
+  ) );
+  $wp_customize->add_setting( 'popup-which-pages', array( 
+    'default'     => false,
+    'transport'   => 'postMessage',
+    ) );
+
+  
+  $wp_customize->add_control( 'popup-show_selector', array(
+    'settings'    => 'popup-show',
+    'label'       => 'Tampilkan popup',
+    'description' => 'Kosongkan untuk tidak menampilkan iklan popup.',
+    'section'     => 'popup_customizer',
+    'type'        => 'checkbox',
+  ) );
+  $wp_customize->add_control( 'popup-penyedia_selector', array(
+    'settings'    => 'popup-penyedia',
+    'label'       => 'Pilih Penyedia Iklan',
+    'section'     => 'popup_customizer',
+    'type'        => 'select',
+    'choices'     => [
+      'google'  => 'Google AdSense',
+      'kustom'  => 'Kustom'
+    ],
+  ) );
+  if( get_theme_mod('popup-penyedia') == 'kustom' ) {
+
+    //get the iklans
+    $iklan_loop_args = array(
+      'post_type' => 'iklan',
+      'ignore_sticky_posts' => true,
+      'orderby' => 'date',
+      'order' => 'DESC',
+    );
+
+    $iklan_query = new WP_Query( $iklan_loop_args );
+
+    $iklans = array(
+      false => '--'
+    );
+
+    if( $iklan_query->have_posts() ) {
+      while( $iklan_query->have_posts() ) {
+        $iklan_query->the_post();
+        $iklans[get_the_id()] = get_the_title();
+      }
+    }
+
+    $wp_customize->add_control( 'popup-post_selector', array(
+      'settings'    => 'popup-post',
+      'label'       => 'Pilih Iklan Kustom',
+      'description' => 'Iklan yang ditampilkan (hanya untuk setting penyedia iklan "kustom").',
+      'section'     => 'popup_customizer',
+      'type'        => 'select',
+      'choices'     => $iklans,
+    ) );
+  }
+  $wp_customize->add_control( 'popup-url', array(
+    'settings'    => 'popup-url',
+    'label'       => 'URL Iklan',
+    'description' => 'Atur tautan kustom untuk iklan pop-up. Kosongkan untuk mengarahkan pengguna ke pos iklan default saat diklik.',
+    'section'     => 'popup_customizer',
+    'type'        => 'url',
+  ) );
+  $wp_customize->add_control( 'popup-which-pages_selector', array(
+    'settings'    => 'popup-which-pages',
+    'label'       => 'Tampilkan di semua halaman (default: halaman depan saja)',
+    'section'     => 'popup_customizer',
+    'type'        => 'checkbox',
+  ) );
   
   $section_templates = [
     'none' => 'Disembunyikan',
@@ -453,6 +574,7 @@ function breadcrumbs() {
 }
   
 add_action( 'init', 'register_unhastv_menus' );
+add_action( 'init', 'unhastv_add_posttypes' );
 add_action( 'customize_register', 'unhastv_customize_register' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_scripts' );

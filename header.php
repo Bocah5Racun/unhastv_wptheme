@@ -11,6 +11,42 @@
 </head>
 <body>
 
+<?php
+
+// check if popups are allowed on this page
+if( get_theme_mod( 'popup-show', true ) ):
+        
+    $popup_settings = array(
+        'penyedia'      => get_theme_mod( 'popup-penyedia', 'kustom' ),
+        'show_on_all'   => get_theme_mod( 'popup-which-pages', false ),
+        'iklan_id'      => get_theme_mod( 'popup-post', false ),
+        'iklan_url'     => get_theme_mod( 'popup-url', '' ),
+    );
+
+    if( is_front_page() || $popup_settings['show_on_all'] ):
+        if( $popup_settings['iklan_id'] ):
+?>
+
+<div id="popup-overlay">
+    <div id="popup-container">
+        <div id="popup-close" onclick="closeOverlay()">
+            <img src="<?= get_template_directory_uri() . '/assets/imgs/unhastv-close.png'; ?>"></div>
+        <?php
+        if( $popup_settings['penyedia'] == 'kustom' ):
+        ?>
+        <a href="<?= $popup_settings['iklan_url'] ? $popup_settings['iklan_url'] : get_permalink( $popup_settings['iklan_id'] ); ?>">
+            <img src="<?= get_the_post_thumbnail_url( $popup_settings['iklan_id'], 'large'); ?>" class="popup-image">
+        </a>
+        <?php endif; ?>
+    </div>
+</div>
+    
+<?php
+endif;
+endif;
+endif;
+?>
+
 <div id="sticky-header" class="sticky-header--conceal">
     <div id="sticky-header__inner" class="container--constrained">
         <div class="sticky-header__brand"><?php the_custom_logo(); ?></div>
