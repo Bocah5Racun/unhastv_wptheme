@@ -60,7 +60,7 @@ function unhastv_add_posttypes() {
       'public'      => true,
       'has_archive' => false,
       'rewrite'     => array( 'slug' => 'iklan' ),
-      'taxonomies'  => array( 'category' ),
+      'taxonomies'  => array( 'kategori_iklan' ),
     ) );
 }
 
@@ -566,6 +566,15 @@ function unhastv_customize_register( $wp_customize ) {
   ) );
 }
 
+// Custom Taxonomy Code
+
+function unhastv_taxonomies() {
+
+    register_taxonomy( 'kategori_iklan', 'iklan', array( 'hierarchical' => true, 'label' => 'Kategori Iklan', 'query_var' => true, 'rewrite' => true ) );
+
+}
+
+
 //extra functions
 function breadcrumbs() {
   if ( function_exists('yoast_breadcrumb') ) {
@@ -575,6 +584,7 @@ function breadcrumbs() {
   
 add_action( 'init', 'register_unhastv_menus' );
 add_action( 'init', 'unhastv_add_posttypes' );
+add_action( 'init', 'unhastv_taxonomies' );
 add_action( 'customize_register', 'unhastv_customize_register' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'unhastv_enqueue_scripts' );

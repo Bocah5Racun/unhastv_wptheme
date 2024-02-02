@@ -10,8 +10,13 @@ get_header();
 if( have_posts() ) the_post();
 
 $the_post_cats = get_the_category();
-$the_category_id = $the_post_cats[0]->cat_ID;
-$the_category_slug = $the_post_cats[0]->slug;
+$the_category_id;
+$the_category_slug;
+
+if( $the_post_cats ) {
+    $the_category_id = $the_post_cats[0]->cat_ID;
+    $the_category_slug = $the_post_cats[0]->slug;
+}
 
 //Adding adsense ad unit inside the article
 //Insert ads after every third paragraph of single post content.
@@ -65,13 +70,17 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 </div>
 
 <div class="single-header my-2">
+<?php if( $the_post_cats ): ?>
 <a href="<?= get_category_link( $the_category_id ); ?>"class="single-category category-badge--with-background">
     <?php echo $the_post_cats[0]->name; ?>
 </a>
+<?php endif; ?>
 <h1 class="single-title"><?php the_title(); ?></h1>
 <div class="single-meta">
-<span class="single-author">Oleh <?php the_author(); ?></span> •
-<span class="single-date"><?php the_date(); ?></span>
+<?php if( get_post_type() != 'iklan' ): ?>
+    <span class="single-author">Oleh <?php the_author(); ?></span> •
+    <span class="single-date"><?php the_date(); ?></span>
+<?php endif; ?>
 </div>
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image my-2' ) ); ?>
 </div>
@@ -198,6 +207,8 @@ endif;
 
 <?php
 
+if( $the_post_cats):
+
 $query_args = array(
     'posts_per_page' => '4',
     'category_name' => $the_category_slug,
@@ -261,6 +272,7 @@ endif;
 
 <?php
 endwhile;
+endif;
 endif;
 ?>
 
