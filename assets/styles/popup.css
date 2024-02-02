@@ -18,6 +18,7 @@
 
 #popup-container {
   position: relative;
+  background-color: var(--light-gray);
   min-width: 200px;
   min-height: 80px;
   max-width: 600px;

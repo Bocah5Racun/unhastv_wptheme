@@ -18,8 +18,8 @@
 // check if popups are allowed on this page
 if( get_theme_mod( 'popup-show', true ) ):
 
-// check popup session
-if( !isset( $_SESSION["popup-timeout"] ) || (time() - $_SESSION["popup-timeout"] > get_theme_mod( 'popup-timeout', 180 )) ) :
+    // check popup session
+if( !isset( $_SESSION["popup-timeout"] ) || (time() - $_SESSION["popup-timeout"] > get_theme_mod( 'popup-timeout', 10)) ) :
 
     $_SESSION["popup-timeout"] = time();
         
@@ -44,12 +44,14 @@ if( !isset( $_SESSION["popup-timeout"] ) || (time() - $_SESSION["popup-timeout"]
         <a href="<?= $popup_settings['iklan_url'] ? $popup_settings['iklan_url'] : get_permalink( $popup_settings['iklan_id'] ); ?>">
             <img src="<?= get_the_post_thumbnail_url( $popup_settings['iklan_id'], 'large'); ?>" class="popup-image">
         </a>
-        <?php else: ?>
+        <?php endif; ?>
+        <?php if ($popup_settings['penyedia'] == 'google' ): ?>
+            This is a Google Ad.
+        <?php endif; ?>
     </div>
 </div>
     
 <?php
-endif;
 endif;
 endif;
 endif;
