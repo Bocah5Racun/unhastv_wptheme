@@ -6,7 +6,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   transition: all 500ms ease-in;
