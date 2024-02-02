@@ -6,8 +6,8 @@ if (popupOverlay) {
       popupOverlay.classList.add("show");
     }, 2000);
   });
-
-  const closeOverlay = () => {
-    popupOverlay.style.display = "none";
-  };
 }
+
+const closeOverlay = () => {
+  popupOverlay.style.opacity = 0;
+};
