@@ -2,8 +2,10 @@ const popupOverlay = document.getElementById("popup-overlay");
 
 if (popupOverlay) {
   window.addEventListener("load", () => {
-    popupOverlay.style.display = "flex";
-    const popupTimer = setTimeout(() => {
+    setTimeout(() => {
+      popupOverlay.style.display = "flex";
+    }, 1500);
+    setTimeout(() => {
       popupOverlay.classList.add("show");
     }, 2000);
   });
@@ -11,7 +13,7 @@ if (popupOverlay) {
 
 const closeOverlay = () => {
   popupOverlay.classList.remove("show");
-  const popupRemove = setTimeout(() => {
+  setTimeout(() => {
     popupOverlay.remove();
   }, 550);
 };
