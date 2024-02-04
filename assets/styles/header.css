@@ -126,9 +126,9 @@
   background-color: var(--unhas-yellow);
 }
 
-.menu-main-menu > li:last-child {
+/* .menu-main-menu > li:last-child {
   color: var(--unhas-yellow);
-}
+} */
 
 /* sub-menu styles */
 
