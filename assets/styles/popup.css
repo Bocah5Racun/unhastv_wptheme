@@ -25,8 +25,7 @@
   width: fit-content;
 }
 #popup-container .popup-image {
-  min-width: 180px;
-  max-width: 33vw;
+  width: clamp(400px, 33vw, 700px);
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
