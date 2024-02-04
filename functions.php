@@ -24,15 +24,19 @@ function unhastv_enqueue_styles() {
     wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
+    if( get_theme_mod( 'popup-show' ) ) {
+      wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
   }
-
-  if(is_front_page() || get_theme_mod('popup-show')) {
-    wp_enqueue_style( 'unhastv-popup-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
   }
   
   if(is_single()) {
     wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), '1.0', 'all' );
   }
+
+  if( get_post_type() === 'product' ) {
+    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/single-product.css', array(), '1.0', 'all' );
+  }
+
   if(is_archive()) {
     wp_enqueue_style( 'unhastv-archive-styles', get_template_directory_uri() . '/assets/styles/archive.css', array(), '1.0', 'all' );
   }
@@ -602,4 +606,5 @@ add_action( 'after_setup_theme', 'unhastv_theme_setup' );
 //add_filter( 'excerpt_length', 'my_excerpt_length' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
- ?>
+// shortcode functions
+include( 'shortcodes.php' );

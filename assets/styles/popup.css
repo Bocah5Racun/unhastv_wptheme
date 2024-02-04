@@ -19,15 +19,17 @@
 #popup-container {
   position: relative;
   background-color: var(--light-gray);
-  min-width: 200px;
-  min-height: 80px;
-  max-width: 600px;
-  max-height: 600px;
   box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 #popup-container .popup-image {
-  width: 100%;
+  min-width: 180px;
+  max-width: 33vw;
   height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #popup-container #popup-close {
   position: absolute;

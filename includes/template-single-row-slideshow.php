@@ -38,7 +38,7 @@ if( $the_query->have_posts() ) :
     
 <div class="section-header"> 
     
-<a class="section-header__inner-container"
+<a title="<?= $category_filter ? get_category_by_slug( $category_filter )->name : ''; ?>" class="section-header__inner-container"
 
 <?php if( !empty( $category_id ) ) : ?>
 href="<?php echo $category_id ?>"
@@ -47,7 +47,6 @@ href="<?php echo $category_id ?>"
 >
 
 <h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<?php if( $category_filter ): ?><span class="section-header__see-more">━ Lihat Semua</span><?php endif; ?>
 
 </a>
 
@@ -91,7 +90,7 @@ endif;
 ?>
 
 <div class="hero__news-item">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
     <div class="hero__news-item__image-container">
         <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
         <?php if( strlen( $category_filter > 0 ) ): ?>

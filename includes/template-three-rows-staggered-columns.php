@@ -41,7 +41,6 @@ href="<?php echo $category_id ?>"
 >
 
 <h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
-<?php if( $category_filter ): ?><span class="section-header__see-more">━ Lihat Semua</span><?php endif; ?>
 
 </a>
 

@@ -14,7 +14,6 @@
 
 <?php
 
-
 // check if popups are allowed on this page
 if( get_theme_mod( 'popup-show', true ) ):
 

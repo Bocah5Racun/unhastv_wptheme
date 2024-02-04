@@ -9,6 +9,7 @@
 .footer__main {
   display: flex;
   align-items: center;
+  gap: 4rem;
 }
 
 .footer__main > div:not(:nth-child(2)) {
