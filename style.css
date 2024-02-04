@@ -128,7 +128,7 @@ hr {
 
 .container--constrained {
   margin: 0 auto;
-  width: clamp(120px, 80vw, 1280px);
+  width: clamp(120px, 80vw, 1280px) !important;
 }
 
 .to-red {

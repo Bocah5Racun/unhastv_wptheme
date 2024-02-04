@@ -64,7 +64,7 @@
 
 /* .hero__news-item--large styles */
 .hero__news-item--large {
-  height: clamp(300px, 50vh, 600px);
+  height: clamp(300px, 75vh, 800px);
 }
 .hero__news-item--large .hero__news-item__thumbnail {
   position: absolute;
