@@ -24,9 +24,7 @@ function unhastv_enqueue_styles() {
     wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
-    if( get_theme_mod( 'popup-show' ) ) {
-      wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
-  }
+    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
   }
   
   if(is_single()) {
