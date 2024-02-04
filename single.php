@@ -83,10 +83,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <?php endif; ?>
 </div>
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image my-2' ) ); ?>
-</div>
-
-<div class="single-body-container">
-    <div class="socials-container sticky">
+<div class="socials-container container--constrained">
         <div class="socials-header">Share</div>
         <div class="socials-icons">
             <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
@@ -99,6 +96,9 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
             })()'/>
         </div>
     </div>
+</div>
+
+<div class="single-body-container">
     <div class="content-container text-container">
         <?php the_content(); ?>
         <div class="single-post-tags">
