@@ -416,7 +416,7 @@
 }
 
 .template--video-gallery__inner .section__news-item__title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   font-weight: 700;
 }
 
@@ -486,5 +486,5 @@
   aspect-ratio: 16 / 9;
 }
 .video-gallery__title {
-  font-size: clamp(14px, 1.5vw, 2rem);
+  font-size: clamp(14px, 0.8vw, 2rem);
 }
