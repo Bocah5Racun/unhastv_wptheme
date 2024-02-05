@@ -2,6 +2,12 @@
 Theme Name: Unhas TV News Theme
 */
 
+@media only screen and (max-width: 980px) {
+  .container--constrained {
+    width: calc(100% - 2rem) !important;
+  }
+}
+
 :root {
   --ultra-dark-gray: #0f1214;
   --dark-gray: #727272;
@@ -128,7 +134,7 @@ hr {
 
 .container--constrained {
   margin: 0 auto;
-  width: clamp(120px, 80vw, 1280px) !important;
+  width: clamp(120px, 80vw, 1280px);
 }
 
 .to-red {
@@ -178,7 +184,7 @@ hr {
   font-weight: 700;
 }
 #breadcrumbs > span > *:last-child {
-  max-width: 20vw;
+  max-width: clamp(350px, 20vw, 700px);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

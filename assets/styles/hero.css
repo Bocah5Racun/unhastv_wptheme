@@ -104,5 +104,5 @@
   justify-content: end;
 }
 .hero__news-item--large .hero__news-item__title {
-  font-size: clamp(32px, 3.5vw, 72px);
+  font-size: clamp(36px, 4vw, 72px);
 }

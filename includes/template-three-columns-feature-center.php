@@ -100,7 +100,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge">
                 <?php echo $the_category; ?>
             </div>
-            <?php if( $the_query->current_post == 5 ): ?>
+            <?php if( $the_query->current_post == 5 || $the_query->current_post == 6  ): ?>
                 <a href="<?php echo get_the_permalink(); ?>">
                     <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="section__news-item__thumbnail" />
                 </a>

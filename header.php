@@ -71,9 +71,9 @@ endif;
             $cta_text = get_theme_mod( 'cta_text' );
             if( $cta_text ) :
         ?>
-        <a id="sticky-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
+        <a id="sticky-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" title="<?= $cta_text; ?>" target="_blank">
             <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
-            <?= $cta_text; ?>
+            <span class="cta-text"><?= $cta_text; ?></span>
         </a>
 
         <?php endif; ?>
@@ -84,29 +84,14 @@ endif;
 <header id="unhastv-header">
     <div id="unhastv-header__brand-cta" class="container--constrained">
         <?php the_custom_logo(); ?>
-
-        <div class="ads-header-horizontal">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-            crossorigin="anonymous"></script>
-            <!-- header-horizontal -->
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-3215141506790563"
-                data-ad-slot="6113283488"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-        
+                
         <?php
             if( $cta_text ) :
         ?>
 
-        <a id="unhastv-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" target="_blank">
+        <a id="unhastv-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" title="<?= $cta_text; ?>" target="_blank">
             <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
-            <?= $cta_text; ?>
+            <span class="cta-text"><?= $cta_text; ?></span>
         </a>
 
         <?php endif; ?>

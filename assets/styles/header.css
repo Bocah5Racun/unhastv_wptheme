@@ -1,3 +1,22 @@
+@media only screen and (max-width: 1200px) {
+  #sticky-header__cta .cta-text {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .unhastv-header__main-nav {
+    display: none;
+  }
+  #sticky-header__cta .cta-text {
+    display: block !important;
+  }
+}
+@media only screen and (max-width: 490px) {
+  #unhastv-header__cta .cta-text {
+    display: none !important;
+  }
+}
+
 #unhastv-header {
   background-color: var(--light-gray);
 }
@@ -80,13 +99,15 @@
 }
 #sticky-header__inner {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 40px;
+  padding: 16px 0;
 }
 .unhastv-header__main-nav {
   margin-right: auto;
   /* background: linear-gradient(180deg, #373737 0%, #0a0a0a 21.35%, #000 54.69%); */
   background-color: var(--ultra-dark-gray);
+  padding: 16px 0;
 }
 
 #sticky-header__inner .menu-main-menu {
@@ -111,7 +132,7 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 16px;
+  padding: 0 1rem;
 }
 .menu-main-menu li:hover {
   transition: background-color 120ms ease-in-out;
