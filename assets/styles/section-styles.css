@@ -384,7 +384,7 @@
     display: none !important;
   }
   .video-gallery__title {
-    font-size: clamp(14px, 2.5vw, 2rem) !important;
+    font-size: clamp(14px, 2.5vw, 1.25rem) !important;
   }
   .video-gallery__video-list-container .video-gallery__thumbnail {
     max-height: 124px;
