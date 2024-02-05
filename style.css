@@ -85,7 +85,7 @@ main {
 }
 
 .text-container {
-  max-width: clamp(300px, 70vw, 700px);
+  max-width: clamp(160px, 70vw, 700px);
 }
 
 .line-limit {

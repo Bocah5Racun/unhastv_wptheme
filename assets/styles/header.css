@@ -7,11 +7,8 @@
   .unhastv-header__main-nav {
     display: none;
   }
-  #sticky-header__cta .cta-text {
-    display: block !important;
-  }
 }
-@media only screen and (max-width: 490px) {
+@media only screen and (max-width: 768px) {
   #unhastv-header__cta .cta-text {
     display: none !important;
   }
