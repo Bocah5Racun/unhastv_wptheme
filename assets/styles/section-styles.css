@@ -104,7 +104,7 @@
 .template--two-columns-feature-left
   .section__news-item--feature
   .section__news-item__thumbnail {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;
@@ -131,7 +131,9 @@
 .template--two-columns-feature-left
   .section__news-item--feature
   .section__news-item__meta-container {
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   display: flex;
   height: 100%;
   padding: 10px;
