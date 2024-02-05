@@ -1,3 +1,18 @@
+@media only screen and (max-width: 680px) {
+  .archive-container .archive-posts-container {
+    grid-template-columns: 1fr !important;
+  }
+  .archive-container
+    .archive-posts-container
+    .archive-posts-container__inner
+    .archive-post
+    .archive-post__thumbnail {
+    height: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
 .archive-container h2.archive-header {
   color: var(--unhas-red);
   font-size: 3rem;
