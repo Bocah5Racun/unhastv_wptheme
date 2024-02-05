@@ -178,7 +178,7 @@
 .template--three-columns-feature-center
   .section__news-item--feature
   .section__news-item__title {
-  font-size: clamp(1rem, 3vw, 4rem);
+  font-size: clamp(1rem, 3vw, 2rem);
 }
 .template--three-columns-feature-center .section__news-item {
   padding: 8px 0;
