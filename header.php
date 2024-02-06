@@ -8,7 +8,11 @@
 <link rel="stylesheet" href="<?= esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
     crossorigin="anonymous"></script>
-<?php wp_head(); ?>
+<?php
+wp_head();
+$cta_text = get_theme_mod( 'cta_text' );
+
+?>
 </head>
 <body>
 
@@ -57,6 +61,28 @@ endif;
 endif;
 ?>
 
+<div id="mobile-menu">
+    <img id="mobile-menu-close" onclick="toggleMenu()" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-close.png" ; ?> " />
+    <div class="mobile-menu__brand"><?php the_custom_logo(); ?></div>
+    
+    <?php
+            if( $cta_text ) :
+        ?>
+    <a id="mobile-menu__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" title="<?= $cta_text; ?>" target="_blank">
+            <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <span class="cta-text"><?= $cta_text; ?></span>
+        </a>
+    <?php endif; ?>
+<?php wp_nav_menu( array(
+    "theme_location" => "header-nav",
+    "menu_class" => "menu-main-menu"
+    ));
+?>
+<div class="mobile-menu__footer">
+    <span>©2023<?= ( date("Y") != "2023" ) ? "–" . date("Y") : "";?> <?= get_bloginfo( 'name' ); ?>. All rights reserved.</span>
+</div>
+</div>
+
 <div id="sticky-header" class="sticky-header--conceal">
     <div id="sticky-header__inner" class="container--constrained">
         <div class="sticky-header__brand"><?php the_custom_logo(); ?></div>
@@ -68,15 +94,17 @@ endif;
             ?>
         </div>
         <?php
-            $cta_text = get_theme_mod( 'cta_text' );
             if( $cta_text ) :
         ?>
         <a id="sticky-header__cta" href="<?= get_theme_mod( 'cta_url' ); ?>" title="<?= $cta_text; ?>" target="_blank">
-            <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png" ?>" />
+            <img loading="lazy" class="header__cta__record-icon" src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-record.png"; ?>" />
             <span class="cta-text"><?= $cta_text; ?></span>
         </a>
 
         <?php endif; ?>
+        <div class="burger-icon-container" onclick="toggleMenu()">
+            <img src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-menu.png"; ?>" />
+        </div>
     </div>
     <div class="header__border-gradient"></div>
 </div>
@@ -95,6 +123,9 @@ endif;
         </a>
 
         <?php endif; ?>
+        <div class="burger-icon-container" onclick="toggleMenu()">
+            <img src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-menu.png"; ?>" />
+        </div>
     </div>
     <div class="unhastv-header__main-nav">
         <?php wp_nav_menu( array(

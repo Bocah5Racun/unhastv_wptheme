@@ -7,6 +7,12 @@
     gap: 1rem !important;
     margin-bottom: 1rem !important;
   }
+  #footer-menu {
+    flex-direction: column !important;
+  }
+  #footer-menu .menu-item::before {
+    display: none !important;
+  }
 }
 
 #unhastv-footer {
@@ -14,7 +20,7 @@
   background-color: var(--ultra-dark-gray);
   padding: 25px 0;
   color: var(--light-gray);
-  font-size: 0.875rem;
+  font-size: 0.675rem;
 }
 
 .footer__main {

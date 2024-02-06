@@ -24,6 +24,7 @@
 }
 .archive-container .filter-by-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .archive-container .filter-by-container .category-filter {
