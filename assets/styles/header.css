@@ -244,7 +244,7 @@ ul.sub-menu li:hover {
 #mobile-menu .menu-main-header-menu-container {
   height: 100%;
 }
-#mobile-menu #menu-main-header-menu {
+#mobile-menu .menu-main-menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -253,17 +253,17 @@ ul.sub-menu li:hover {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#mobile-menu #menu-main-header-menu > li {
+#mobile-menu .menu-main-menu > li {
   min-height: initial;
   flex: 1;
   text-transform: uppercase;
   font-weight: 700;
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
-#mobile-menu #menu-main-header-menu > li:hover {
+#mobile-menu .menu-main-menu > li:hover {
   color: var(--light-gray);
 }
-#mobile-menu #menu-main-header-menu .sub-menu {
+#mobile-menu .menu-main-menu .sub-menu {
   display: none;
 }
 .mobile-menu__footer {
