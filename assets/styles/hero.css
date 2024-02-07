@@ -71,7 +71,7 @@
 /* .hero__news-item--large styles */
 .hero__news-item--large {
   width: 100%;
-  min-height: 330px;
+  min-height: 420px;
   max-height: 660px;
   height: auto !important;
   aspect-ratio: 16 / 9 !important;

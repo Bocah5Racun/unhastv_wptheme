@@ -204,7 +204,7 @@ ul.sub-menu li:hover {
   position: fixed;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1vh;
   background-color: #fff;
   left: -100vw;
   top: 0;
@@ -254,14 +254,16 @@ ul.sub-menu li:hover {
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 #mobile-menu .menu-main-menu > li {
   min-height: initial;
-  flex: 1;
   text-transform: uppercase;
   font-weight: 700;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2vh 0;
+}
+#mobile-menu .menu-main-menu > li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 #mobile-menu .menu-main-menu > li:hover {
   color: var(--light-gray);
