@@ -55,7 +55,9 @@ if( $the_query->current_post == 0 ): // check if first post
 ?>
 
 <div class="hero__news-item--large">
-    <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
+    <div class="hero__news-item__thumbnail-container">
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
+    </div>
 
     <div class="hero__news-item__overlay"></div>
     <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
