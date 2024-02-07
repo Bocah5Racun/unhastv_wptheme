@@ -5,6 +5,20 @@
   .hero--feature__excerpt {
     display: none !important;
   }
+  .hero__news-item--large .hero__news-item__thumbnail {
+    width: 100vw !important;
+    height: auto !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hero__news-item__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 18, 20, 0) 35%,
+      rgba(15, 18, 20, 0.8) 45%,
+      rgba(15, 18, 20, 1) 60%
+    ) !important;
+  }
 }
 
 #hero {
@@ -74,7 +88,7 @@
 /* .hero__news-item--large styles */
 .hero__news-item--large {
   width: 100%;
-  min-height: 420px;
+  min-height: 300px;
   max-height: 660px;
   height: auto !important;
   aspect-ratio: 16 / 9 !important;
