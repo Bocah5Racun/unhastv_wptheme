@@ -1,4 +1,6 @@
 <?php
+
+$version = '1.1';
 function register_unhastv_menus() {
   register_nav_menus(
     array(
@@ -15,28 +17,28 @@ function register_unhastv_menus() {
 }
 
 function unhastv_enqueue_styles() {
-  wp_enqueue_style( 'unhastv-header-styles', get_template_directory_uri() . '/assets/styles/header.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-footer-styles', get_template_directory_uri() . '/assets/styles/footer.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-ads-styles', get_template_directory_uri() . '/assets/styles/ads.css', array(), '1.0', 'all' );
-  wp_enqueue_style( 'unhastv-badges-and-buttons-styles', get_template_directory_uri() . '/assets/styles/badges-buttons-styles.css', array(), '1.0', 'all' );
+  wp_enqueue_style( 'unhastv-header-styles', get_template_directory_uri() . '/assets/styles/header.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/header.css'), 'all' );
+  wp_enqueue_style( 'unhastv-footer-styles', get_template_directory_uri() . '/assets/styles/footer.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/footer.css'), 'all' );
+  wp_enqueue_style( 'unhastv-ads-styles', get_template_directory_uri() . '/assets/styles/ads.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/ads.css'), 'all' );
+  wp_enqueue_style( 'unhastv-badges-and-buttons-styles', get_template_directory_uri() . '/assets/styles/badges-buttons-styles.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/badges-buttons-styles.css'), 'all' );
 
   if(is_front_page()) {
-    wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), '1.0', 'all' );
-    wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), '1.0', 'all' );
-    wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), '1.0', 'all' );
-    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), '1.0', 'all');
+    wp_enqueue_style( 'unhastv-slider-styles', get_template_directory_uri() . '/assets/styles/slider-styles.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/slider-styles.css'), 'all' );
+    wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/hero.css'), 'all' );
+    wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/section-styles.css'), 'all' );
+    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/popup.css'), 'all');
   }
   
   if(is_single()) {
-    wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/single.css'), 'all' );
   }
 
   if( get_post_type() === 'product' ) {
-    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/single-product.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'unhastv-product-styles', get_template_directory_uri() . '/assets/styles/single-product.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/single-product.css'), 'all' );
   }
 
   if(is_archive()) {
-    wp_enqueue_style( 'unhastv-archive-styles', get_template_directory_uri() . '/assets/styles/archive.css', array(), '1.0', 'all' );
+    wp_enqueue_style( 'unhastv-archive-styles', get_template_directory_uri() . '/assets/styles/archive.css', array(), filemtime(get_template_directory_uri() . '/assets/styles/archive.css'), 'all' );
   }
 }
 
@@ -45,7 +47,7 @@ function unhastv_enqueue_scripts() {
   wp_enqueue_script( 'ad-controls', get_template_directory_uri() . '/assets/scripts/ad-controls.js', NULL, NULL, true );
 
   if(is_front_page() || get_theme_mod('popup-show')) {
-    wp_enqueue_script( 'unhastv-popup-controls', get_template_directory_uri() . '/assets/scripts/popup-controls.js', array(), '1.0', 'all');
+    wp_enqueue_script( 'unhastv-popup-controls', get_template_directory_uri() . '/assets/scripts/popup-controls.js', NULL, NULL, true);
   }
 }
 
