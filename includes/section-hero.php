@@ -63,7 +63,7 @@ if( $the_query->current_post == 0 ): // check if first post
             <div class="category-badge--with-background"><?php echo $the_category; ?></div>
             <h1 class="hero__news-item__title"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
-            <p class="hero--feature__excerpt" class="line-limit"><?= get_the_excerpt(); ?></p>
+            <p class="hero--feature__excerpt text-container line-limit-3"><?= get_the_excerpt(); ?></p>
         </div>
     </a>
 </div>
