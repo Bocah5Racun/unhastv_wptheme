@@ -5,7 +5,7 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'posts_per_page' => '7',
+    'posts_per_page' => '8',
     'orderby' => 'date',
     'order' => 'DESC',
 );
@@ -102,7 +102,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="hero__news-item__title line-limit-3"><?php the_title(); ?></h1>
+            <h1 class="hero__news-item__title"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>

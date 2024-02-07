@@ -4,18 +4,15 @@ const menuTrigger = window.innerHeight / 3;
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuClose = document.getElementById("mobile-menu-close");
 let mobileMenuTrigger = false;
+const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
 
-window.onload = () => {
-  const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
-
-  document.addEventListener("scroll", () => {
-    if (document.body.scrollTop > menuTrigger) {
-      stickyHeader.style.top = bodyOffset;
-    } else {
-      stickyHeader.style.top = -stickyHeaderHeight;
-    }
-  });
-};
+document.addEventListener("scroll", () => {
+  if (document.body.scrollTop > menuTrigger) {
+    stickyHeader.style.top = bodyOffset;
+  } else {
+    stickyHeader.style.top = -stickyHeaderHeight;
+  }
+});
 
 function toggleMenu() {
   mobileMenuTrigger = !mobileMenuTrigger;
