@@ -23,5 +23,8 @@ function toggleMenu() {
     mobileMenu.classList.add("mobile-menu__reveal");
     mobileMenuClose.classList.add("mobile-menu-close__spin-right");
   }
-  if (!mobileMenuTrigger) mobileMenu.classList.remove("mobile-menu__reveal");
+  if (!mobileMenuTrigger) {
+    mobileMenu.classList.remove("mobile-menu__reveal");
+    mobileMenuClose.classList.remove("mobile-menu-close__spin-right");
+  }
 }
