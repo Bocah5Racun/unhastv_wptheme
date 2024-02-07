@@ -92,6 +92,7 @@
   max-height: 660px;
   height: auto !important;
   aspect-ratio: 16 / 9 !important;
+  overflow: hidden;
 }
 .hero__news-item--large .hero__news-item__thumbnail {
   position: absolute;
