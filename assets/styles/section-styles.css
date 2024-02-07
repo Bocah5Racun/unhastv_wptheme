@@ -65,7 +65,7 @@
 .template--two-columns-feature-left
   .section__news-item--feature
   .section__news-item__title {
-  font-size: 2rem;
+  font-size: clamp(1rem, 3vw, 2rem);
 }
 .template--two-columns-feature-left .section__news-item__link {
   position: relative;
