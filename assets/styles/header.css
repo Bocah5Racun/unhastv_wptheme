@@ -11,6 +11,9 @@
   .burger-icon-container {
     display: block !important;
   }
+  .hero--feature__excerpt {
+    display: none !important;
+  }
 }
 @media only screen and (max-width: 1200px) {
   #sticky-header__cta .cta-text {
@@ -270,4 +273,8 @@ ul.sub-menu li:hover {
   font-size: 0.675rem;
   padding: 1rem 0;
   text-align: center;
+}
+
+.hero--feature__excerpt {
+  display: block;
 }
