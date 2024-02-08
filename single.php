@@ -82,24 +82,24 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
     <span class="single-date"><?php the_date(); ?></span>
 <?php endif; ?>
 </div>
-<?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image my-2' ) ); ?>
-<div class="socials-container container--constrained">
-        <div class="socials-header">Share</div>
-        <div class="socials-icons">
-            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
-            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>" title="Bagikan artikel ini lewat Facebook" />
-            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>" title="Bagikan artikel ini lewat WhatsApp" />
-            <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-email.png" ?>" title="Bagikan artikel ini lewat email" />
-            <img loading="lazy" class="socials-icon to-red copy" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-copy.png" ?>" title="Salin link artikel ini ke clipboard" onclick='( ()=> {
-                const alertText = "Baca Artikel Ini di Unhas TV: <?php echo get_the_permalink(); ?>";
-                copyToClipboard(alertText);
-            })()'/>
-        </div>
-    </div>
 </div>
 
 <div class="single-body-container">
+<div class="socials-container">
+    <div class="socials-icons">
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>" title="Bagikan artikel ini lewat Facebook" />
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>" title="Bagikan artikel ini lewat WhatsApp" />
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-email.png" ?>" title="Bagikan artikel ini lewat email" />
+        <img loading="lazy" class="socials-icon to-red copy" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-copy.png" ?>" title="Salin link artikel ini ke clipboard" onclick='( ()=> {
+            const alertText = "Baca Artikel Ini di Unhas TV: <?php echo get_the_permalink(); ?>";
+            copyToClipboard(alertText);
+        })()'/>
+    </div>
+</div>
     <div class="content-container text-container">
+        
+<?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
         <?php the_content(); ?>
         <div class="single-post-tags">
 

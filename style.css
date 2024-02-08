@@ -85,7 +85,9 @@ main {
 }
 
 .text-container {
-  max-width: clamp(160px, 70vw, 700px);
+  max-width: clamp(160px, 70vw, 600px);
+  font-size: 20px;
+  color: #000;
 }
 
 .line-limit {
@@ -168,7 +170,7 @@ hr {
 #breadcrumbs {
   color: var(--ultra-dark-gray);
   font-size: 0.875rem;
-  font-weight: 500;
+  text-transform: uppercase;
 }
 #breadcrumbs > span {
   display: flex;
