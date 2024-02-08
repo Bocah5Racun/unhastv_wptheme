@@ -87,7 +87,6 @@ main {
 .text-container {
   max-width: clamp(160px, 70vw, 600px);
   font-size: 20px;
-  color: #000;
 }
 
 .line-limit {
