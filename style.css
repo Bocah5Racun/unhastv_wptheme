@@ -85,8 +85,7 @@ main {
 }
 
 .text-container {
-  max-width: clamp(160px, 70vw, 600px);
-  font-size: 20px;
+  max-width: clamp(160px, 90vw, 600px);
 }
 
 .line-limit {
@@ -231,4 +230,22 @@ a.page-numbers:hover {
   background-color: var(--unhas-red);
   font-weight: bold;
   color: var(--light-gray);
+}
+
+.skeleton {
+  background: linear-gradient(to right, #cacaca 8%, #d6d6d6 18%, #cacaca 33%);
+  animation-name: loading;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 0px 0;
+  }
+  100% {
+    background-position: 100em 0;
+  }
 }

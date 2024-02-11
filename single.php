@@ -153,7 +153,7 @@ $the_query = new WP_QUERY( $query_args );
 
 <?php if( $the_query->have_posts() ) : ?>
 
-<div class="related-articles-container">
+<section class="related-articles-container">
     <h2 class="related-articles-container__header">Artikel Terkait</h2>
 
 <div class="related-articles-container__inner">
@@ -193,7 +193,7 @@ endif;
         </div>
         <h1 class="title line-limit-3"><?php the_title(); ?></h1>
     </a>
-    <div class="date"><?php echo get_the_date(); ?></div>
+    <time class="date"><?php echo get_the_date(); ?></time>
 </div>
 
 <?php
@@ -224,7 +224,9 @@ if( $the_query->have_posts() ):
 
 ?>
 
-<div class="related-articles-container">
+</section>
+
+<section class="related-articles-container">
     <h2 class="related-articles-container__header">Artikel <?= $tags ? $the_post_cats[0]->name : ""; ?> Lain</h2>
 
 <div class="related-articles-container__inner">
@@ -277,7 +279,7 @@ endif;
 ?>
 
 </div>
-</div>
+</section>
 
 </main>
 

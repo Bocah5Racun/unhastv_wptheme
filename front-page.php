@@ -1,5 +1,3 @@
-<body>
-
 <?php
 
 wp_enqueue_script( 'slider-controls', get_template_directory_uri() . '/assets/scripts/slider-controls.js', NULL, NULL, true );
@@ -60,6 +58,8 @@ get_template_part(
         ?>
     </section>
 
+    <hr />
+
     <section id="section-2" class="section">
         <?php
             get_template_part(
@@ -89,6 +89,8 @@ get_template_part(
         </script>
     </section>
 
+    <hr />
+
     <section id="section-3" class="section">
         <?php
             get_template_part(
@@ -102,8 +104,12 @@ get_template_part(
             );
         ?>
     </section>
+
     <section class="section adspace--landscape container--constrained">
     </section>
+
+    <hr />
+
     <section id="section-4" class="section">
         <?php
             get_template_part(
@@ -133,6 +139,8 @@ get_template_part(
         </script>
     </section>
 
+    <hr />
+
     <section id="section-5" class="section">
         <?php
             get_template_part(
@@ -146,6 +154,8 @@ get_template_part(
             );
         ?>
     </section>
+
+    <hr />
 
     <section id="section-6" class="section">
         <?php
