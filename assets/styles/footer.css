@@ -20,7 +20,7 @@
   background-color: var(--ultra-dark-gray);
   padding: 25px 0;
   color: var(--light-gray);
-  font-size: 0.675rem;
+  font-size: 0.85rem;
 }
 
 .footer__main {
@@ -44,6 +44,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 #footer-menu > li:not(:first-child)::before {

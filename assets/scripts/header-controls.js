@@ -1,17 +1,20 @@
-const stickyHeader = document.getElementById("sticky-header");
-const stickyHeaderHeight = stickyHeader.offsetHeight;
-const menuTrigger = window.innerHeight / 3;
+window.addEventListener("DOMContentLoaded", () => {
+  const stickyHeader = document.getElementById("sticky-header");
+  const stickyHeaderHeight = stickyHeader.offsetHeight;
+  const menuTrigger = window.innerHeight / 3;
+  const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
+
+  document.addEventListener("scroll", () => {
+    stickyHeader.style.top =
+      window.scrollY > menuTrigger
+        ? `${bodyOffset}px`
+        : `${-stickyHeaderHeight}px`;
+  });
+});
+
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuClose = document.getElementById("mobile-menu-close");
-const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
 let mobileMenuTrigger = false;
-
-document.addEventListener("scroll", () => {
-  stickyHeader.style.top =
-    window.scrollY > menuTrigger
-      ? `${bodyOffset}px`
-      : `${-stickyHeaderHeight}px`;
-});
 
 function toggleMenu() {
   mobileMenuTrigger = !mobileMenuTrigger;
