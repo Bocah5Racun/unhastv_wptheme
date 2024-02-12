@@ -80,7 +80,7 @@ if( $the_query->current_post == 0 ):
 ?>
 
 <div class="section__news-item--feature">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
         <img loading="lazy" class="section__news-item__thumbnail" src="<?php echo get_the_post_thumbnail_url(); ?>" />
         <div class="hero__news-item__overlay"></div>
         <div class="section__news-item__meta-container">
@@ -96,7 +96,7 @@ if( $the_query->current_post == 0 ):
 <?php else: ?>
 
 <div class="section__news-item">
-    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>">
+    <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
         <div class="section__news-item__meta-container">
             <div class="category-badge">
                 <?php echo $the_category; ?>

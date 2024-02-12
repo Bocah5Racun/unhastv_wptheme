@@ -63,9 +63,9 @@ if( $the_query->current_post == 0 ) :
 ?>
 
 <div class="section__news-item--feature">
-    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="video-gallery__thumbnail" /></a>
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="video-gallery__thumbnail" /></a>
     <div class="section__news-item__meta">
-        <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
+        <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?= get_the_date(); ?></div>
         <div class="section__news-item__tags">
             <?php foreach( $tags as $tag ) : ?>
@@ -97,7 +97,7 @@ if( $the_query->current_post == 0 ) :
 <?php else : ?>
 
     <div class="video-gallery__video">
-    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="video-gallery__thumbnail" />
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" class="video-gallery__thumbnail" />
     <div class="video-gallery__meta">
         <h1 class="video-gallery__title line-limit-3"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?= get_the_date(); ?></div>
