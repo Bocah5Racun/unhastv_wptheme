@@ -81,6 +81,12 @@ article {
   border-radius: 6px;
   align-self: center;
 }
+.single-body-container .content-container .single-feature-image-caption {
+  font-size: 0.875rem;
+  margin-top: 4px;
+  color: var(--dark-gray);
+  font-style: italic;
+}
 .single-body-container .content-container p {
   line-height: 150%;
   word-wrap: break-word;

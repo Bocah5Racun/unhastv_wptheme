@@ -100,6 +100,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
     <div class="content-container text-container">
         
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
+<div class="single-feature-image-caption"><?= get_the_post_thumbnail_caption(); ?></div>
         <?php the_content(); ?>
         <div class="single-post-tags">
 

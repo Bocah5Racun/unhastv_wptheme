@@ -63,7 +63,7 @@ if( $the_query->current_post == 0 ) :
 ?>
 
 <div class="section__news-item--feature">
-    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="video-gallery__thumbnail" /></a>
+    <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><img src="<?= get_the_post_thumbnail_url( get_the_ID(), wp_is_mobile()  ? 'medium_large' : 'full' ); ?>" class="video-gallery__thumbnail" /></a>
     <div class="section__news-item__meta">
         <a class="section__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>"><h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1></a>
         <div class="hero__news-item__date"><?= get_the_date(); ?></div>

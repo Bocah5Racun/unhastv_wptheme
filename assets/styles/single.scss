@@ -77,6 +77,12 @@ article {
       border-radius: 6px;
       align-self: center;
     }
+    .single-feature-image-caption {
+      font-size: 0.875rem;
+      margin-top: 4px;
+      color: var(--dark-gray);
+      font-style: italic;
+    }
     p {
       line-height: 150%;
       word-wrap: break-word;
