@@ -3,15 +3,14 @@ const stickyHeaderHeight = stickyHeader.offsetHeight;
 const menuTrigger = window.innerHeight / 3;
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuClose = document.getElementById("mobile-menu-close");
-let mobileMenuTrigger = false;
 const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
+let mobileMenuTrigger = false;
 
 document.addEventListener("scroll", () => {
-  if (window.scrollY > menuTrigger) {
-    stickyHeader.style.top = bodyOffset;
-  } else {
-    stickyHeader.style.top = -stickyHeaderHeight;
-  }
+  stickyHeader.style.top =
+    window.scrollY > menuTrigger
+      ? `${bodyOffset}px`
+      : `${-stickyHeaderHeight}px`;
 });
 
 function toggleMenu() {
