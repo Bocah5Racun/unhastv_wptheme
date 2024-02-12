@@ -71,7 +71,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 
 <div class="single-header my-2">
 <?php if( $the_post_cats ): ?>
-<a href="<?= get_category_link( $the_category_id ); ?>"class="single-category category-badge--with-background" title="<?= $the_post_cats[0]->name; ?>">
+<a href="<?= get_category_link( $the_category_id ); ?>"class="single-category category-badge--with-background">
     <?php echo $the_post_cats[0]->name; ?>
 </a>
 <?php endif; ?>
@@ -110,7 +110,7 @@ $post_id = get_the_ID();
 
 if( $tags ) :
 foreach( $tags as $tag ) : ?>
-            <a href="<?php echo get_tag_link( $tag->term_id ); ?>" title="<?= $tag; ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
+            <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
 <?php endforeach; endif; ?>
         </div>
     </div>
@@ -184,7 +184,7 @@ endif;
 ?>
 
 <div class="related-article">
-    <a class="link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
+    <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
             <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
@@ -260,7 +260,7 @@ endif;
 ?>
 
 <div class="related-article">
-    <a class="link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
+    <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
         <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
             <div class="category-badge--with-background">
