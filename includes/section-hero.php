@@ -60,11 +60,11 @@ if( $the_query->current_post == 0 ): // check if first post
     </div>
 
     <div class="hero__news-item__overlay"></div>
-    <a class="hero__news-item__link" href="<?php echo get_the_permalink(); ?>">
+    <a class="hero__news-item__link" href="<?= get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
         <div class="hero__news-item__meta-container container--constrained">
-            <div class="category-badge--with-background"><?php echo $the_category; ?></div>
+            <div class="category-badge--with-background"><?= $the_category; ?></div>
             <h1 class="hero__news-item__title"><?php the_title(); ?></h1>
-            <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
+            <div class="hero__news-item__date"><?= get_the_date(); ?></div>
             <p class="hero--feature__excerpt text-container line-limit-3"><?= get_the_excerpt(); ?></p>
         </div>
     </a>

@@ -45,11 +45,9 @@ function unhastv_enqueue_styles() {
 
 function unhastv_enqueue_scripts() {
   wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
-  wp_enqueue_script( 'ad-controls', get_template_directory_uri() . '/assets/scripts/ad-controls.js', NULL, NULL, true );
 
   if(is_front_page() || get_theme_mod('popup-show')) {
     wp_enqueue_script( 'unhastv-popup-controls', get_template_directory_uri() . '/assets/scripts/popup-controls.js', NULL, NULL, true);
-    wp_enqueue_script( 'unhastv-carousel-controls', get_template_directory_uri() . '/assets/scripts/produk-carousel.js', array('jquery'), NULL, true);
   }
 }
 
