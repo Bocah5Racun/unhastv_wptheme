@@ -56,7 +56,7 @@ if( $the_query->current_post == 0 ): // check if first post
 
 <div class="hero__news-item--large">
     <div class="hero__news-item__thumbnail-container">
-        <img fetchpriority="high" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>" class="hero__news-item__thumbnail" />
+        <img fetchpriority="high" src="<?= get_the_post_thumbnail_url( get_the_ID(), wp_is_mobile() ? 'medium' : 'full' ); ?>" class="hero__news-item__thumbnail" />
     </div>
 
     <div class="hero__news-item__overlay"></div>

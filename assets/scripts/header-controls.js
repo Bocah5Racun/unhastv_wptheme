@@ -7,7 +7,7 @@ let mobileMenuTrigger = false;
 const bodyOffset = document.getElementById("wpadminbar") ? 32 : 0;
 
 document.addEventListener("scroll", () => {
-  if (document.body.scrollTop > menuTrigger) {
+  if (window.scrollY > menuTrigger) {
     stickyHeader.style.top = bodyOffset;
   } else {
     stickyHeader.style.top = -stickyHeaderHeight;

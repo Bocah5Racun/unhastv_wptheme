@@ -22,12 +22,14 @@ Theme Name: Unhas TV News Theme
   font-family: "Inter";
   font-weight: 400;
   src: url("./assets/fonts/Inter-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
   font-weight: 700;
   src: url("./assets/fonts/Inter-Bold.ttf");
+  font-display: swap;
 }
 
 @font-face {
@@ -35,12 +37,14 @@ Theme Name: Unhas TV News Theme
   font-weight: 700;
   font-stretch: 0% 200%;
   src: url("./assets/fonts/InriaSans-Bold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "IBM Plex Serif";
   font-weight: 700;
   src: url("./assets/fonts/IBMPlexSerif-Bold.ttf");
+  font-display: swap;
 }
 
 * {
