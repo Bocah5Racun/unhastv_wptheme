@@ -40,13 +40,6 @@ Theme Name: Unhas TV News Theme
   font-display: swap;
 }
 
-@font-face {
-  font-family: "IBM Plex Serif";
-  font-weight: 700;
-  src: url("./assets/fonts/IBMPlexSerif-Bold.ttf");
-  font-display: swap;
-}
-
 * {
   box-sizing: border-box;
 }

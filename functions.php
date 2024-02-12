@@ -44,7 +44,6 @@ function unhastv_enqueue_styles() {
 }
 
 function unhastv_enqueue_scripts() {
-  wp_enqueue_script('jquery');
   wp_enqueue_script( 'header-controls', get_template_directory_uri() . '/assets/scripts/header-controls.js', NULL, NULL, true );
   wp_enqueue_script( 'ad-controls', get_template_directory_uri() . '/assets/scripts/ad-controls.js', NULL, NULL, true );
 
@@ -629,3 +628,12 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // shortcode functions
 include( 'shortcodes.php' );
+
+// remove jquery
+function remove_jquery() {
+  if (!is_admin()) {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', false);
+  }
+}
+add_action('init', 'remove_jquery');
