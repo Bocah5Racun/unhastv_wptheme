@@ -92,7 +92,7 @@ endif;
 <div class="hero__news-item">
     <a class="section__news-item__link" href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
     <div class="hero__news-item__image-container">
-        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
+        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), wp_is_mobile() ? 'medium' : 'medium_large' ); ?>" class="hero__news-item__thumbnail" />
         <?php if( strlen( $category_filter > 0 ) ): ?>
         <div class="category-badge--with-background">
             <?php echo $the_category; ?>

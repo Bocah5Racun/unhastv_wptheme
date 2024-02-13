@@ -1,5 +1,5 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html lang="id">
 <head>
 <meta charset="<?php bloginfo( "charset" ); ?>">

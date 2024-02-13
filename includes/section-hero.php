@@ -49,14 +49,13 @@ endif;
 if( strlen( $the_category ) == 0 ):
     $the_category = $cats[0]->name;
 endif;
-
 if( $the_query->current_post == 0 ): // check if first post
 
 ?>
 
 <div class="hero__news-item--large">
     <div class="hero__news-item__thumbnail-container">
-        <img fetchpriority="high" src="<?= get_the_post_thumbnail_url( get_the_ID(), wp_is_mobile() ? 'medium_large' : 'full' ); ?>" class="hero__news-item__thumbnail" />
+        <?= get_the_post_thumbnail( get_the_ID(), wp_is_mobile() ? 'medium_large' : 'full', array( 'class' => 'hero__news-item__thumbnail', 'fetchpriority' => 'high' ) ); ?>
     </div>
 
     <div class="hero__news-item__overlay"></div>
