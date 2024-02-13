@@ -329,6 +329,7 @@
   .section__news-item__thumbnail {
   height: 100%;
   border-radius: 0;
+  aspect-ratio: 16 / 9;
 }
 .template--three-columns-feature-left
   .section__news-item
