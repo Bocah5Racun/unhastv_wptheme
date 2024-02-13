@@ -165,7 +165,6 @@ hr {
 #breadcrumbs {
   color: var(--ultra-dark-gray);
   font-size: 0.875rem;
-  text-transform: uppercase;
 }
 #breadcrumbs > span {
   display: flex;
