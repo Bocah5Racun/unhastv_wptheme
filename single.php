@@ -1,5 +1,3 @@
-<body>
-
 <?php
 
 wp_enqueue_script( 'sticky-controls', get_template_directory_uri() . '/assets/scripts/sticky-controls.js', NULL, NULL, true );
@@ -150,6 +148,9 @@ $query_args = array(
 
 $the_query = new WP_QUERY( $query_args );
 
+global $related_post_ids;
+$related_post_ids = [ $post_id ];
+
 ?>
 
 <?php if( $the_query->have_posts() ) : ?>
@@ -161,6 +162,8 @@ $the_query = new WP_QUERY( $query_args );
 
 <?php while( $the_query->have_posts() ):
 $the_query->the_post();
+$related_post_ids[] = get_the_ID();
+
 
 /**
  * get the first sub-category.
@@ -200,6 +203,7 @@ endif;
 <?php
 wp_reset_postdata();
 endwhile;
+wp_cache_set( 'related_post_ids', $related_post_ids );
 endif;
 endif;
 
@@ -210,11 +214,13 @@ endif;
 
 if( $the_post_cats):
 
+$related_post_ids = wp_cache_get( 'related_post_ids' );
+
 $query_args = array(
     'posts_per_page' => '4',
     'category_name' => $the_category_slug,
     'orderby' => 'date',
-    'post__not_in' => array( $post_id ),
+    'post__not_in' => $related_post_ids,
 );
 
 $the_query = new WP_QUERY( $query_args );
@@ -285,5 +291,3 @@ endif;
 </main>
 
 <?php get_footer(); ?>
-
-</body>

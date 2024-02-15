@@ -5,7 +5,7 @@ global $shown_posts;
 $loop_args = array(
     'post_type' => 'post',
     'ignore_sticky_posts' => true,
-    'posts_per_page' => '8',
+    'posts_per_page' => '7',
     'orderby' => 'date',
     'order' => 'DESC',
 );
@@ -86,7 +86,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
+            <h1 class="section__news-item__title"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>
@@ -117,13 +117,13 @@ if( $the_query->current_post == 0 ):
                 <?php echo $the_category; ?>
             </div>
             <a href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
-                <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
+                <h1 class="section__news-item__title"><?php the_title(); ?></h1>
             </a>       
             <p class="line-limit"><?php echo get_the_excerpt(); ?></p>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
         <a href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
-        <?php the_post_thumbnail( wp_is_mobile() ? 'thumbnail' : 'medium', array( 'loading' => 'lazy', 'class' => 'section__news-item__thumbnail' ) ); ?>
+        <?php the_post_thumbnail( wp_is_mobile() ? 'thumbnail' : 'medium_large', array( 'loading' => 'lazy', 'class' => 'section__news-item__thumbnail' ) ); ?>
         </a>
     </div>
 </div>

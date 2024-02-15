@@ -37,7 +37,7 @@ if( $the_query->have_posts() ):
 <div class="template--three-columns-feature-center container--constrained">
 <div class="section-header"> 
     
-<a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>" title="<?= $category_id ?>">
+<a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>" title="<?= $category_id ?? $category_id; ?>">
 
 <h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
 </a>
@@ -106,7 +106,7 @@ if( $the_query->current_post == 0 ):
                 </a>
             <?php endif; ?>
             <a href="<?php echo get_the_permalink(); ?>" title="<?= get_the_title(); ?>">
-                <h1 class="section__news-item__title line-limit-3"><?php the_title(); ?></h1>
+                <h1 class="section__news-item__title"><?php the_title(); ?></h1>
             </a>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>

@@ -37,12 +37,16 @@ if( $the_query->have_posts() ):
 <div class="template--three-columns-feature-left container--constrained">
     
 <div class="section-header"> 
-    
-<a class="section-header__inner-container" href="<?php if( isset( $category_id ) ) echo $category_id; ?>"  title="<?= $category_id; ?>">
 
-<h1><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+<?php if( isset( $category_id ) ) : ?>
+<a class="section-header__inner-container" href="<?= $category_id; ?>">
+<?php endif; ?>
 
+<h1 class="to-red"><?= $category_filter ? get_category_by_slug( $category_filter )->name : "Latest"; ?></h1>
+
+<?php if( isset( $category_id ) ) : ?>
 </a>
+<?php endif; ?>
 
 </div>
 
@@ -87,7 +91,7 @@ if( $the_query->current_post == 0 ):
             <div class="category-badge--with-background">
                 <?php echo $the_category; ?>
             </div>
-            <h1 class="section__news-item__title line-limit"><?php the_title(); ?></h1>
+            <h1 class="section__news-item__title"><?php the_title(); ?></h1>
             <div class="hero__news-item__date"><?php echo get_the_date(); ?></div>
         </div>
     </a>

@@ -29,21 +29,6 @@ get_template_part(
 ?>
 <main>
 
-    <section class="section adspace--landscape container--constrained">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-        crossorigin="anonymous"></script>
-        <!-- below-hero-horizontal -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="3743939319"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </section>
-    
     <section id="section-1" class="section">
         <?php
             get_template_part(
@@ -74,21 +59,6 @@ get_template_part(
         ?>
     </section>
 
-    <section class="section adspace--landscape container--constrained">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-            crossorigin="anonymous"></script>
-        <!-- section-horizontal-1 -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="3113383928"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </section>
-
     <hr />
 
     <section id="section-3" class="section">
@@ -105,9 +75,6 @@ get_template_part(
         ?>
     </section>
 
-    <section class="section adspace--landscape container--constrained">
-    </section>
-
     <hr />
 
     <section id="section-4" class="section">
@@ -122,21 +89,6 @@ get_template_part(
                 )
             );
         ?>
-    </section>
-
-    <section class="section adspace--landscape container--constrained">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-            crossorigin="anonymous"></script>
-        <!-- section-horizontal-2 -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="7790995533"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </section>
 
     <hr />
@@ -169,21 +121,6 @@ get_template_part(
                 )
             );
         ?>
-    </section>
-
-    <section class="section adspace--landscape container--constrained">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-            crossorigin="anonymous"></script>
-        <!-- section-horizontal-3 -->
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="6286342179"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </section>
 
 </main>
