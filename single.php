@@ -21,21 +21,8 @@ if( $the_post_cats ) {
 add_filter( 'the_content', 'prefix_insert_post_ads' );
 function prefix_insert_post_ads( $content ) {
 	//CHANGE BELOW AdSense CODE WITH YOUR OWN CODE
-	$ad_code = '
-    <div class="single-adspace">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3215141506790563"
-            crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-3215141506790563"
-            data-ad-slot="8727660920"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
-';
+	$ad_code = '<!-- Ad Placeholder -->';
+    
     if ( is_single() ) {
 	//CHANGE 3 TO DESIRED NUMBER YOU WANT ADVERT TO BE APPEARED
         return prefix_insert_after_paragraph( $ad_code, 5, $content );
@@ -148,7 +135,6 @@ $query_args = array(
 
 $the_query = new WP_QUERY( $query_args );
 
-global $related_post_ids;
 $related_post_ids = [ $post_id ];
 
 ?>
@@ -225,7 +211,7 @@ $query_args = array(
 
 $the_query = new WP_QUERY( $query_args );
 
-if( !$the_query->have_posts() ) $the_query = new WP_QUERY( $query_args );
+if( !$the_query->have_posts() ) $the_query = new WP_QUERY( array( 'posts_per_page' => '4', 'orderby' => 'random', 'post__not_in' => $related_post_ids ) );
 
 if( $the_query->have_posts() ):
 
