@@ -153,11 +153,6 @@ article {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.related-articles-container__inner .related-article .image-container .category-badge--with-background {
-  position: absolute;
-  left: 4px;
-  bottom: 4px;
-}
 .related-articles-container__inner .related-article .title {
   font-size: clamp(0.85rem, 2vw, 1.25rem);
 }

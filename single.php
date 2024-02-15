@@ -212,7 +212,7 @@ endif;
 
 <?php
 
-if( $the_post_cats):
+if( $the_post_cats ):
 
 $related_post_ids = wp_cache_get( 'related_post_ids' );
 
@@ -225,7 +225,7 @@ $query_args = array(
 
 $the_query = new WP_QUERY( $query_args );
 
-if( !$the_query->have_posts() ) $the_query = new WP_QUERY( array( 'posts_per_page' => '4', 'orderby' => 'random', 'post__not_in' => array( $post_id ) ) );
+if( !$the_query->have_posts() ) $the_query = new WP_QUERY( $query_args );
 
 if( $the_query->have_posts() ):
 
@@ -269,10 +269,10 @@ endif;
 <div class="related-article">
     <a class="link" href="<?php echo get_the_permalink(); ?>">
         <div class="image-container">
-        <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
-            <div class="category-badge--with-background">
+            <img loading="lazy" src="<?= get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ); ?>" class="thumbnail" />
+        </div>
+        <div class="category-badge--with-background">
             <?php echo $the_category; ?>
-            </div>
         </div>
         <h1 class="title line-limit-3"><?php the_title(); ?></h1>
     </a>
