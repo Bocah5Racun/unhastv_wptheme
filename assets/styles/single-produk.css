@@ -52,6 +52,7 @@
 #center-track #produk-tabs-container {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  line-height: 0;
 }
 #center-track #produk-tabs {
   position: relative;
@@ -63,7 +64,7 @@
   font-size: 0.875rem;
 }
 #center-track #produk-tabs li {
-  padding: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
   font-weight: 700;
 }

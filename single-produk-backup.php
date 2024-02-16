@@ -1,3 +1,5 @@
+<body>
+
 <?php
 
 get_header();
@@ -69,6 +71,11 @@ if( have_posts() ):
 
 </main>
 
+<?php 
+endif;
+get_footer();
+?>
+
 <script>
 
     const descTab = document.querySelector('[data-active="deskripsi"]')
@@ -77,10 +84,8 @@ if( have_posts() ):
     const detail = document.getElementById("produk-detail")
     const selector = document.getElementById("produk-selector")
 
-    console.log(descTab.offsetWidth)
-
-    selector.style.width = `${descTab.offsetWidth}px`
-    selector.style.left = `${descTab.offsetLeft}px`
+    selector.style.width = descTab.offsetWidth
+    selector.style.left = descTab.offsetLeft
 
     const setActiveTab = ( obj ) => {
         const offset = obj.offsetLeft
@@ -92,13 +97,13 @@ if( have_posts() ):
         if(dataActive == "deskripsi") {
             description.style.display = "block"
             detail.style.display = "none"
-            selector.style.width = `${descTab.offsetWidth}px`
-            selector.style.left = `${descTab.offsetLeft}px`
+            selector.style.width = descTab.offsetWidth
+            selector.style.left = descTab.offsetLeft
         } else {
             description.style.display = "none"
             detail.style.display = "block"
-            selector.style.width = `${infoTab.offsetWidth}px`
-            selector.style.left = `${infoTab.offsetLeft}px`
+            selector.style.width = infoTab.offsetWidth
+            selector.style.left = infoTab.offsetLeft
         }
     }
 
@@ -113,7 +118,4 @@ if( have_posts() ):
     }
 </script>
 
-<?php 
-endif;
-get_footer();
-?>
+</body>
