@@ -17,7 +17,7 @@ if( $produk_query->have_posts() ):
         <div id="gallery-desc">
             <h1>Produk Hadin & Akuadin</h1>
             <p>Hadin Cokelat Celebes diolah secara eksklusif dari biji kakao pilihan berkualitas tinggi dari Sulawesi.</p>
-            <!-- <a href="<?= get_site_url() . "/semua-produk/"; ?>">Lihat Semua Produk</a> -->
+            <!-- <a href="">Lihat Semua Produk</a> -->
         </div>
         <ul id="gallery-carousel">
 
