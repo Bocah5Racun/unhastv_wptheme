@@ -713,4 +713,7 @@ function remove_jquery() {
 }
 add_action('init', 'remove_jquery');
 
-flush_rewrite_rules( );
+function theme_prefix_rewrite_flush() {
+  flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'theme_prefix_rewrite_flush' );
