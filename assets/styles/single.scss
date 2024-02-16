@@ -105,6 +105,12 @@ article {
   }
 }
 
+.wp-element-caption {
+  font-size: 0.875rem;
+  margin-top: 4px;
+  color: var(--dark-gray);
+  font-style: italic;
+}
 .ad-example-space {
   grid-area: advertisement;
   .example-ad {
