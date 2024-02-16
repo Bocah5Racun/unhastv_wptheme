@@ -84,7 +84,7 @@
 .hero__news-item .category-badge--with-background {
   position: absolute;
   left: 4px;
-  bottom: 4px;
+  bottom: 8px;
 }
 .hero__news-item__title {
   font-size: 1rem;
