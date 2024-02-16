@@ -4,7 +4,7 @@
 
 get_header();
 
-print("Header loaded.")
+print("Header loaded.");
 
 if( have_posts() ):
     the_post();
