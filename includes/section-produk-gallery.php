@@ -12,7 +12,7 @@ if( $produk_query->have_posts() ):
 
 ?>
 
-<div id="produk-gallery-container" class="container--constrained">
+<div id="produk-gallery-container" class="container--constrained my-2">
     <div id="gallery-row">
         <div id="gallery-desc">
             <h1>Hadin Coklat & Akuadin</h1>
