@@ -164,7 +164,7 @@ hr {
 
 #breadcrumbs {
   color: var(--ultra-dark-gray);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 #breadcrumbs > span {
   display: flex;
@@ -172,12 +172,10 @@ hr {
   gap: 8px;
 }
 #breadcrumbs > span > *:first-child > a {
-  font-weight: 700;
   color: var(--unhas-red);
   text-decoration: underline;
 }
 #breadcrumbs > span > *:nth-child(2n) {
-  font-weight: 700;
 }
 #breadcrumbs > span > *:last-child {
   max-width: clamp(350px, 20vw, 700px);

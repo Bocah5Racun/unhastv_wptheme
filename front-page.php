@@ -43,7 +43,14 @@ get_template_part(
         ?>
     </section>
 
-    <hr />
+    <section id="produk-gallery" class="section">
+        <?php
+            get_template_part(
+                'includes/section',
+                'produk-gallery'
+            );
+        ?>
+    </section>
 
     <section id="section-2" class="section">
         <?php

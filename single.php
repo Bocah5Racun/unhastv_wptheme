@@ -94,6 +94,10 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 $tags = get_the_tags();
 $post_id = get_the_ID();
 
+$related_post_ids = [ $post_id ];
+
+wp_cache_set( 'related_post_ids', $related_post_ids );
+
 if( $tags ) :
 foreach( $tags as $tag ) : ?>
             <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><span class="post-tag"><?php echo $tag->name; ?></span></a>
@@ -126,16 +130,16 @@ $tag_ids = array();
 if( $tags ) :
 foreach( $tags as $tag ) $tag_ids[] = $tag->term_id;
 
+$related_post_ids = wp_cache_get( 'related_post_ids' );
+
 $query_args = array(
     'posts_per_page' => '4',
     'tag__in' => $tag_ids,
     'orderby' => 'rand',
-    'post__not_in' => array( get_the_ID() ),
+    'post__not_in' => $related_post_ids,
 );
 
 $the_query = new WP_QUERY( $query_args );
-
-$related_post_ids = [ $post_id ];
 
 ?>
 
@@ -149,7 +153,6 @@ $related_post_ids = [ $post_id ];
 <?php while( $the_query->have_posts() ):
 $the_query->the_post();
 $related_post_ids[] = get_the_ID();
-
 
 /**
  * get the first sub-category.

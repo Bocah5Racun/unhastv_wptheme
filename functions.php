@@ -27,13 +27,14 @@ function unhastv_enqueue_styles() {
     wp_enqueue_style( 'unhastv-hero-styles', get_template_directory_uri() . '/assets/styles/hero.css', array(), filemtime(get_template_directory() . '/assets/styles/hero.css'), 'all' );
     wp_enqueue_style( 'unhastv-section-styles', get_template_directory_uri() . '/assets/styles/section-styles.css', array(), filemtime(get_template_directory() . '/assets/styles/section-styles.css'), 'all' );
     wp_enqueue_style( 'unhastv-popup-styles', get_template_directory_uri() . '/assets/styles/popup.css', array(), filemtime(get_template_directory() . '/assets/styles/popup.css'), 'all');
+    wp_enqueue_style( 'unhastv-produk-gallery-styles', get_template_directory_uri() . '/assets/styles/produk-gallery.css', array(), filemtime(get_template_directory() . '/assets/styles/produk-gallery.css'), 'all');
   }
   
   if(is_single()) {
     wp_enqueue_style( 'unhastv-single-styles', get_template_directory_uri() . '/assets/styles/single.css', array(), filemtime(get_template_directory() . '/assets/styles/single.css'), 'all' );
   }
 
-  if( get_post_type() === 'produk' ) {
+  if( is_singular( 'produk' ) ) {
     wp_enqueue_style( 'unhastv-produk-styles', get_template_directory_uri() . '/assets/styles/single-produk.css', array(), filemtime(get_template_directory() . '/assets/styles/single-produk.css'), 'all' );
   }
 
@@ -626,6 +627,82 @@ add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 // shortcode functions
 include( 'shortcodes.php' );
+
+// add produk metabox
+
+function add_meta_produk_metabox() {
+  add_meta_box(
+    'meta_produk', // $id
+    'Informasi Produk', // $title
+    'show_meta_produk_metabox', // $callback
+    'produk', // $screen
+    'normal', // $context
+    'high' // $priority
+  );
+}
+add_action( 'add_meta_boxes', 'add_meta_produk_metabox' );
+
+function show_meta_produk_metabox() {
+  global $post;
+    $meta = get_post_meta( $post->ID, 'meta_produk', true ); ?>
+
+  <input type="hidden" name="meta_produk_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+
+  <section style="display: grid; gap: 8px; margin: 1rem 0;">
+
+  <section style="display: flex; align-items: center; gap: 8px;">
+    <label for="meta_produk[harga]" style="flex: 0 0 110px;"><b>Harga</b></label>
+    <input type="number" name="meta_produk[harga]" id="meta_produk[harga]" class="regular-text" value="<?php if (is_array($meta) && isset($meta['harga'])){ echo $meta['harga']; } ?>">
+    <span style="font-style: italic;">Tentukan harga produk per satuan</span>
+  </section>
+  <section style="display: flex; align-items: center; gap: 8px;">
+    <label for="meta_produk[satuan]" style="flex: 0 0 110px;"><b>Satuan</b></label>
+    <input type="text" value="unit" name="meta_produk[satuan]" id="meta_produk[satuan]" class="regular-text" value="<?php if (is_array($meta) && isset($meta['satuan'])){ echo $meta['satuan']; } ?>">
+    <span style="font-style: italic;">Tentukan satuan produk (e.g., 'kemasan', 'lusin', 'kotak')</span>
+  </section>
+  <section style="display: flex; align-items: center; gap: 8px;">
+    <label for="meta_produk[minimum]" style="flex: 0 0 110px;"><b>Min. Pemesanan</b></label>
+    <input type="number" name="meta_produk[minimum]" id="meta_produk[minimum]" class="regular-text" value="<?= (is_array($meta) && isset($meta['minimum'])) ? $meta['minimum'] : 1; ?>">
+  </section>
+  
+  <label for="meta_produk[detail]"><b>Detail Produk</b></label>
+  <span style="font-style: italic;">Informasi penting lain yang tidak termasuk deskripsi produk (i.e., item-item yang termasuk dalam paket, detail pengiriman, dan lain-lain).</span>
+  <section>
+  <textarea name="meta_produk[detail]" id="meta_produk[detail]" class="regular-text" style="width: 100%; height: 120px;">
+  <?php if (is_array($meta) && isset($meta['detail'])){ echo $meta['detail']; } ?>
+  </textarea>
+  </section>
+
+  <?php }
+
+function save_meta_produk_meta( $post_id ) {
+  // verify nonce
+  if ( !wp_verify_nonce( $_POST['meta_produk_nonce'], basename(__FILE__) ) ) {
+    return $post_id;
+  }
+  // check autosave
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+    return $post_id;
+  }
+  // check permissions
+  if ( 'page' === $_POST['post_type'] ) {
+    if ( !current_user_can( 'edit_page', $post_id ) ) {
+      return $post_id;
+    } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
+      return $post_id;
+    }
+  }
+
+  $old = get_post_meta( $post_id, 'meta_produk', true );
+  $new = $_POST['meta_produk'];
+
+  if ( $new && $new !== $old ) {
+    update_post_meta( $post_id, 'meta_produk', $new );
+  } elseif ( '' === $new && $old ) {
+    delete_post_meta( $post_id, 'meta_produk', $old );
+  }
+}
+add_action( 'save_post', 'save_meta_produk_meta' );
 
 // remove jquery
 function remove_jquery() {
