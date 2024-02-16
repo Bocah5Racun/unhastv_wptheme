@@ -144,11 +144,11 @@
 /* media queries */
 @media only screen and (max-width: 1120px) {
   #single-produk-container {
-    grid-template-areas: "image image" "description buybox";
+    grid-template-areas: "description image" "description buybox";
     grid-template-columns: minmax(0, 37.5rem) 18.75rem;
   }
 }
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 650px) {
   #single-produk-container {
     grid-template-areas: "image" "description" "buybox";
     grid-template-columns: 1fr;

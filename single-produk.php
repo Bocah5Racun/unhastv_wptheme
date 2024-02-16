@@ -56,7 +56,7 @@ if( have_posts() ):
     <section id="buybox">
         <h3>Pesan Produk Ini</h3>
         <div class="buybox-row">
-            <input id="jumlah" type="number" value=1 min=1 onchange="calculateSubtotal(this)" />
+            <input id="jumlah" type="number" value=1 min=<?= isset( $meta['minimum'] ) ? $meta['minimum'] : 1; ?> onchange="calculateSubtotal(this)" />
             <label for="jumlah">Jumlah <?= ucfirst( $meta['satuan'] ); ?></label>
         </div>
         <div class="buybox-row subtotal">
