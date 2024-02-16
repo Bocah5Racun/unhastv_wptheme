@@ -668,9 +668,7 @@ function show_meta_produk_metabox() {
   <label for="meta_produk[detail]"><b>Detail Produk</b></label>
   <span style="font-style: italic;">Informasi penting lain yang tidak termasuk deskripsi produk (i.e., item-item yang termasuk dalam paket, detail pengiriman, dan lain-lain).</span>
   <section>
-  <textarea name="meta_produk[detail]" id="meta_produk[detail]" class="regular-text" style="width: 100%; height: 120px;">
-  <?php if (is_array($meta) && isset($meta['detail'])){ echo $meta['detail']; } ?>
-  </textarea>
+  <textarea name="meta_produk[detail]" id="meta_produk[detail]" class="regular-text" style="width: 100%; height: 120px;"><?php if (is_array($meta) && isset($meta['detail'])){ echo $meta['detail']; } ?></textarea>
   </section>
 
   <?php }
