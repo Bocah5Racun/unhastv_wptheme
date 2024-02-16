@@ -625,9 +625,6 @@ add_action( 'after_setup_theme', 'unhastv_theme_setup' );
 //add_filter( 'excerpt_length', 'my_excerpt_length' );
 add_filter( 'excerpt_more', 'new_excerpt_more' );
 
-// shortcode functions
-include( 'shortcodes.php' );
-
 // add produk metabox
 
 function add_meta_produk_metabox() {
