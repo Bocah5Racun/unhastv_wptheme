@@ -15,8 +15,9 @@ if( $produk_query->have_posts() ):
 <div id="produk-gallery-container" class="container--constrained">
     <div id="gallery-row">
         <div id="gallery-desc">
-            <h1>Produk Hadin & Akuadin</h1>
-            <p>Hadin Cokelat Celebes diolah secara eksklusif dari biji kakao pilihan berkualitas tinggi dari Sulawesi.</p>
+            <h1>Hadin Coklat & Akuadin</h1>
+            <p>Cokelat berkualitas tinggi dan air minum murni untuk kesegaran sempurna.</p>
+            <p style="font-weight: 700; font-size: 115%">Rasakan kelezatan dan kesegaran lokal!</p>
             <!-- <a href="">Lihat Semua Produk</a> -->
         </div>
         <ul id="gallery-carousel">

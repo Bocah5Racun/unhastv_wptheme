@@ -57,8 +57,10 @@
 }
 
 #gallery-desc {
-  padding: 2rem;
-  padding-right: 4rem;
+  display: grid;
+  align-content: center;
+  padding: 1.75rem;
+  padding-right: 3.5rem;
   background-color: var(--unhas-yellow);
   border-radius: 6px;
 }
