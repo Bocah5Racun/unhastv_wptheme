@@ -712,3 +712,5 @@ function remove_jquery() {
   }
 }
 add_action('init', 'remove_jquery');
+
+flush_rewrite_rules( );
