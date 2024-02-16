@@ -76,46 +76,4 @@ endif;
 get_footer();
 ?>
 
-<script>
-
-    const descTab = document.querySelector('[data-active="deskripsi"]')
-    const infoTab = document.querySelector('[data-active="informasi"]')
-    const description = document.getElementById("produk-description")
-    const detail = document.getElementById("produk-detail")
-    const selector = document.getElementById("produk-selector")
-
-    selector.style.width = descTab.offsetWidth
-    selector.style.left = descTab.offsetLeft
-
-    const setActiveTab = ( obj ) => {
-        const offset = obj.offsetLeft
-        const width = obj.offsetWidth
-        const dataActive = obj.dataset.active
-
-        console.log(dataActive)
-
-        if(dataActive == "deskripsi") {
-            description.style.display = "block"
-            detail.style.display = "none"
-            selector.style.width = descTab.offsetWidth
-            selector.style.left = descTab.offsetLeft
-        } else {
-            description.style.display = "none"
-            detail.style.display = "block"
-            selector.style.width = infoTab.offsetWidth
-            selector.style.left = infoTab.offsetLeft
-        }
-    }
-
-    let total = 1;
-    const subtotalDiv = document.getElementById("subtotal-text")
-
-    const calculateSubtotal = ( obj ) => {
-        total = obj.value
-        const subtotal = <?= $meta['harga']; ?> * total
-
-        subtotalDiv.innerHTML = subtotal.toLocaleString('id-ID')
-    }
-</script>
-
 </body>
