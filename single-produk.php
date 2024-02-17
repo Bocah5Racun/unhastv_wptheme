@@ -56,14 +56,15 @@ if( have_posts() ):
     <section id="buybox">
         <h3>Pesan Produk Ini</h3>
         <div class="buybox-row">
-            <input id="jumlah" type="number" value=1 min=<?= isset( $meta['minimum'] ) ? $meta['minimum'] : 1; ?> onchange="calculateSubtotal(this)" />
-            <label for="jumlah">Jumlah <?= ucfirst( $meta['satuan'] ); ?></label>
+            <input id="jumlah" type="number" value=1 min=<?= isset( $meta['minimum'] ) ? $meta['minimum'] : 1; ?> onchange="calculateSubtotal()" />
+            <label for="jumlah" style="font-size: 0.875rem;">Jumlah <?= ucfirst( $meta['satuan'] ); ?></label>
         </div>
         <div class="buybox-row subtotal">
             <div>Subtotal</div>
             <div id="subtotal-container">Rp<span id="subtotal-text"><?= number_format( $meta['harga'], 0, ',', '.' ); ?></span></div>
         </div>
-        <button>Pesan Sekarang!</button>
+        <button onclick="(()=>{calculateSubtotal();makeOrder()})()" style="display: flex; align-items: center; justify-content: center; gap: 6px; "><img src="<?= get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png"; ?>" style="width: 18px; aspect-ratio: 1;" />Pesan Sekarang!</button>
+        <small style="background: rgba(255, 255, 255, 0.25); padding: 8px; font-size: 0.75rem; border-radius: 6px; text-align: center;">Klik tombol di atas untuk melakukan pemesanan via chat WhatsApp.</small>
     </section>
 </div>
 
@@ -104,12 +105,19 @@ if( have_posts() ):
 
     let total = 1;
     const subtotalDiv = document.getElementById("subtotal-text")
+    const jumlah = document.getElementById("jumlah")
 
-    const calculateSubtotal = ( obj ) => {
-        total = obj.value
+    const calculateSubtotal = () => {
+        total = jumlah.value
         const subtotal = <?= $meta['harga']; ?> * total
 
         subtotalDiv.innerHTML = subtotal.toLocaleString('id-ID')
+    }
+
+    const makeOrder = () => {
+        const textString = `https://wa.me/6285237777541?text=Halo%2C%20PT%20Hadin!%0A%0ASaya%20ingin%20memesan%0A%0A<?= get_the_title(); ?>%20x${jumlah.value}%0A%0A-----------------%0AInfo%20Pengantaran%0A-----------------%0ANama%3A%20Name%0AAlamat%3A%20Address%0A%0ATerima%20kasih.`
+
+        window.open(textString)
     }
 </script>
 

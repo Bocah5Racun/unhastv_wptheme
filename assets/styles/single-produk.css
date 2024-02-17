@@ -106,7 +106,7 @@
 }
 #right-track #buybox .buybox-row {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
   align-items: center;
 }
 #right-track #buybox .buybox-row input[type=number] {
@@ -131,10 +131,15 @@
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 700;
+  scale: 1;
   transition: background-color 100ms ease-out;
+  transition: scale 50ms ease-out;
 }
 #right-track #buybox button:hover {
   background-color: rgb(255, 174, 0);
+}
+#right-track #buybox button:active {
+  scale: 0.98;
 }
 
 .subtotal {
