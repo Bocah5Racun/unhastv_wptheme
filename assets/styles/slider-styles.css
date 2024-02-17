@@ -4,7 +4,7 @@
   width: calc(100% - 88px);
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
 .slider-container::-webkit-scrollbar {
   display: none;
@@ -22,12 +22,10 @@
 }
 .slider-prev {
   left: 0;
-  background: #fff;
   padding-right: 4px;
 }
 .slider-next {
   right: 0;
-  background-color: #fff;
   padding-left: 4px;
 }
 .slider-prev--black {

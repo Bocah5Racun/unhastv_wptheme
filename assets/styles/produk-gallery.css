@@ -7,17 +7,15 @@
 
 #gallery-row {
   position: relative;
-  left: 2rem;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 #gallery-carousel {
   position: relative;
-  left: -3rem;
   list-style-type: none;
   margin: 0;
-  padding: 1rem;
+  padding: 8px;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(4, 1fr);
