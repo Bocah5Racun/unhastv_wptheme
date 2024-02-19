@@ -115,7 +115,7 @@ if( have_posts() ):
     }
 
     const makeOrder = () => {
-        const textString = `https://wa.me/6285237777541?text=Halo%2C%20PT%20Hadin!%0A%0ASaya%20ingin%20memesan%0A%0A<?= get_the_title(); ?>%20x${jumlah.value}%0A%0A-----------------%0AInfo%20Pengantaran%0A-----------------%0ANama%3A%20Name%0AAlamat%3A%20Address%0A%0ATerima%20kasih.`
+        const textString = `https://wa.me/6285237777541?text=Halo%2C%20PT%20Hadin!%0A%0ASaya%20ingin%20memesan%0A%0A<?= get_the_title(); ?>%20x${jumlah.value}%0A%0A-----------------%0AInfo%20Pengantaran%0A-----------------%0ANama%3A%0AAlamat%3A%0A%0ATerima%20kasih.`
 
         window.open(textString)
     }
