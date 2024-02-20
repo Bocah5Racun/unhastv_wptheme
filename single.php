@@ -5,6 +5,8 @@ wp_enqueue_script( 'copypaste-controls', get_template_directory_uri() . '/assets
 
 get_header();
 
+global $page;
+
 if( have_posts() ) the_post();
 
 $the_post_cats = get_the_category();
@@ -63,7 +65,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <h1 class="single-title"><?php the_title(); ?></h1>
 <div class="single-meta">
 <?php if( get_post_type() != 'iklan' ): ?>
-    <span class="single-author">Oleh <?php the_author(); ?></span> •
+    <span class="single-author"><?php the_author(); ?></span> •
     <span class="single-date"><?php the_date(); ?></span>
 <?php endif; ?>
 </div>
@@ -84,7 +86,8 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 </div>
     <div class="content-container text-container">
 
-<?php if( !is_paged() ): ?>
+<?php if( $page == 1 ):
+?>
         
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
 <div class="single-feature-image-caption"><?= get_the_post_thumbnail_caption(); ?></div>
