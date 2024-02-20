@@ -36,7 +36,7 @@ article {
 .single-body-container {
   display: grid;
   grid-template-areas: "socials content advertisement";
-  grid-template-columns: 14rem minmax(0, 37.5rem) 18.75rem;
+  grid-template-columns: 14rem minmax(0, 38rem) 14rem;
   gap: 1rem;
   .socials-container {
     grid-area: socials;
