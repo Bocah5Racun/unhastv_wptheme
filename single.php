@@ -86,7 +86,7 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 
 <?php
 global $page;
-if( empty( $page ) ):
+if( $page == 1):
 ?>
         
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
