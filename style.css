@@ -206,7 +206,8 @@ hr {
   margin-bottom: 3rem;
 }
 
-.nav-links {
+.nav-links,
+.post-nav-links {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -216,7 +217,8 @@ hr {
   border-radius: 6px;
 }
 
-a.page-numbers:hover {
+a.page-numbers:hover,
+a.post-page-numbers {
   text-decoration: underline;
 }
 .nav-links .page-numbers {
@@ -226,7 +228,8 @@ a.page-numbers:hover {
   align-items: center;
 }
 
-.nav-links .current {
+.nav-links .current,
+.post-nav-links .current {
   background-color: var(--unhas-red);
   font-weight: bold;
   color: var(--light-gray);

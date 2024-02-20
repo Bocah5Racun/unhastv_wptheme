@@ -87,7 +87,10 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
 <div class="single-feature-image-caption"><?= get_the_post_thumbnail_caption(); ?></div>
         <?php the_content(); ?>
-        <?php wp_link_pages(); ?>
+        <?php wp_link_pages( array(
+            'before'    => '',
+            'after'     => '',
+        ) ); ?>
         <div class="single-post-tags">
 
 <?php
