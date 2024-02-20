@@ -1,6 +1,4 @@
 # ignore sass files
-/assets/styles/*.scss
-/assets/styles/*.css.map
-
-# ignore backups
-*.backup
+*.scss
+*.map
+*.bkp
