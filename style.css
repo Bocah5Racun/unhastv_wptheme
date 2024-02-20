@@ -221,7 +221,8 @@ a.page-numbers:hover,
 a.post-page-numbers {
   text-decoration: underline;
 }
-.nav-links .page-numbers {
+.nav-links .page-numbers,
+.post-nav-links .page-numbers {
   padding: 0.5rem;
   display: flex;
   justify-content: center;
