@@ -5,8 +5,6 @@ wp_enqueue_script( 'copypaste-controls', get_template_directory_uri() . '/assets
 
 get_header();
 
-global $page;
-
 if( have_posts() ) the_post();
 
 $the_post_cats = get_the_category();
@@ -86,7 +84,9 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 </div>
     <div class="content-container text-container">
 
-<?php if( $page == 1 ):
+<?php
+global $page;
+if( empty( $page ) ):
 ?>
         
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
