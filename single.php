@@ -87,12 +87,13 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <?php
 global $page;
 if( $page == 1):
+    if( !has_post_format( 'video' ) ):
 ?>
         
 <?php the_post_thumbnail( 'full', array( 'class' => 'single-feature-image' ) ); ?>
 <div class="single-feature-image-caption"><?= get_the_post_thumbnail_caption(); ?></div>
 
-<?php endif; ?>
+<?php endif; endif; ?>
 
         <?php the_content(); ?>
         <?php wp_link_pages( array(

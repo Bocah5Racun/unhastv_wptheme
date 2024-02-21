@@ -37,7 +37,7 @@ article {
 .single-body-container {
   display: grid;
   grid-template-areas: "socials content advertisement";
-  grid-template-columns: 14rem minmax(0, 38rem) 14rem;
+  grid-template-columns: 10rem minmax(0, 40rem) 10rem;
   gap: 1rem;
 }
 .single-body-container .socials-container {
@@ -166,6 +166,12 @@ article {
 .related-articles-container__inner .related-article .date {
   color: var(--dark-gray);
   font-size: 0.875rem;
+}
+
+.wp-block-embed iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
 /* media queries */
