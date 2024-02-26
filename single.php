@@ -72,9 +72,13 @@ function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
 <div class="single-body-container">
 <div class="socials-container">
     <div class="socials-icons">
-        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>" title="Bagikan artikel ini lewat Twitter/X" />
-        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>" title="Bagikan artikel ini lewat Facebook" />
-        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>" title="Bagikan artikel ini lewat WhatsApp" />
+        <a href="https://twitter.com/intent/tweet?url=<?= get_the_permalink() ;?>" title="Bagikan artikel ini lewat Twitter/X" target="_blank">
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-twitterx.png" ?>"/></a>
+        <a href="https://web.facebook.com/sharer/sharer.php?u=<?= get_the_permalink(); ?>" title="Bagikan artikel ini lewat Facebook" target="_blank"><img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-facebook.png" ?>"  /></a>
+        <a href="https://api.whatsapp.com/send?text=Baca artikel ini dari Unhas TV:<?= get_the_permalink(); ?>" title="Bagikan artikel ini lewat WhatsApp" target="_blank">
+        <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-whatsapp.png" ?>"  /></a>
+        <a href="mailto:?subject=<?= get_the_title(); ?>&amp;body=Baca artikel ini dari Unhas TV: <?= get_the_permalink(); ?>"
+   title="Share by Email">
         <img loading="lazy" class="socials-icon to-red" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-email.png" ?>" title="Bagikan artikel ini lewat email" />
         <img loading="lazy" class="socials-icon to-red copy" src="<?php echo get_template_directory_uri() . "/assets/imgs/unhastv-socials-copy.png" ?>" title="Salin link artikel ini ke clipboard" onclick='( ()=> {
             const alertText = "Baca Artikel Ini di Unhas TV: <?php echo get_the_permalink(); ?>";
