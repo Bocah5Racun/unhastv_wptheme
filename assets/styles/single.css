@@ -101,6 +101,9 @@ article {
 .single-body-container .content-container p:last-child {
   margin-bottom: 0;
 }
+.single-body-container .content-container mark {
+  padding: 0.25rem 0.5rem;
+}
 .single-body-container .content-container .single-post-tags {
   display: flex;
   flex-wrap: wrap;

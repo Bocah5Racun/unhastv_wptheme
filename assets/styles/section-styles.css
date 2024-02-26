@@ -40,6 +40,7 @@
 .section__news-item__tags {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* two columns feature left */

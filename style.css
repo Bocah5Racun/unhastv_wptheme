@@ -222,7 +222,7 @@ a.post-page-numbers {
   text-decoration: underline;
 }
 .nav-links .page-numbers,
-.post-nav-links .page-numbers {
+.post-nav-links .post-page-numbers {
   padding: 0.5rem;
   display: flex;
   justify-content: center;
