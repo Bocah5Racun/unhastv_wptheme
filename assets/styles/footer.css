@@ -68,3 +68,11 @@
     brightness(97%) contrast(106%);
   scale: 0.95;
 }
+
+.footer__branding {
+  max-width: 200px;
+}
+.footer__branding .custom-logo {
+  width: 100%;
+  object-fit: contain;
+}
