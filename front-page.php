@@ -1,5 +1,7 @@
 <?php
 
+const TOGGLE_PRODUCT_GALLERY = false;
+
 wp_enqueue_script( 'slider-controls', get_template_directory_uri() . '/assets/scripts/slider-controls.js', NULL, NULL, true );
 
 get_header();
@@ -43,6 +45,7 @@ get_template_part(
         ?>
     </section>
 
+    <?php if( TOGGLE_PRODUCT_GALLERY ) : ?>
     <section id="produk-gallery" class="section">
         <?php
             get_template_part(
@@ -51,6 +54,7 @@ get_template_part(
             );
         ?>
     </section>
+    <?php endif; ?>
 
     <section id="section-2" class="section">
         <?php
